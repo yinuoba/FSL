@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>聚团购-每天上午10点名品团购开抢</title><meta name="Keywords" content="团购,聚团购,聚尚网,品牌折扣,限时抢购" /><meta name="Description" content="聚团购是聚尚网时尚名品的团购频道，为3700万年轻时尚族群提供370多个国际大牌超低折扣，支持货到付款，7天无理由退换。每天上午10点开抢！" />
+       
+        <link href="css/tuan_basic.css" type="text/css" rel="stylesheet" />  
+        <link href="css/tuan.css" type="text/css" rel="stylesheet" />
+        
+        <script src="js/FSL.js"></script>
+		<script src="js/FSL_Plug.js"></script>
+    </head>
+    <body>
+        <!--聚团购头部 开始 -->
+        <div class="head_tuan">
+            <div class="normal_box_tuan">
+                <div class="float_left">
+                    <a target="_self" class="float_left" alt="聚团购" href="#">
+                    <img title="聚团购" alt="聚团购" src="http://img1.fclubimg.com/ju3/images/tuan_logo.jpg">
+                    </a>
+                </div>
+                <div class="tuan_head_right">
+                    <div class="tuan_head_form">
+                        <input type="text" value=" 输入邮箱地址或手机号码" class="tuan_textbox" name="" style="color: rgb(174, 174, 176);">
+                        <input type="button" class="tuan_btn">
+                    </div>
+                    <div class="tuan_msg_order">
+                        免费订阅明日团购！&nbsp;&nbsp;
+                        <a id="tuan_cancel_msg" href="#">»取消订阅！</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu_tuan">
+            <div class="normal_box_tuan">
+                <ul>
+                    <li>
+                        <a target="_self" title="聚团购" href="tuangouListStrip.php?sortType=1" class="tuangou_main">
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_self" title="限时抢购" href="http://www.fclub.cn" class="qianggou_main">
+                        </a>
+                    </li>
+                    <!--登录状态-->
+                    <li id="userinfo" class="menu_text">
+                    	<!--登录后 -->
+                    	&nbsp;&nbsp;您好，Hoogle [
+                        <a class="a_white" href="http://www.fclub.cn/user.html?act=logout">注销</a>]                        
+                        
+                        <!--未登录 -->
+                        <a class="text_bold a_white" href="/user.html?act=login">[登录]</a>&nbsp;&nbsp;&nbsp;
+                        <a class="text_bold a_white" href="/user.html?act=register">[注册]</a>
+                    </li>
+                    <!--登录后状态-->
+                    <li class="menu_img_online">
+                        <a title="在线咨询" onclick="window.open('http://chat10.live800.com/live800/chatClient/chatbox.jsp?companyID=88398&amp;configID=157085&amp;jid=4250996372&amp;enterurl=http%3A%2F%2Flocalhost%2Fecshop%2Fgoods%2Ephp%3Fid%3D316%26key%3D1248319068%26keycode%3D9603122EB97D7A358E63E4288A93A021&amp;timestamp=1248319169410')" href="#" class="online_order">
+                        </a>
+                    </li>
+                    <li class="menu_img_400">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--聚团购头部 结束 -->
+        
+        <!--聚团购 图片列表 开始 -->
+        <div class="tuan3_box">
+            <div class="tuan3_navbar">
+                <ul>
+                    <li onclick="location.href='?sortType=1'" class="tuan3_w58 tuan3_navli_on">
+                        默认
+                    </li>
+                    <li onclick="location.href='?sortType=2'" class="">
+                        最新团购
+                    </li>
+                    <li onclick="location.href='?sortType=3'" class="">
+                        最具人气
+                    </li>
+                    <li onclick="location.href='?sortType=4'" class="">
+                        即将结束
+                    </li>
+                </ul>
+            </div>
+            <div class="tuan3_container">
+                <!--默认-->
+                <ul style="display: block">
+                    <li class="tuan3_container_on">
+                        <div class="tuan3_container_lihover">
+                            <a title="简约剪裁绅士长裤" href="tuangouDetail.php?id=1310&amp;color_id=33" target="_blank" class="imglink">简约剪裁绅士长裤</a>
+                        </div>
+                        <div class="tuan3_img_big">
+                            <a title="简约剪裁绅士长裤" href="tuangouDetail.php?id=1310&amp;color_id=33" target="_blank">
+                            <img width="230" height="425" fslazy="http://img1.fclubimg.com/data/jutuangou/listimg/1338508628918481198.jpg">
+                            </a>
+                        </div>
+                        <div class="tuan3_botm tuan3_botm_red">
+                            <div class="tuan3_botm_left">
+                                <h4>216</h4>
+                                <div class="float_left">
+                                    <s>
+                                        原价：1080
+                                    </s>
+                                    <p>
+                                        折扣：2折
+                                    </p>
+                                </div>
+                                <div class="clearboth">
+                                </div>
+                                <p id="end_time">
+                                    剩余：
+                                    <span id="sp_hour_0">70</span>小时
+                                    <span id="sp_minute_0">31</span>分
+                                    <span id="sp_second_0">23</span>秒
+                                </p>
+                            </div>
+                            <h5></h5>
+                        </div>
+                    </li>
+                    <li class="tuan3_container_on">
+                        <div class="tuan3_container_lihover">
+                            <a title="皇马足球队运动衫" href="tuangouDetail.php?id=1309&amp;color_id=4" target="_blank" class="imglink">皇马足球队运动衫</a>
+                        </div>
+                        <div class="tuan3_img_big">
+                            <a title="皇马足球队运动衫" href="tuangouDetail.php?id=1309&amp;color_id=4" target="_blank">
+                            <img width="230" height="425" fslazy="http://img3.fclubimg.com/data/jutuangou/listimg/1338508570386600992.jpg">
+                            </a>
+                        </div>
+                        <div class="tuan3_botm tuan3_botm_red">
+                            <div class="tuan3_botm_left">
+                                <h4>42</h4>
+                                <div class="float_left">
+                                    <s>
+                                        原价：280
+                                    </s>
+                                    <p>
+                                        折扣：1.5折
+                                    </p>
+                                </div>
+                                <div class="clearboth">
+                                </div>
+                                <p id="end_time">
+                                    剩余：
+                                    <span id="sp_hour_1">70</span>小时
+                                    <span id="sp_minute_1">31</span>分
+                                    <span id="sp_second_1">23</span>秒
+                                </p>
+                            </div>
+                            <h5></h5>
+                        </div>
+                    </li>
+                    <li class="tuan3_container_on">
+                        <div class="tuan3_container_lihover">
+                            <a title="明亮色连帽拉链衫" href="tuangouDetail.php?id=1308&amp;color_id=9" target="_blank" class="imglink">明亮色连帽拉链衫</a>
+                        </div>
+                        <div class="tuan3_img_big">
+                            <a title="明亮色连帽拉链衫" href="tuangouDetail.php?id=1308&amp;color_id=9" target="_blank">
+                            <img width="230" height="425" fslazy="http://img1.fclubimg.com/data/jutuangou/listimg/1338508332650186597.jpg">
+                            </a>
+                        </div>
+                        <div class="tuan3_botm tuan3_botm_red">
+                            <div class="tuan3_botm_left">
+                                <h4>39</h4>
+                                <div class="float_left">
+                                    <s>
+                                        原价：139
+                                    </s>
+                                    <p>
+                                        折扣：2.8折
+                                    </p>
+                                </div>
+                                <div class="clearboth">
+                                </div>
+                                <p id="end_time">
+                                    剩余：
+                                    <span id="sp_hour_2">70</span>小时
+                                    <span id="sp_minute_2">31</span>分
+                                    <span id="sp_second_2">23</span>秒
+                                </p>
+                            </div>
+                            <h5></h5>
+                        </div>
+                    </li>
+                    <li class="tuan3_container_on">
+                        <div class="tuan3_container_lihover">
+                            <a title="时髦海洋印花睡衣" href="tuangouDetail.php?id=1307&amp;color_id=19" target="_blank" class="imglink">时髦海洋印花睡衣</a>
+                        </div>
+                        <div class="tuan3_img_big">
+                            <a title="时髦海洋印花睡衣" href="tuangouDetail.php?id=1307&amp;color_id=19" target="_blank">
+                            <img width="230" height="425" fslazy="http://img3.fclubimg.com/data/jutuangou/listimg/1338508292784154106.jpg">
+                            </a>
+                        </div>
+                        <div class="tuan3_botm tuan3_botm_red">
+                            <div class="tuan3_botm_left">
+                                <h4>106</h4>
+                                <div class="float_left">
+                                    <s>
+                                        原价：530
+                                    </s>
+                                    <p>
+                                        折扣：2折
+                                    </p>
+                                </div>
+                                <div class="clearboth">
+                                </div>
+                                <p id="end_time">
+                                    剩余：
+                                    <span id="sp_hour_3">70</span>小时
+                                    <span id="sp_minute_3">31</span>分
+                                    <span id="sp_second_3">23</span>秒
+                                </p>
+                            </div>
+                            <h5></h5>
+                        </div>
+                    </li>
+                    <li class="tuan3_container_on">
+                        <div class="tuan3_container_lihover">
+                            <a title="时髦海洋印花睡衣" href="tuangouDetail.php?id=1307&amp;color_id=19" target="_blank" class="imglink">时髦海洋印花睡衣</a>
+                        </div>
+                        <div class="tuan3_img_big">
+                            <a title="时髦海洋印花睡衣" href="tuangouDetail.php?id=1307&amp;color_id=19" target="_blank">
+                            <img width="230" height="425" fslazy="http://img3.fclubimg.com/data/jutuangou/listimg/1338508292784154106.jpg">
+                            </a>
+                        </div>
+                        <div class="tuan3_botm tuan3_botm_red">
+                            <div class="tuan3_botm_left">
+                                <h4>106</h4>
+                                <div class="float_left">
+                                    <s>
+                                        原价：530
+                                    </s>
+                                    <p>
+                                        折扣：2折
+                                    </p>
+                                </div>
+                                <div class="clearboth">
+                                </div>
+                                <p id="end_time">
+                                    剩余：
+                                    <span id="sp_hour_3">70</span>小时
+                                    <span id="sp_minute_3">31</span>分
+                                    <span id="sp_second_3">23</span>秒
+                                </p>
+                            </div>
+                            <h5></h5>
+                        </div>
+                    </li>
+                </ul>
+                <!--最新团购-->
+                <ul style="display: none">
+                </ul>
+                <!--最具人气-->
+                <ul style="display: none">
+                </ul>
+                <!--即将结束-->
+                <ul style="display: none">
+                </ul>
+            </div>
+        </div>
+        <!--聚团购 图片列表 结束 -->
+        
+        <!--聚团购 底部 开始 -->
+        <div class="bottom_tuan">
+            <div class="bottom_tuan_boxtop">
+                <ul>
+                    <li><a target="_blank" class="black" href="http://www.fclub.cn/article-9.html">客服中心</a></li>
+                    <li><a target="_blank" class="black" href="http://www.fclub.cn/article-1.html">新手指南</a></li>  
+                    <li><a target="_blank" class="black" href="http://www.fclub.cn/article-10.html">支付方式</a></li>
+                    <li><a target="_blank" class="black" href="http://www.fclub.cn/article-20.html">配送方式</a></li>  
+                    <li><a target="_blank" class="black" href="http://www.fclub.cn/article-17.html">投诉建议</a></li>
+                </ul>
+                <dl>
+                    <dt><a title="正品保障" target="_blank" href="http://www.fclub.cn/fclub.php" class="tuan_zz"></a></dt>
+                    <dt><a title="开箱验货" target="_blank" href="http://www.fclub.cn/article-354.html" class="tuan_yh"></a></dt>
+                    <dt><a title="7天保障" target="_blank" href="http://www.fclub.cn/article-13.html" class="tuan_bz"></a></dt>
+                    <dt><a title="货到付款" target="_blank" href="http://www.fclub.cn/article-22.html" class="tuan_pay"></a></dt>
+                    <dt><a title="免运费" target="_blank" href="http://www.fclub.cn/article-22.html" class="tuan_yy"></a></dt>
+                    <dt><a title="积分换现金" target="_blank" href="http://www.fclub.cn/article-4.html" class="tuan_jf"></a></dt>
+                </dl>
+            </div>
+            <div class="bottom_tuan_boxdown">
+                <ul>
+                    <li><a class="a_white" target="_blank" href="http://www.fclub.cn/article-24.html">关于聚尚</a></li>
+                    <li><a class="a_white" target="_blank" href="http://www.fclub.cn/article.php?id=213">媒体报道</a></li>
+                    <li><a class="a_white" target="_blank" href="http://www.fclub.cn/fclub.php">正品保险</a></li>
+                    <li><a class="a_white" target="_blank" href="http://www.fclub.cn/article-88.html">友情链接</a></li>
+                    <li><a class="a_white" target="_blank" href="http://www.fclub.cn/article.php?id=92">招贤纳士</a></li>
+                    <li><a class="a_white" target="_blank" href="http://www.fclub.cn/article-91.html">联系我们</a></li>
+                    <li class=" a_white_gray">聚尚网版权所有 <a class=" a_white_gray" target="_blank" href="http://www.miibeian.gov.cn/">沪ICP备09012343号</a></li>
+                    <li class="tuan_zggs"><a target="_blank" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20110329175522925" class="a_white">上海工商</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--聚团购 底部 结束 -->
+        
+        <!--返回顶部 开始 -->
+        <a style="right: 150px;" href="#" id="gotop">top</a>
+        <!--返回顶部 结束 -->
+        <script src="js/tuan.js"></script>
+    </body>
+</html>

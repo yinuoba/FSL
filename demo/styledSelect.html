@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head><meta charset="utf-8">
+		<title>聚尚网-国际名品限时特卖购物网</title><meta name="keywords" content="聚尚网,品牌折扣,限时抢购 "><meta name="description" content="聚尚网fclub提供国际品牌正品的1折起限时抢购。提供货到付款，并由中华联合财产保险公司为每件商品提供正品保险，如工商部门鉴定为假货，即可向保险公司索取全额赔偿。">
+		<style>
+			.styledSelect{ margin:0 100px 0 0; padding:0; float:left; width:113px; line-height:21px; border:1px solid #000; background:url(images/new_index/selete.png) repeat-x;}
+			.styledSelect select{ margin:0; padding:0; visibility:hidden; border:none; width:1px; height:1px;}
+			.styledSelect ul{ margin:0; padding:0; width:113px; list-style:none; border-top:none; display:none;}
+			li.liClass{ cursor:pointer; padding-left:5px; list-style:none; font-family:'宋体'; font-size:12px; height:21px; line-height:21px;}
+			.divClass{ cursor:pointer; width:108px; height:21px; padding-left:5px; background:url(images/new_index/selete_bg.png) no-repeat right top;}
+			.liHover{ background:#E1E1E1!important;}
+			.liSelected{ background:#AEAEAE;}
+		</style>
+	</head>
+	<body>
+		<div class="styledSelect">
+			<select id="brand" name="brand">
+				<option value="0">选择品牌</option>
+				<option value="1">Cisio</option>
+				<option value="2">太平鸟</option>
+				<option value="3">比起</option>
+			</select>
+		</div>
+		<div class="styledSelect">
+			<select id="sort" name="sort">
+				<option value="0">选择品类</option>
+				<option value="1">男装</option>
+				<option value="2">女装</option>
+			</select>
+		</div>
+	</body>
+	<script src="js/FSL.js">
+	</script>
+	<script src="js/FSL_Plug.js">
+	</script>
+	<script>
+        FS.styledSelect({
+            selectSelector :　'#brand',
+            liClass : 'liClass',
+            divClass : 'divClass',
+            liHover : 'liHover',
+            liSelected : 'liSelected',
+            //dumpUrl : 'http://www.fclub.cn?brandid=',
+            clickFun : clickFun
+        });
+        
+        FS.styledSelect({
+            selectSelector :　'#sort',
+            liClass : 'liClass',
+            divClass : 'divClass',
+            liHover : 'liHover',
+            liSelected : 'liSelected',
+            //dumpUrl : 'http://www.fclub.cn?id=',
+            clickFun : clickFun
+        });
+        
+        function clickFun(){
+           // alert('执行回调行数');
+        }
+	</script>
+</html>

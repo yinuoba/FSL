@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录</title>
+<link href="css/basic_2012.css" type="text/css" rel="stylesheet" />
+<link href="css/header.css" type="text/css" rel="stylesheet" />
+<link href="css/reg_login.css" type="text/css" rel="stylesheet" />
+<script src="../core/FSL.js" type="text/javascript" ></script>
+<script src="../components/nav.js" type="text/javascript"></script>
+<script src="../components/popup.js" type="text/javascript"></script>
+<script src="../components/toogletext.js" type="text/javascript"></script>
+<script src="../components/successpop.js" type="text/javascript"></script>
+</head>
+<body>
+<!--头部内容开始-->
+<div class="mainTopBox">
+  <div id="mainTopBoxInfo">
+    <div class="mainTopBoxInfoLeft">
+      <ul>
+        <li class="noLeftLine"><a href="" class="main_white">走进聚尚</a></li>
+        <li><a href="" class="main_white">收藏网站</a></li>
+        <li>
+          <p id="mainImgMobie"></p>
+          <a href="" class="main_white">移动聚尚</a></li>
+        <li>
+          <p id="mainImgWeibo"></p>
+          <a href="" class="main_white">新浪微博</a></li>
+      </ul>
+    </div>
+    <div class="mainTopBoxInfoRight">
+      <ul>
+        <!--未登录-->
+        <!--<li class="noLeftLine"><a href="" class="main_white">登录</a></li>
+        <li><a href="" class="main_white">快速注册</a></li>-->
+        <!--已登录-->
+        <li id="userInfobox"> <a href="" id="userInfo" class="main_white mainImgUser">zhangkaixin1983</a>
+          <div class="infoPersonalBox" style="display:none;">
+            <ul id="myinfo">
+              <li><a href="" target="_blank" id="myOrder">我的订单</a></li>
+              <li><a href="" target="_blank" id="myFav">我的收藏</a></li>
+              <li><a href="" target="_blank" id="myCount">我的积分</a></li>
+              <li><a href="" target="_blank" id="myCash">我的现金券</a></li>
+              <li><a href="" target="_blank" id="myInfo">我的资料</a></li>
+              <li><a href="" target="_blank" id="myQuit">退出账号</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="myCartLi"> <a href="" class="myCart">购物车<b>(6)</b></a>
+          <!--已有商品加入购物车-->
+          <div style="display:none;" id="mainCartBox">
+            <ul>
+              <li><a class="main_fLeft main_mR10" target="_blank" href="http://e.fclub.cn/goods-3473-13.html"><img alt="" src="http://img.fclub.cn/data/goods_img/70/teeny_img/3473_teeny_1262539488696.jpg"></a><a title="" class="main_black main_fLeft" target="_blank" href="http://e.fclub.cn/goods-3473-13.html">时尚复古连体修身衬衫...<br />
+                <span>【蓝色】</span>&nbsp;<span>【L】</span></a><b class="main_fRight main_red">￥9.00元&nbsp;x1</b><br />
+                <a href="#" class="main_black main_fRight">删除</a></li>
+              <li id="cartTotalBox">
+                <p class="main_black">共有<strong class="main_red">2</strong>件商品&nbsp;&nbsp;总价格:<strong class="main_red">￥24.00元</strong></p>
+                <a target="_self" class="main_btnRed4 main_fRight" href="http://e.fclub.cn/flow.php">立即结算</a></li>
+            </ul>
+          </div>
+          <!--没有商品加入购物车-->
+          <div style="display:none;" id="mainCartBoxNull"> <!--<span class="">购物车中还没有商品，赶紧选购吧！</span>--> </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="mainTopBoxLogo"> <a href="" title="聚尚网">
+    <h3 title="聚尚网" class="logoImg"></h3>
+    </a>
+    <h3 class="infoOnline" title="每天10点新品牌上线"></h3>
+    <div class="mainServiceRight">
+      <h3 id="phone400" title="客服热线：4006-333-999"></h3>
+      <div id="mainSerOnlineBox">
+          <p id="serverOnline" class="mainOnlineLink"></p>
+          <div class="serverOnlineBox" style="display:none;">
+            <ul>
+              <li><a href="" class="serverOnlineSub" target="_self">线上客服</a></li>
+              <li><a href="" class="serverOnlineSub" target="_self">QQ客服</a></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div id="mainTopBoxMenu">
+    <ul id="mainMenuUl">
+      <li  id="menu0"  class="mainMenuOn"><span onclick="javascript:;">首页</span>
+         <div class="now"></div> 
+      </li>
+      <li id="menu1"><div class="mainMenuLeftLine"></div><span onclick="javascript:;">女士</span>
+        <div id="mainMenuBox1" style="display:none">
+          <div class="iconOnMenu" id="mainIconPos1"></div>
+          <div class="bgMenuUnderShadowLine"></div>
+          <div class="menuSubBox">
+            <div class="menuSubBoxLeft">
+              <h4>正在进行的抢购</h4>
+              <ul id="menuOnNow">
+                <li><a href="" target="_self" class="main_darkgray_black">女士LACOSTE男装早春外套3折起</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black">女士LACOSTE男装早春外套3折起</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black">女士LACOSTE男装早春外套3折起</a></li>
+              </ul>
+            </div>
+            <div class="menuSubBoxRight">
+              <h4>全部</h4>
+              <ul id="menuOnNowKinds">
+                <li><a href="" target="_self" class="main_darkgray_black" title="[全部]">[全部]</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="针织衫">针织衫 </a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="皮带">皮带</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="鞋">鞋</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="针织衫">针织衫 </a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="皮带">皮带</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="鞋">鞋</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li id="menu2"><div class="mainMenuLeftLine"></div><span onclick="javascript:;">男士</span>
+        <div id="mainMenuBox2" style="display:none;">
+          <div class="iconOnMenu" id="mainIconPos2"></div>
+          <div class="bgMenuUnderShadowLine"></div>
+          <div class="menuSubBox">
+            <div class="menuSubBoxLeft">
+              <h4>正在进行的抢购</h4>
+              <ul id="menuOnNow">
+                <li><a href="" target="_self" class="main_darkgray_black">男士LACOSTE男装早春外套3折起</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black">男士LACOSTE男装早春外套3折起</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black">男士LACOSTE男装早春外套3折起</a></li>
+              </ul>
+            </div>
+            <div class="menuSubBoxRight">
+              <h4>全部</h4>
+              <ul id="menuOnNowKinds">
+                <li><a href="" target="_self" class="main_darkgray_black" title="[全部]">[全部]</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="针织衫">针织衫 </a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="皮带">皮带</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="鞋">鞋</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="针织衫">针织衫 </a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="皮带">皮带</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="鞋">鞋</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li id="menu3"><div class="mainMenuLeftLine"></div><span onclick="javascript:;">配饰</span>
+        <div id="mainMenuBox3"  style="display:none;">
+          <div class="iconOnMenu" id="mainIconPos3"></div>
+          <div class="bgMenuUnderShadowLine"></div>
+          <div class="menuSubBox">
+            <div class="menuSubBoxLeft">
+              <h4>正在进行的抢购</h4>
+              <ul id="menuOnNow">
+                <li><a href="" target="_self" class="main_darkgray_black">配饰LACOSTE男装早春外套3折起</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black">配饰LACOSTE男装早春外套3折起</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black">配饰LACOSTE男装早春外套3折起</a></li>
+              </ul>
+            </div>
+            <div class="menuSubBoxRight">
+              <h4>全部</h4>
+              <ul id="menuOnNowKinds">
+                <li><a href="" target="_self" class="main_darkgray_black" title="[全部]">[全部]</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="针织衫">针织衫 </a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="皮带">皮带</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="鞋">鞋</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="针织衫">针织衫 </a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="皮带">皮带</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="鞋">鞋</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li id="menu4"><div class="mainMenuLeftLine"></div><span onclick="javascript:;">家居</span>
+        <div id="mainMenuBox4" style="display:none;">
+          <div class="iconOnMenu" id="mainIconPos4"></div>
+          <div class="bgMenuUnderShadowLine"></div>
+          <div class="menuSubBox">
+            <div class="menuSubBoxLeft">
+              <h4>正在进行的抢购</h4>
+              <ul id="menuOnNow">
+                <li><a href="" target="_self" class="main_darkgray_black">家居LACOSTE男装早春外套3折起</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black">家居LACOSTE男装早春外套3折起</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black">家居LACOSTE男装早春外套3折起</a></li>
+              </ul>
+            </div>
+            <div class="menuSubBoxRight">
+              <h4>全部</h4>
+              <ul id="menuOnNowKinds">
+                <li><a href="" target="_self" class="main_darkgray_black" title="[全部]">[全部]</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="针织衫">针织衫 </a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="皮带">皮带</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="鞋">鞋</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="针织衫">针织衫 </a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="皮带">皮带</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="鞋">鞋</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li id="menu5"><div class="mainMenuLeftLine"></div><span onclick="javascript:;">儿童</span>
+        <div id="mainMenuBox5" style="display:none;">
+          <div class="iconOnMenu" id="mainIconPos5"></div>
+          <div class="bgMenuUnderShadowLine"></div>
+          <div class="menuSubBox">
+            <div class="menuSubBoxLeft">
+              <h4>正在进行的抢购</h4>
+              <ul id="menuOnNow">
+                <li><a href="" target="_self" class="main_darkgray_black">儿童LACOSTE男装早春外套3折起</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black">儿童LACOSTE男装早春外套3折起</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black">儿童LACOSTE男装早春外套3折起</a></li>
+              </ul>
+            </div>
+            <div class="menuSubBoxRight">
+              <h4>全部</h4>
+              <ul id="menuOnNowKinds">
+                <li><a href="" target="_self" class="main_darkgray_black" title="[全部]">[全部]</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="针织衫">针织衫 </a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="皮带">皮带</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="鞋">鞋</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="针织衫">针织衫 </a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="皮带">皮带</a></li>
+                <li><a href="" target="_self" class="main_darkgray_black" title="鞋">鞋</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li id="menu6"><div class="mainMenuLeftLine"></div><span onclick="javascript:;">聚团购</span><b id="hotSales"></b></li>
+    </ul>
+  </div>
+</div>
+<!--头部内容结束-->
+
+<!-- 登录 开始 -->
+<div class="reg_content">
+  <div class="reg_box">
+    <h1 class="reg_title">登录聚尚网</h1>    
+      <div class="reg_left">
+        <form id="formLogin" action="" method="post" name="formLogin">
+          <dl>
+            <dt>用户账号：</dt>
+            <dd>
+              <input type="text" name="login_user" id="login_user" class="username" value="Email地址或者手机号码">
+            </dd>
+            <dd class="tips_wrong"><b>账号只能由字母数字及下划线组成</b></dd>
+          </dl>
+          <dl>
+            <dt>用户密码：</dt>
+            <dd>
+              <input type="password" name="login_pwd" id="login_pwd" class="user_pwd" value="" maxlength="16">
+            </dd>
+            <dd class="tips_wrong"><b>密码不能少于6个字符</b></dd>
+          </dl>     
+          <dl class="mb5">
+            <dt></dt>
+            <dd>
+              <label for="rember_state" id="rember_label" hidefocus>
+                <input type="checkbox" name="rember_state" id="rember_state" value="" />               
+                请记住登录状态
+              </label>
+              <a href="#" target="_blank" class="forget_pwd_m">忘记密码</a>
+            </dd>
+          </dl>
+          <dl class="mb5">
+            <dt></dt>
+            <dd>
+              <input type="button" class="sub_form" id="sub_form_login" value="登录&nbsp;" />
+            </dd>
+          </dl>
+        </form>
+        <h3 class="other_way">使用其他方式登录聚尚网</h3>
+        <ul class="union_login width400">
+          <li><a href="" title="新浪微博" class="sina_login"></a></li>
+          <li><a href="" title="360登录" class="login360"></a></li>
+          <li><a href="" title="开心网" class="kaixin_login"></a></li>
+          <li><a href="" title="支付宝" class="alipay_login"></a></li>
+          <li><a href="" title="QQ登录" class="qq_login"></a></li>
+        </ul>
+      </div>
+    
+
+    <div class="reg_right">
+      <h2 class="has_account">还不是聚尚网会员？</h2>
+      <a href="#" class="login_now fast_login" title="10秒快速注册" hidefocus>10秒快速注册&nbsp;</a>
+      <ul class="four_info">
+        <li><a href="" class="zhengpin_login" title="100%正品保证"></a></li>
+        <li class="mr0"><a href="" class="mian_login" title="满288元免运费"></a></li>
+        <li><a href="" class="seven_login" title="7天无条件退款"></a></li>
+        <li class="mr0"><a href="" class="huo_login" title="支持货到付款"></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- 登录 结束 -->
+
+<!-- 页面js 开始 -->
+<script src="js/user.js"></script>
+<!-- 页面js 结束 -->
+
+<!--底部内容开始-->
+<div class="mainBottomBox">
+  <!--取消订阅弹窗 开始 -->
+  <div id="order_msg" class="normalWindow" style="display:none;">
+    <div class="normalWindowTop"> <b class="closeMainWindow" id="closeMainWindow" title="关闭"></b> <span class="titleWindow">取消订阅</span> </div>
+    <div class="mainAlertBody">
+      <form>
+        <div class="mainNoticeBox">
+          <p> <b>取消手机订阅：</b>
+            <input class="orderInput" type="text" value='请输入手机号码'>
+          </p>
+          <p> <b>取消邮件订阅：</b>
+            <input class="orderInput" type="text" value='请输入您的邮箱'>
+          </p>
+          <input type='hidden' id="notice_rush_id" value="0">
+        </div>
+        <input type="button" value="取消订阅" class="mainBtnCancel">
+      </form>
+      <p class='mainNoticeWindow'> 温馨提醒：取消订阅后，您将不再收到聚尚网每日限购信息。 </p>
+    </div>
+  </div>
+  <!--取消订阅弹窗 结束 -->
+  <!--取消、订阅成功弹窗 开始 -->
+  <div id="orderMainSucMsg" class="normalWindow"  style="display:none;">
+    <div class="normalWindowTop"> <b class="closeMainWindow" id="closeMainSucMsgWindow" title="关闭"></b> <span class="titleWindow" id="titleWindow">取消订阅</span> </div>
+    <div class="mainAlertBody">
+      <div class="iconMsgBox"> <b class="iconMsgSuc"></b><span class="mainIconMsg" >成功订阅每日限抢信息！</span>
+        <!--<b class="iconMsgFal"></b><span class="mainIconMsg" >请输入正确的手机号或邮箱地址！</span>-->
+      </div>
+      <p class='mainNoticeWindow' id="mainNoticeWindow">温馨提醒：取消订阅后，您将不再收到聚尚网每日限购信息。</p>
+    </div>
+  </div>
+  <!--取消、订阅成功信息弹窗 结束 -->
+  <div class="mainBottomBoxService">
+    <ul>
+      <li><a id="linkMainBox1" title="正品保证" target="_blank" href="#">正品保证</a></li>
+      <li><a id="linkMainBox2" title="开箱验货" target="_blank" href="#">开箱验货</a></li>
+      <li><a id="linkMainBox3" title="7天保障" target="_blank" href="#">7天保障</a></li>
+      <li><a id="linkMainBox4" title="货到付款" target="_blank" href="#">货到付款</a></li>
+      <li><a id="linkMainBox5" title="免运费" target="_blank" href="#">免运费</a></li>
+      <li><a id="linkMainBox6" title="积分抵现金" target="_blank" href="#">积分抵现金</a></li>
+    </ul>
+  </div>
+  <div class="mainBottomBoxMap">
+    <div class="mainBottomBoxMapLeft">
+      <p class="mainBottomHotline" title="聚尚服务热线4006-333-999"></p>
+      <p class="mainBottomSerLine" title="24小时投诉电话18621551755"></p>
+    </div>
+    <div class="mainBottomBoxMapCenter">
+      <ul>
+        <li>
+          <dl>
+            <dt>帮助中心</dt>
+            <dd><a href="" target="_blank" class="main_white" title="新手指南">新手指南</a></dd>
+            <dd><a href="" target="_blank" class="main_white" title="支付方式">支付方式</a></dd>
+            <dd><a href="" target="_blank" class="main_white" title="配送方式">配送方式</a></dd>
+            <dd><a href="" target="_blank" class="main_white" title="客服中心">客服中心</a></dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>关于聚尚</dt>
+            <dd><a href="" target="_blank" class="main_white" title="聚尚简介">聚尚简介</a></dd>
+            <dd><a href="" target="_blank" class="main_white" title="合作媒体">合作媒体</a></dd>
+            <dd><a href="" target="_blank" class="main_white" title="媒体报道">媒体报道</a></dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>正品保证</dt>
+            <dd><a href="" target="_blank" class="main_white" title="保险计划">保险计划</a></dd>
+            <dd><a href="" target="_blank" class="main_white" title="投诉建议">投诉建议</a></dd>
+            <dd><a href="" target="_blank" class="main_white" title="欺诈声明">欺诈声明</a></dd>
+            <dd><a href="" target="_blank" class="main_white" title="账户异常">账户异常</a></dd>
+          </dl>
+        </li>
+        <li>
+          <dl>
+            <dt>联系我们</dt>
+            <dd><a href="" target="_blank" class="main_white" title="商务合作">商务合作</a></dd>
+            <dd><a href="" target="_blank" class="main_white" title="投资合作">投资合作</a></dd>
+            <dd><a href="" target="_blank" class="main_white" title="招贤纳士">招贤纳士</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+    <div class="mainBottomBoxMapRight">
+      <div id="weiboInfo" class="mainBottomBoxMapRightContainer"> <strong>微博关注</strong>
+        <p>
+          <iframe width="136" scrolling="no" height="24" frameborder="0" src="http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&amp;width=136&amp;height=24&amp;uid=1774393653&amp;style=2&amp;btn=light&amp;dpc=1" border="0" marginheight="0" marginwidth="0" allowtransparency="false"></iframe>
+          <a id="mobileFclub" target="_blank" href="/zhuanti/mobile.php"><s class="unvisited">移动聚尚网</s></a> </p>
+      </div>
+      <div class="mainBottomBoxMapRightContainer main_mT20">
+        <div id="msgOrderInputBox">
+          <input type="text" value="请输入邮箱或手机" id="msgOrderInputBoxText" name="orderMsg" />
+          <a id="msgOrderInputBoxBtn" target="_self" href="javascript:;">订阅</a> </div>
+        <a id='order_cancel' class="main_white main_fRight main_mT10" href="javascript:;" target="_self">取消订阅</a> </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="mainBottomBoxLast">
+    <p style="line-height:25px"><span class="main_gray_span main_mR10">聚尚网版权所有</span><a href="" class="main_gray mL10" target="_blank">沪ICP备09012343号</a></p>
+    <a href=""  target="_blank" title="中国电子商务诚信单位"><img src="images/header/linkImgBS.jpg" class="mainNoborder" alt="中国电子商务诚信单位" /></a>&nbsp;&nbsp; <a href=""  target="_blank" title="支付宝特约商家"><img src="images/header/linkImgAlipay.jpg" class="mainNoborder" alt="支付宝特约商家" /></a>&nbsp;&nbsp; <a href=""  target="_blank" title="上海工商"><img src="images/header/linkImgGS.jpg" class="mainNoborder" alt="上海工商" /></a>&nbsp;&nbsp; <a href=""  target="_blank" title="可信网站"><img src="images/header/linkImgSite.jpg" class="mainNoborder" alt="可信网站" /></a>&nbsp;&nbsp; <a href=""  target="_blank" title="360绿色网站"><img src="images/header/360safe.gif" class="mainNoborder" alt="360绿色网站" /></a>&nbsp;&nbsp; <a href=""  target="_blank" title="一淘合作商家"><img src="images/header/etao.gif" class="mainNoborder" alt="一淘合作商家" /></a> </div>
+</div>
+<!--底部内容结束-->
+<!--返回顶部-->
+<a class="goTop" href="javascript:;" target="_self"><b id="gotop">返回顶部</b></a>
+</body>
+<!-- <script src="../components/topTile.js" type="text/javascript"></script> -->
+</html>

@@ -1,0 +1,43 @@
+#content{ width:920px;}
+.c_gray{ color:#7E7E7E;}
+.time_t,.limit_nav,.notice{ font-family:"微软雅黑","黑体";}
+.time_t{ color:#FFF;}
+.adv{ width:920px; padding-top:10px; height:313px; overflow:hidden; background:#000; position:relative}
+/*1118 让其脱离普通文档流*/
+.news_after{padding-top:0!important; position:relative}
+.adv_left{ width:612px; height:313px;  overflow:hidden; position:absolute; left:0; top:0}
+/*1118 让其脱离普通文档流*/
+.adv_right{ width:303px; float:right; height:313px; overflow:hidden;}
+.limit_area,.limit_over,.limit_about{ width:921px; height:auto;}
+.limit_area,.limit_about{ margin-top:32px;}
+.limit_over{ margin-top:38px;}
+.limit_area li{ float:left; width:303px; height:208px; padding-top:6px; position:relative; _overflow:hidden;}
+.l_m{ margin-left:6px;}
+.float_area{ display:none; position:absolute; left:0px; top:136px; width:303px; height:45px; line-height:45px; text-align:center; background-color:#fff; filter: Alpha(Opacity=60);opacity:0.6;-moz-opacity:0.6;z-index:1; font-size:14px; color:#000;}
+.limit_nav{width:901px; font-family:"宋体"; padding-left:20px; height:51px; line-height:51px; background:url(../images/index/b_ui.png) left -141px repeat-x; background-color:#171514; font-size:12px; color:#FFF; letter-spacing:2px;}
+.limit_over li,.limit_about li{ width:293px; height:90px; padding:5px; float:left; position:relative; background-color:#252220; margin-bottom:6px; overflow:hidden;}
+.ln_r{ margin-left:6px; display:inline-block;}
+.over_t,.about_t{  height:50px; line-height:25px; position:absolute; z-index:6px;}
+.over_t{left:140px; top:38px; width:155px;}
+.about_t{left:138px; top:38px; width:155px;}
+/*未上线弹出窗口*/
+#pop_notice{ position:absolute;  padding:15px; clear:both; background:url(../images/index/tuijian_bg.gif) no-repeat; z-index:201}
+.end_time{ position:absolute; overflow:hidden; margin-left:2px; margin-top:-20px; 
+*margin-left:-706px; *margin-top:152px; _margin-top:150px;z-index:10;padding-left:10px; font-size:13px;*background-image: url(../images/index/limit_list_bg.png);background-image:url(../images/index/limit_list_bg.png);
+_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/index/limit_list_bg.png');_background-image: none; width:600px;}
+
+/*1118 从index.htm中移入 开始*/
+a.heji{ color:#FFF; font-size: 14px; line-height: 27px; font-weight: bold; float:right; }
+a.toonline{ display:block; width:87px; height:24px; background:url(../images/index/centerbgs.png) -234px 0px no-repeat; float:right; margin:0 21px 0 10px; _margin-right:11px; text-indent:-9999px}
+a.tellMe{ display:block; width:116px; height:21px; background:url(../images/index/t_me.gif) no-repeat;}
+a.tellMe b{ font-size: 12px; left: -9999px; position: absolute; top: 0px}
+/*1118 从index.htm中移入 结束*/
+
+.product_show ul li a.pic-goods{ display: block; background: url("../images/index/loading.gif") no-repeat scroll center center transparent; width: 303px; height: 207px; }
+.product_show ul li a.pic-goods img{ display:block; width:303px; height:207px}
+.mainmodel_willonline_contain ul li , .product_showRushOff ul li a.pic-goods{ display: block; background: url("../images/index/loading.gif") no-repeat scroll center center transparent; width: 293px; height: 90px;}
+
+.img_pngsale{background:url(../images/index/sale.png) no-repeat; _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../images/index/sale.png" ,sizingMethod="crop"); position:absolute; z-index:999; margin-left:894px; margin-top:5px; width:22px; height:12px;}
+
+.mt15{ margin-top:15px;}
+.active_brand{ display:block!important;}

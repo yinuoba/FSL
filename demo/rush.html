@@ -1,0 +1,605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Keywords" content="聚尚网,品牌折扣,限时抢购">
+    <meta name="Description" content="聚尚网fclub提供国际品牌正品的1折起限时抢购。提供货到付款，并由中华联合财产保险公司为每件商品提供正品保险，如工商部门鉴定为假货，即可向保险公司索取全额赔偿。">
+    <title>聚尚网-国际名品限时特卖购物网</title>    
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/limit_buying.css" rel="stylesheet" type="text/css">
+    
+    <script src="js/FSL.js"></script>
+</head>
+
+<body>
+    <!--成功订阅 开始-->
+    <div id="box_msg_suc" class="box_mainmsg">
+       <div class="box_mainmsg_top">
+          <div class="box_mainmsg_tleft_suc"></div>
+          <div class="box_mainmsg_tcenter"></div>
+          <div class="box_mainmsg_tright"><a class="close" href="javascript:;"><img src="images/index/img_mainmsg_close.gif" alt=""></a></div>
+       </div>
+       <div class="box_mainmsg_body">
+          <div class="box_mainmsg_body_span"><img src="images/index/msg_success.gif" alt=""></div>
+          <span class="msg">我们会在每天抢购开始前，第一时间通知您！</span>
+       </div>
+       <div class="box_mainmsg_bottom"></div>
+    </div>
+    <!--成功订阅 结束-->
+    
+    <!--成功取消订阅 开始-->
+    <div id="box_msg_final" class="box_mainmsg">
+       <div class="box_mainmsg_top">
+            <div class="box_mainmsg_tleft_cancel"></div>
+            <div class="box_mainmsg_tcenter"></div>
+            <div class="box_mainmsg_tright"><a class="close" id="pclose_cancel" href="javascript:;"><img src="images/index/img_mainmsg_close.gif" alt=""></a></div>
+       </div>
+       <div class="box_mainmsg_body">
+           <div class="box_mainmsg_body_span"><img src="images/index/msg_suc_cancel.gif"></div>
+           请留下您的宝贵建议：<a href="mailto:service@f-club.cn">service@f-club.cn</a>
+       </div>
+        <div class="box_mainmsg_bottom"></div>
+    </div>
+    <!--成功取消订阅 结束-->
+    
+    <!--取消订阅界面 开始-->
+    <div class="box_mainmsg" id="msg_cancel_contain" style="display:none;">
+       <div class="box_mainmsg_top">
+         <div class="box_mainmsg_tleft_cancel"></div>
+         <div class="box_mainmsg_tcenter"></div>
+             <div class="box_mainmsg_tright"><a class="close" id="box_mainmsg_close" href="javascript:;"></a></div>
+       </div>
+       <div class="box_mainmsg_body">
+          <form id="" method="post" title="">
+           <div class="box_mainmsg_body_span">
+              <ul>
+                <li><span>取消手机订阅：</span><input name="" id="notice_mobile" class="mainmsg_textbox" type="text" value="请输入手机号码"></li>
+                <li><span>取消邮件订阅：</span><input name="" id="notice_email" class="mainmsg_textbox" type="text" value="请输入邮箱地址"></li>
+                    <li><strong class="strong_inner_window">特别提示：</strong><font class="font_inner_window">取消订阅后，您将不再收到聚尚网名品折扣限时抢购的每日信息通知。</font></li>
+                    <li style=" width:100%; text-align:center;"><input id="btn_mainmsg_sure" class="btn_mainmsg_sure" type="button"></li>
+              </ul>
+           </div>
+          </form>
+       </div>
+       <div class="box_mainmsg_bottom"></div>
+    </div>
+    <!--取消订阅界面 结束-->
+    
+<!--头部内容开始-->
+    <!--QQ彩贝开始 -->
+    <div id="caibei_bg" class="caibei_bg" style="display:none;"></div>
+    <!--QQ彩贝结束 -->
+    
+    <!--导航顶部 Logo那一栏开始 -->
+    <div class="maintop">
+         <div class="maintop_contain">
+             <h1 class="maintop_contain_l">
+                <a class="maintop_contain_la" href="http://www.fclub.cn/" target="_self" title="聚尚网 www.fclub.cn">
+                	<b>聚尚网 www.fclub.cn</b>
+                	<img src="images/index/logo_main_new412.gif" alt="聚尚网，名品折扣，限时抢购">
+                </a>
+             </h1>
+         
+
+             <div class="maintop_contain_r">
+                 <div class="maintop_contain_rtop">
+                     <ul>
+                        <li><a class="font_gray maintop_contain_r1right" href="http://www.fclub.cn/flow.php" id="my_cart">购物车</a></li>
+                        <li><a href="http://www.fclub.cn/user.html?act=msg_center" class="a_white_gray" id="indexUserMsgAction">消息</a></li>
+                        <li><a href="http://www.fclub.cn/user.html?act=uc_default" class="a_white_gray">会员中心</a></li>
+                        <li class="font_gray" id="userinfo">|&nbsp;&nbsp;您好，欢迎 [<a href="http://www.fclub.cn/user.html?act=login" class="a_white">登录</a>] [<a href="http://www.fclub.cn/user.html?act=register" class="a_white">免费注册</a>]</li>
+                        <li><a href="#" onclick="window.open('http://chat10.live800.com/live800/chatClient/chatbox.jsp?companyID=88398&configID=157085&jid=4250996372&enterurl=http%3A%2F%2Flocalhost%2Fecshop%2Fgoods%2Ephp%3Fid%3D316%26key%3D1248319068%26keycode%3D9603122EB97D7A358E63E4288A93A021&timestamp=1248319169410')" title="在线咨询" class="onlineq"><b>聚尚网 在线咨询</b></a></li>
+                        <li><a href="http://b.qq.com/webc.htm?new=0&sid=800026252&eid=2188z8p8p8p8K8x8K8R8K&o=www.fclub.cn&q=7" target="_blank" class="qqwen" title="QQ咨询"><b>聚尚网 QQ咨询</b></a></li>
+                        <li class="hotphone" title="聚尚网热线 4006-333-999">
+                            <b>聚尚网热线 4006-333-999</b>
+                        </li> 
+                     </ul>
+                 </div>
+                <div class="clear_both"></div>
+                <div class="maintop_contain_rsecond">
+                     <div class="float_left margin_right90px"><img src="images/index/main_msg_ontime.jpg"></div>
+                         <div class="maintop_inner">
+                             <form id="" method="post" title="" class="head_form">
+                                 <div class="maintop_contain_r2">
+                                     <div class="margin_right5px float_left">
+                                        <input id="sub" name="" class="main_textbox" value="输入邮箱地址或手机号码" type="text">
+                                     </div>
+                                     <div class="f_l">
+                                        <input id="btn_msg_order" class="main_button_onmsg" type="button">
+                                     </div>
+                                 </div>                          
+                             </form>
+                             <div class="maintop_contain_r3">免费订阅明日抢购！ <a href="javascript:;" id="msg_cancel" class="a_white_gray">» 取消订阅</a>
+                             </div>
+                          </div>
+                      </div>
+                 </div>
+            </div>
+    </div>
+    <!--导航顶部 Logo那一栏结束 -->
+    
+    <!--导航 开始 -->
+    <div class="z_nav" id="header">
+        <div class="main_nav">
+            <div class="img_pngsale"></div>
+            <div class="hd-main">
+              <ul id="hd-nav">
+                  <li class="menuBoxOn">
+                    <a href="http://www.fclub.cn/rushlist"><img src="http://img.fclub.cn/data/nav920/nav_image_focus_9.gif"></a>
+                    <div class="now"></div>
+                  </li>
+                  <li>          
+                      <a class="" href="http://www.fclub.cn/women"><img src="http://img.fclub.cn/data/nav920/nav_image_1.gif"></a>
+                      <div class="navp">
+                          <div class="ej_d_t">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                              <tbody><tr>
+                                <td valign="top" width="15%">分类</td>
+                                <td valign="top" width="85%">
+                                <a href="http://www.fclub.cn/listing-2.html">[全部]</a>
+                                        <a href="http://www.fclub.cn/listing-299.html">包</a>
+                                        <a href="http://www.fclub.cn/listing-634.html">流行彩妆</a>
+                                        <a href="http://www.fclub.cn/listing-32.html">裙子</a>
+                                        <a href="http://www.fclub.cn/listing-300.html">鞋</a>
+                                        <a href="http://www.fclub.cn/listing-633.html">面部护理</a>
+                                        <a href="http://www.fclub.cn/listing-15.html">衬衫</a>
+                                        <a href="http://www.fclub.cn/listing-41.html">内衣</a>
+                                        <a href="http://www.fclub.cn/listing-18.html">针织衫 </a>
+                                        <a href="http://www.fclub.cn/listing-23.html">外套</a>
+                                        <a href="http://www.fclub.cn/listing-639.html">沐浴用品</a>
+                                        <a href="http://www.fclub.cn/listing-36.html">裤子</a>
+                                        <a href="http://www.fclub.cn/listing-637.html">头发护理</a>
+                                        <a href="http://www.fclub.cn/listing-10.html">T恤</a>
+                                        </td>
+                              </tr>
+                            </tbody></table>
+                          </div>
+                        
+                          <div class="ej_d_b">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                              <tbody><tr>
+                                <td valign="top" width="15%">品牌</td>
+                                <td valign="top" width="85%">
+                        <a href="http://www.fclub.cn/brand-1113--2.html">[依雪妮]</a><a href="http://www.fclub.cn/brand-872--2.html">[BELMANI(宝曼尼)]</a><a href="http://www.fclub.cn/brand-1133--2.html">[JUST BB(嘉丝肤缇)]</a><a href="http://www.fclub.cn/brand-701--2.html">[Dbni(迪妮)]</a><a href="http://www.fclub.cn/brand-743--2.html">[LONDEE(龙笛)]</a><a href="http://www.fclub.cn/brand-1028--2.html">[cannelle(晴迷桂莉)]</a><a href="http://www.fclub.cn/brand-1141--2.html">[CONTACTS]</a><a href="http://www.fclub.cn/brand-1135--2.html">[TUOGU(拓谷)]</a><a href="http://www.fclub.cn/brand-943--2.html">[R＆D(索典)]</a><a href="http://www.fclub.cn/brand-953--2.html">[funmisy(汎迷丝)]</a><a href="http://www.fclub.cn/brand-76--2.html">[ANAYI(安乃一)]</a><a href="http://www.fclub.cn/brand-1088--2.html">[bani Rabbit(贝妮兔)]</a><a href="http://www.fclub.cn/brand-739--2.html">[INSUN(恩裳)]</a><a href="http://www.fclub.cn/brand-359--2.html">[demain(德·玛纳)]</a><a href="http://www.fclub.cn/brand-1119--2.html">[caven(佳纷)]</a><a href="http://www.fclub.cn/brand-980--2.html">[Huangmei(皇妹)]</a><a href="http://www.fclub.cn/brand-865--2.html">[MIGAINO(曼娅奴)]</a><a href="http://www.fclub.cn/brand-509--2.html">[PEOLEO(飘蕾)]</a>        </td>
+                              </tr>
+                            </tbody></table>
+                          </div>         
+                      </div>
+                  </li>
+                  <li>          
+                      <a href="http://www.fclub.cn/men"><img src="http://img.fclub.cn/data/nav920/nav_image_3.gif"></a>
+                      <div class="navp">
+                          <div class="ej_d_t">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                              <tbody><tr>
+                                <td valign="top" width="15%">分类</td>
+                                <td valign="top" width="85%">
+                                <a href="http://www.fclub.cn/listing-3.html">[全部]</a>
+                                        <a href="http://www.fclub.cn/listing-82.html">针织衫</a>
+                                        <a href="http://www.fclub.cn/listing-545.html">套装</a>
+                                        <a href="http://www.fclub.cn/listing-64.html">T恤</a>
+                                        <a href="http://www.fclub.cn/listing-369.html">皮带</a>
+                                        <a href="http://www.fclub.cn/listing-319.html">鞋</a>
+                                        <a href="http://www.fclub.cn/listing-71.html">裤子</a>
+                                        <a href="http://www.fclub.cn/listing-93.html">内衣</a>
+                                        <a href="http://www.fclub.cn/listing-76.html">外套</a>
+                                        <a href="http://www.fclub.cn/listing-318.html">包</a>
+                                        <a href="http://www.fclub.cn/listing-336.html">领带</a>
+                                        <a href="http://www.fclub.cn/listing-68.html">衬衫</a>
+                                        </td>
+                              </tr>
+                            </tbody></table>
+                          </div>
+                        
+                          <div class="ej_d_b">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                              <tbody><tr>
+                                <td valign="top" width="15%">品牌</td>
+                                <td valign="top" width="85%">
+                        <a href="http://www.fclub.cn/brand-1139--3.html">[meilles(美乐仕)]</a><a href="http://www.fclub.cn/brand-1136--3.html">[FEGER(斐格)]</a><a href="http://www.fclub.cn/brand-1135--3.html">[TUOGU(拓谷)]</a><a href="http://www.fclub.cn/brand-106--3.html">[U.S. POLO ASSN.]</a><a href="http://www.fclub.cn/brand-513--3.html">[L2利郎]</a><a href="http://www.fclub.cn/brand-1138--3.html">[Hush Puppies(暇步士)]</a>        </td>
+                              </tr>
+                            </tbody></table>
+                          </div>                        
+                      </div>
+                  </li>
+                  <li>          
+                      <a class="" href="http://www.fclub.cn/accessories"><img src="http://img.fclub.cn/data/nav920/nav_image_4.gif"></a>
+                      <div class="navp">
+                          <div class="ej_d_t">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                              <tbody><tr>
+                                <td valign="top" width="15%">分类</td>
+                                <td valign="top" width="85%">
+                                <a href="http://www.fclub.cn/listing-5.html">[全部]</a>
+                                        <a href="http://www.fclub.cn/listing-127.html">首饰/小物件</a>
+                                        <a href="http://www.fclub.cn/listing-119.html">围巾</a>
+                                        <a href="http://www.fclub.cn/listing-143.html">袜子</a>
+                                        </td>
+                              </tr>
+                            </tbody></table>
+                          </div>
+                        
+                          <div class="ej_d_b">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                              <tbody><tr>
+                                <td valign="top" width="15%">品牌</td>
+                                <td valign="top" width="85%">
+                        <a href="http://www.fclub.cn/brand-324--5.html">[媛翠坊]</a><a href="http://www.fclub.cn/brand-76--5.html">[ANAYI(安乃一)]</a><a href="http://www.fclub.cn/brand-1139--5.html">[meilles(美乐仕)]</a>        </td>
+                              </tr>
+                            </tbody></table>
+                          </div>
+                      </div>
+                  </li>
+                  <li>          
+                      <a href="http://www.fclub.cn/fashion"><img src="http://img.fclub.cn/data/nav920/nav_image_8.gif"></a>
+                      <div></div>
+                  </li>
+                  <li>          
+                      <a class="" href="http://www.fclub.cn/child"><img src="http://img.fclub.cn/data/nav920/nav_image_15.gif"></a>
+                      <div class="navp">
+                          <div class="ej_d_t">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                              <tbody><tr>
+                                <td valign="top" width="15%">分类</td>
+                                <td valign="top" width="85%">
+                                <a href="http://www.fclub.cn/listing-570.html">[全部]</a>
+                                        <a href="http://www.fclub.cn/listing-571.html">男童</a>
+                                        <a href="http://www.fclub.cn/listing-572.html">女童</a>
+                                        </td>
+                              </tr>
+                            </tbody></table>
+                          </div>
+                        
+                          <div class="ej_d_b">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                              <tbody><tr>
+                                <td valign="top" width="15%">品牌</td>
+                                <td valign="top" width="85%">
+                        <a href="http://www.fclub.cn/brand-1084--570.html">[COOLEFUN(可乐凡尼)]</a>        </td>
+                              </tr>
+                            </tbody></table>
+                          </div>
+                      </div>
+                  </li>
+                  <li>          
+                    <a href="http://www.fclub.cn/tuangouListStrip.php" target="_blank"><img src="http://img.fclub.cn/data/nav920/nav_image_focus_14.gif"></a>
+                    <div></div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </div>
+    <!--导航菜单 结束 -->
+    
+    <!--头部公告 开始 -->
+    <div class="mainnews_contbg news_add_width">
+        <ul>
+            <li><span><a href="http://www.fclub.cn/article-13.html" style="color:#fff;" target="_blank">尊敬的用户：为了提升聚尚网的整体服务质量，从6月1日起实施新的《聚尚网退换货运费及取现规则》! 点击查看详情&gt;&gt;&gt;</a></span></li>
+        </ul>
+
+        <div class="mainnews_close">
+            <a alt="275a04411c613973d6d0d8e375763cb8" id="newsbox_close" href="#_self"><img src="http://m3.fclubimg.com/images/img_mainnews_close.gif" alt="关闭"></a>
+        </div>
+    </div>
+    <!--头部公告 结束 -->
+    
+<!--头部内容 结束-->
+    
+    <div id="limit_buying">
+        <div class="brand_top_add">
+            <embed width="980" height="240" wmode="transparent" menu="true" loop="true" play="true" type="application/x-shockwave-flash" src="http://img1.fclubimg.com/data/goods_rush/75/rush_flash_7530.swf">
+        </div>
+        <div class="brand_m_dh">
+        
+            <div class="brand_mf"> 
+                <img width="16" height="15" align="absmiddle" alt="fclub" src="http://img1.fclubimg.com/images/f.gif">&nbsp;
+                <a href="/">首页</a> <code>&gt;</code><a href="/rushlist.html">限时抢购</a><code>&gt;</code> <a href="/rush-7530.html">caven(佳纷)    限时抢购</a>
+            </div>
+            <div class="brand_show_page">
+            	每页显示：
+         		<a class="select_number">60</a>          
+                <a href="/brand-11--2--0-120.html">120</a>
+            </div>
+            <div class="brand_arrange">
+            排列方式：
+            <select onchange="javascript:location.href='/rush-7530----'+this.value+'.html';" name="sort">
+                <option selected="selected" value="0">默认排列方式</option>
+                <option value="1">按价格从低到高</option>
+                <option value="2">按价格从高到低</option>
+                <option value="3">按上架时间</option>
+                <option value="5">销量排列</option>
+            </select>
+            </div>
+            <div class="brand_next_page">
+                <table cellspacing="0" cellpadding="0" border="0" width="140">
+                      <tbody><tr>
+                        <td width="40">1/1：</td>
+                        <td width="30"><a><img border="0" width="22" height="21" align="absmiddle" src="http://img2.fclubimg.com/images/product_list_35.jpg"></a></td>
+                        <td width="70"> 
+                         <a><img border="0" width="57" height="21" align="absbottom" src="http://img1.fclubimg.com/images/product_list_36.jpg"></a> 
+                        </td>
+                      </tr>
+                    </tbody>
+            	</table>
+            </div>
+            
+        </div>
+        
+  		<div id="limit_listleft">          
+            <div class="second_class">
+                <div class="sc_nav">
+                    <span class="sc_nav_left">
+                        <p>
+                        <img width="191" height="33" src="http://img.fclub.cn/data/upload/Image/201008/26/lady.png" alt="">
+                        </p>
+                    </span>
+                    <span class="sc_nav_right">[<a href="/rush-7530--2.html">全部</a>]</span>
+                </div>
+                <div class="sc_content">
+                    <ul>
+                        <li>
+                            <a href="/rush-7530--36.html">裤子</a>
+                            <a href="/rush-7530--10.html">T恤</a>
+                            <div id="sc_show_l">
+                                <a href="/rush-7530--401.html">裤子 </a>   
+                                <a href="/rush-7530--401.html">裤子 </a>  
+                                <a href="/rush-7530--401.html">裤子 </a>  
+                                <a href="/rush-7530--401.html">裤子 </a>  
+                                <a href="/rush-7530--401.html">裤子 </a>  
+                                <a href="/rush-7530--401.html">裤子 </a>
+                                <a href="/rush-7530--401.html">裤子 </a>   
+                                <a href="/rush-7530--401.html">裤子 </a>  
+                                <a href="/rush-7530--401.html">裤子 </a>  
+                                <a href="/rush-7530--401.html">裤子 </a>  
+                                <a href="/rush-7530--401.html">裤子 </a>  
+                                <a href="/rush-7530--401.html">裤子 </a>                           
+                            </div>
+                        </li>
+                        <li>
+                            <a href="/rush-7530--18.html">针织衫 </a>
+                            <a href="/rush-7530--32.html">裙子</a>
+                        </li>
+                        <li>
+                            <a href="/rush-7530--23.html">外套</a>
+                            <a href="/rush-7530--15.html">衬衫</a>
+                        </li>
+                    </ul>  
+                </div>
+				<div class="sc_f"></div>
+			</div>
+ 
+            <div id="hot_brands">
+            	<div class="hot_brands_top"></div>
+            	<div class="brands_story_containd">
+                	<h2 class="font_wy">品牌故事</h2>
+                	<p> </p>
+                    <p style="text-indent: 0px; text-align: center"><img width="100" height="35" src="http://img.fclub.cn/data/upload/Image/201205/25/3.jpg" alt=""></p>
+                    <p>品牌愿景：时尚商务女装首选品牌<br>
+                    品牌使命：佳纷&mdash;&mdash;为职场魅力加分<br>
+                    产品定位：时尚商务女装<br>
+                    价格定位：中档<br>
+                    市场定位：全国市场，一、二、三线卖场，区域体系发展</p>
+                    <p>1999年，CAVEN佳纷品牌第一家专卖店在深圳华强北开业，佳纷产品以商务风格赢得都市白领女性的青睐，并逐渐成为深圳职业女装代表性品牌。<br>
+                    2005年，佳纷品牌开始对产品进行时尚化演绎，形成了佳纷自己独特的"时尚商务"风格，同时开始跨区域发展。<br>
+                    2006年，位于深圳布吉的佳纷时装工业园落成运行，佳纷强化了技术力量及专业的管理团队。<br>
+                    2009年，佳纷树立了"时尚商务女装首选品牌"的品牌愿景，并明确了"佳纷&mdash;&mdash;为职场魅力加分"的品牌使命。同年，佳纷在稳定扎实的直营体系基础上，启动了加盟体系，开始了全国市场的快速布局和发展。<br>
+                    2010年，佳纷品牌进行品牌提升和标准化建设，优化终端、连锁复制、资源整合，让更多人才在佳纷平台得以发展。同时推动佳纷向国内一线品牌迈进。<br>
+                    佳纷&mdash;&mdash;为职场魅力加分</p> <p></p>
+              	 </div>
+              	 <div class="hot_brands_btn"></div>
+             </div>
+		</div>
+        
+  		<div id="limit_listright">
+            <div class="limit_listright_content">
+                <div style="display: none" class="limit_list_topadd">
+                    <div style="position: relative;" class="limibuy_ad_content"></div>
+                </div>
+                
+                <div style="margin-top:5px; width:720px;" class="content">
+                    <table cellspacing="10" cellpadding="0" border="0" width="95%" align="center">
+                        <tbody>
+                            <tr>
+                                <td valign="middle">
+                                    <ul class="clear_both">
+                                        <li><img src="http://img1.fclubimg.com/images/product_list_15.jpg"></li>
+                                        <li class="pp">尺寸：</li>
+                                        <li class="all">全部</li>
+                                        <li style="width: 500px;" class="product_list_size auto_height">
+                                            <div><a href="/rush-7530--15-365-0.html">170/92A</a></div>
+                                            <div><a href="/rush-7530--15-363-0.html">160/84A</a></div>
+                                            <div><a href="/rush-7530--15-364-0.html">165/88A</a></div>
+                                            <div><a href="/rush-7530--15-362-0.html">155/80A</a></div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="content2"></div>  
+                </div>
+      
+      			<div class="limit_list_pro">
+
+        			<div class="limit_list_pro product_show">
+                		<ul class="mt8">
+                           <li class="hot_rush">
+                              <a title="短袖上衣 " id="goods_list_href_310048" class="pic-goods" target="_blank" href="goods-310048-13-4_7530.html">
+                              <img alt="短袖上衣 蓝色 SN:HJ61202004" id="goods_list_img_310048" name="goods_list_img_310048" fslazy="http://img1.fclubimg.com/data/goods_img/6201/222_296_img/310048_222_296_1336433087448.jpg">
+                              </a>
+                              <p id="bigimg_310048_13" class="btn_zoom">
+                              	<a target="_blank" href="goods.php?act=zoom_image&amp;goods_id=310048&amp;color_id=13"></a> 
+                              </p>
+                              <dl class="pl8">
+                                  <dd> <font class="product_font">caven(佳纷)</font><br>
+                                  <font class="font_44"><a target="_blank" href="goods-310048-13-4_7530.html">
+                                    短袖上衣&nbsp;HJ61202004</a></font></dd>
+                                  <dd> 现价:<font class="shop_price">￥109</font>(2.5折)<font style="font-size:12px;">市场价:<span style=" text-decoration: line-through;">￥428</span></font> </dd>
+                                  <dd>
+                                  </dd>
+                              </dl>
+                          </li>
+                          <li class="hot_rush">
+                            	<a title="短袖上衣 " id="goods_list_href_310047" class="pic-goods" target="_blank" href="goods-310047-96-4_7530.html">
+                                <img alt="短袖上衣 湖蓝 SN:HJ61202003" id="goods_list_img_310047" name="goods_list_img_310047" fslazy="http://img2.fclubimg.com/data/goods_img/6201/222_296_img/310047_222_296_1336432727712.jpg">
+                                </a>
+                                <p id="bigimg_310047_96" class="btn_zoom ">
+                                	<a target="_blank" href="goods.php?act=zoom_image&amp;goods_id=310047&amp;color_id=96"></a>
+                                </p>
+                                <dl class="pl8">
+                                  <dd> <font class="product_font">caven(佳纷)</font><br>
+                                  <font class="font_44"><a target="_blank" href="goods-310047-96-4_7530.html">
+                                    短袖上衣&nbsp;HJ61202003</a></font></dd>
+                                  <dd> 现价:<font class="shop_price">￥109</font>(2.5折)<font style="font-size:12px;">市场价:<span style=" text-decoration: line-through;">￥428</span></font> </dd>
+                                  <dd>                         <!-- -->
+                                  </dd>
+                                </dl>
+                          </li>
+                          <li class="hot_rush margin_right0">
+                                <a title="条纹短袖衬衫 " id="goods_list_href_310216" class="pic-goods" target="_blank" href="goods-310216-4863-4_7530.html">
+                                <img alt="条纹短袖衬衫 黑黄条 SN:HJ61203015" id="goods_list_img_310216" name="goods_list_img_310216" fslazy="http://img3.fclubimg.com/data/goods_img/6205/222_296_img/310216_222_296_1336432209374.jpg">
+                                </a>
+                                <p id="bigimg_310216_4863" style="display: none;" class="btn_zoom ">
+                                	<a target="_blank" href="goods.php?act=zoom_image&amp;goods_id=310216&amp;color_id=4863">
+                                </p>
+                                <dl class="pl8">
+                                  <dd> <font class="product_font">caven(佳纷)</font><br>
+                                  <font class="font_44"><a target="_blank" href="goods-310216-4863-4_7530.html">
+                                    条纹短袖衬衫&nbsp;HJ61203015</a></font></dd>
+                                  <dd> 现价:<font class="shop_price">￥89</font>(2.2折)<font style="font-size:12px;">市场价:<span style=" text-decoration: line-through;">￥398</span></font> </dd>
+                                  <dd>                         <!-- -->
+                                  </dd>
+                                </dl>
+                          </li>
+                          <li class="hot_rush">
+                                <a title="短袖外套 " id="goods_list_href_309967" class="pic-goods" target="_blank" href="goods-309967-73-4_7530.html">
+                                <img alt="短袖外套 咖啡 SN:HJ61206002" id="goods_list_img_309967" name="goods_list_img_309967" fslazy="http://img3.fclubimg.com/data/goods_img/6200/222_296_img/309967_222_296_1336513491740.jpg">
+                                </a>
+                                <p id="bigimg_309967_73" style="display:none" class="btn_zoom ">
+                                	<a target="_blank" href="goods.php?act=zoom_image&amp;goods_id=309967&amp;color_id=73"></a> 
+                                </p>
+                                <dl class="pl8">
+                                  <dd> <font class="product_font">caven(佳纷)</font><br>
+                                  <font class="font_44"><a target="_blank" href="goods-309967-73-4_7530.html">
+                                    短袖外套&nbsp;HJ61206002</a></font></dd>
+                                  <dd> 现价:<font class="shop_price">￥119</font>(2.3折)<font style="font-size:12px;">市场价:<span style=" text-decoration: line-through;">￥528</span></font> </dd>
+                                  <dd>  
+                                      <s class="green" title="再享受免运费优惠">免邮</s>            
+                                      <s class="pink" title="遇见女装满296减20">立减</s>                  
+                                  </dd>
+                               </dl>
+                          </li>
+                       </ul>
+                	</div>
+                <div class="bottom_page">
+        			<div class="bottom_page_c">
+            		<div class="show_page_bottom">
+                        <dl>
+                            <dd><a><img border="0" width="22" height="21" align="absmiddle" src="images/rush/product_list_35.jpg"></a></dd>
+                            <dd> <a><img border="0" width="57" height="21" align="absmiddle" src="images/rush/product_list_36.jpg"></a></dd>
+                        </dl>
+              		</div>
+        		</div>
+      		</div>
+      </div>
+      <div class="clear_both"></div>
+    </div>
+  </div>
+  <div class="clear_both"></div>
+</div> 
+
+    
+<!--底部 开始 -->
+    <div class="mainmodel grayborder_box">
+        <div class="mainmodel_help_left">
+            <h2 class="helpcenter">聚尚网帮助中心 4006-333-999</h2>
+            <ul>
+                <li><a class="a_white" target="_blank" href="http://www.fclub.cn/article-432.html" title="客服中心">客服中心</a></li>
+                <li><a class="a_white" target="_blank" href="http://www.fclub.cn/article-9.html" title="新手指南">新手指南</a></li>
+                <li><a class="a_white" target="_blank" href="http://www.fclub.cn/article-10.html" title="支付方式">支付方式</a></li>
+                <li><a class="a_white" target="_blank" href="http://www.fclub.cn/article-20.html" title="配送方式">配送方式</a></li>
+                <li><a class="a_white" target="_blank" href="http://www.fclub.cn/article-17.html" title="投诉建议">投诉建议</a></li>
+                <li><a class="a_white" target="_blank" href="http://www.fclub.cn/article-491.html" title="移动聚尚网">移动聚尚网</a></li>
+            </ul>
+            <div class="footphone">24小时投诉电话:18621551755</div>
+        </div>
+        
+        <div class="mainmodel_help_right">
+            <ul>
+                <li>
+                    <a target="_blank" href="http://www.fclub.cn/article-435.html" class="zhengpin" title="正品保证，中华保险">
+                        <b>正品保证，中华保险</b>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href=" http://www.fclub.cn/article-354.html" class="yanhuo" title="开箱验货，先验货再签收">
+                        <b>开箱验货，先验货再签收</b>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://www.fclub.cn/article-13.html" class="baozhang" title="7天保障，无理由退货">
+                        <b>7天保障，无理由退货</b>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://www.fclub.cn/article-29.html" class="hdfk" title="货到付款，全国范围">
+                        <b>货到付款，全国范围</b>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://www.fclub.cn/article-22.html" class="freeyun" title="免运费，购满288元">
+                        <b>免运费，购满288元</b>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://www.fclub.cn/article-431.html" class="jifendi" title="积分抵现金 100积分=￥1元">
+                        <b>积分抵现金 100积分=￥1元</b>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="mainmodel mt28">
+        <ul class="width_70perc">
+           <li><a href="http://www.fclub.cn/article-24.html" target="_blank" class="a_white" title="关于聚尚">关于聚尚</a>|</li>
+           <li><a href="http://www.fclub.cn/article_list.php" target="_blank" class="a_white" title="媒体报道">媒体报道</a>|</li>
+           <li><a href="http://www.fclub.cn/article-435.html" target="_blank" class="a_white" title="正品保险">正品保险</a>|</li>
+           <li><a href="http://www.fclub.cn/article-88.html" target="_blank" class="a_white" title="友情链接">友情链接</a>|</li>
+           <li><a href="http://www.fclub.cn/article-92.html" target="_blank" class="a_white" title="招贤纳士">招贤纳士</a>|</li>
+           <li><a href="http://www.fclub.cn/article-91.html" target="_blank" class="a_white" title="联系我们">联系我们</a>|</li>
+           <li><a href="http://www.fclub.cn/zhuanti/mobile.php" target="_blank" class="a_white" title="移动聚尚网">移动聚尚网</a>|</li>
+           <li><a href="http://www.fclub.cn/article-3.html" target="_blank" class="a_white" title="隐私政策">隐私政策</a></li>
+        </ul>
+    
+        <ul class="tubiao">
+           <a href="http://www.ectrustprc.org.cn/certificate.id/certificateb.php?id=20082245" target="_blank" class="chengxin" title="聚尚网-中国电子商务诚信单位"><b>聚尚网-中国电子商务诚信单位</b></a>
+           <a target="_blank" class="alipay_bot" title="聚尚网-支付宝特约商家"><b>聚尚网-支付宝特约商家</b></a>
+           <a href="https://ss.cnnic.cn/verifyseal.dll?sn=e12020331010010635301505&amp;ct=df&amp;pa=547430" target="_blank" class="xinren" title="聚尚网-可信网站"><b>可信网站</b></a>
+           <a title="上海工商" class="gongshang" target="_blank" style="margin-right: 0px;" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20110329175522925"><b>上海工商</b></a>
+        </ul>
+    
+        <div class="width_30percc">
+            <font class="a_white">聚尚网版权所有</font> 
+            <a href="http://www.miibeian.gov.cn/" class="a_white" target="_blank">沪ICP备09012343号</a>     
+        </div>
+    </div>
+<!--底部 结束 -->
+    
+    <div class="r_down" id="popMsg" style="z-index: 99999; position: absolute; width: 320px; visibility:hidden; top: 0; ">
+        <div class="r_down_nav"> 
+            <a href="javascript:;" id="popMsgClose"><img src="images/index/r_d_topclose.gif" height="17" width="17" border="0"></a>
+        </div>
+        <p> 您购物车中有0件限时抢购的商品，将于10分钟后被放回货架，请尽快结算。 
+            <span>
+                <a href="http://www.fclub.cn/flow.html"><img src="images/index/r_d_js.gif" height="25" width="80" border="0"></a>
+            </span> 
+        </p>
+        <div class="r_down_d"><img src="images/index/r_d_fbg.gif" height="12" width="320"></div>
+    </div>
+    
+    <script src="js/FSL_Plug.js"></script>
+    <script src="js/rush.js"></script>
+    <script src="js/topBottom.js"></script>
+</body>
+</html>

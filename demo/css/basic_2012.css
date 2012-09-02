@@ -1,0 +1,430 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td {
+	margin:0;
+	padding:0;
+}
+/*-主体背景色及其他相关属性-*/
+body {
+	min-height:100%;
+	height:auto !important;
+	height:100%;
+	font-family:Tahoma, SimSun, Arial,'宋体';
+	font-size:12px;
+	
+	background-color: #eee;
+	font-weight:400;
+	
+}
+
+html hr {
+	margin:0;
+}
+ol, ul {
+	list-style:none;
+}
+img {
+	border:0;
+}
+small {
+	font-size:12px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight:700;
+}
+h1 {
+	font-size:20px;
+	line-height:28px;
+}
+h2 {
+	font-size:18px;
+	line-height:24px;
+}
+h3 {
+	font-size:16px;
+	line-height:20px;
+}
+h4 {
+	font-size:14px;
+	line-height:18px;
+}
+h5 {
+	font-size:12px;
+	line-height:16px;
+}
+h6 {
+	font-size:12px;
+	line-height:16px;
+	font-weight:400;
+}
+/*注释及说明性字体*/
+.gray_input{color:#666;}
+.gray_font{color:#999;}
+.gray_span{color:#b3b3b3;}
+/*红底白字标题文字*/
+.redBackWhiteFont{font-size:14px; font-weight:bold; padding:6px 11px; background:#900; color:#fff; }
+/*白色通用字体*/
+.white_normal{color:#fff;}
+
+/*连接一般以hover加下划线来区分，没有颜色的变化*/
+a:link, a:visited {
+	color:#fff;
+	text-decoration:none;
+	
+}
+a:hover, a:active {
+	color:#fff;
+	text-decoration:underline;
+}
+/*红色*/
+.red,
+.red a:link, .red a:visited,
+a.red:link, a.red:visited {
+	color:#e10915;
+	text-decoration:none;
+}
+.red a:hover, .red a:active,
+a.red:hover, a.red:active {
+	color:#e10915;
+	text-decoration:underline;
+}
+/*白色*/ 
+.white a:link, .white a:visited,
+a.white:link, a.white:visited {
+	color:#fff;
+	text-decoration:none;
+}
+.white a:hover, .white a:active,
+a.white:hover, a.white:active {
+	color:#fff;
+	text-decoration:underline;
+}
+/*link灰色 如底部帮助连接*/
+.gray a:link, .gray a:visited,
+a.gray:link, a.gray:visited {
+	color:#b3b3b3;
+	text-decoration:none;
+}
+.gray a:hover, .gray a:active,
+a.gray:hover, a.gray:active {
+	color:#b3b3b3;
+	text-decoration:underline;
+}
+
+/*link灰色 hover红色*/
+.gray_red a:link, .gray_red a:visited,
+a.gray_red:link, a.gray_red:visited {
+	color:#999;
+	text-decoration:none;
+}
+.gray_red a:hover, .gray_red a:active,
+a.gray_red:hover, a.gray_red:active {
+	color:#e10915;
+	text-decoration:underline;
+}
+
+/*link深灰色 hover酒红色*/
+.darkgray_winered a:link, .darkgray_winered a:visited,
+a.darkgray_winered:link, a.darkgray_winered:visited {
+	color:#333;
+	text-decoration:none;
+}
+.darkgray_winered a:hover, .darkgray_winered a:active,
+a.darkgray_winered:hover, a.darkgray_winered :active {
+	color:#900;
+	text-decoration:underline!important;
+}
+/*白色link加下划线*/ 
+.white_under a:link, .white_under a:visited,
+a.white_under:link, a.white_under:visited {
+	color:#fff;
+	text-decoration:underline!important;
+}
+.white_under a:hover, .white_under a:active,
+a.white_under:hover, a.white_under:active {
+	color:#fff;
+	text-decoration:none!important;
+}
+/*黑色*/ 
+.black a:link, .black a:visited,
+a.black:link, a.black:visited {
+	color:#000;
+	text-decoration:none;
+}
+.black a:hover, .black a:active,
+a.black:hover, a.black:active {
+	color:#000;
+	text-decoration:underline;
+}
+/*link黑字hover白字深灰底*/ 
+.blackmiror a:link, .blackmiror a:visited,
+a.blackmiror:link, a.blackmiror:visited {
+	color:#000;
+	text-decoration:none;
+	padding:5px 30px 2px 15px;
+}
+.blackmiror a:hover, .blackmiror a:active,
+a.blackmiror:hover, a.blackmiror:active {
+	color:#fff;
+	text-decoration:none;
+	padding:5px 30px 2px 12px; background:#2d2d2d;
+}
+
+/*-以下连接当前未涉及-*/
+
+/*绿色*/
+a.green:link, a.green:visited {
+	color:#78a633;
+	text-decoration:none;
+}
+a.green:hover, a.green:active {
+	color:#78a633;
+	text-decoration:underline;
+}
+.green a:link, .green a:visited {
+	color:#d3fcae;
+	text-decoration:none;
+}
+.green a:hover, .green a:active {
+	color:#fff;
+	text-decoration:underline;
+}
+/*黄色*/
+.yellow,
+.yellow a:link, .yellow a:visited,
+a.yellow:link, a.yellow:visited {
+	color:#ffdf00;
+	text-decoration:none;
+}
+.yellow a:hover, .yellow a:active,
+a.yellow:hover, a.yellow:active {
+	color:#E17D32;
+	text-decoration:underline;
+}
+
+
+/* 表单 在实施过程中逐步完善
+-------------------------------------------------------------------*/
+input {
+	
+	font-size:12px;
+	font-family:Tahoma, SimSun, Arial,'宋体';
+}
+textarea {
+	width:400px;
+	height:5em;
+	margin:0 0 0 4px;
+ *margin:-1px 0 0 4px;
+	_margin:-1px 0 0 2px;
+	padding:3px;
+	color:#666;
+	font-size:12px;
+	font-family:Tahoma, SimSun, Arial;
+	border:1px solid #a7a6aa;
+	background:#FFF url("input.gif") 0 0 no-repeat;
+}
+input[type="text"],
+input[type="password"] {
+ *margin:-1px 5px 0 5px;
+	margin-top: 0;
+	margin-right: 0px;
+	margin-bottom: 0;
+	margin-left: 0px;
+	padding: 0px;
+}
+input[type="checkbox"] {
+	margin: 3px 0 0 5px;
+ *margin:-1px 0 1px 1px;
+	_vertical-align:middle;
+	
+}
+input[type="radio"] {
+ *margin:-1px 0 0 1px;
+ vertical-align:middle;
+}
+input[type="file"] {
+	height:18px;
+	margin:0 0 0 4px;
+ *margin:-1px 0 0 4px;
+}
+select {
+	margin:0 0 0 4px;
+	_margin:0 0 0 2px;
+	font-size:12px;
+	font-family:Tahoma, SimSun, Arial;
+}
+* html input.text {
+	width:223px;
+	height:12px;
+	border:1px solid #a7a6aa;
+	background:#FFF url("input.gif") 0 0 no-repeat;
+	margin-top: -1px;
+	margin-right: 5px;
+	margin-bottom: 0;
+	margin-left: 2px;
+	padding: 3px;
+	line-height: 12px;
+}
+* html input.checkbox {
+	margin:-1px 0 0 -2px;
+}
+* html input.radio {
+	margin:-1px 0 0 -2px;
+}
+* html input.file {
+	margin:-1px 0 0 1px;
+}
+.button,
+button {
+	margin:0;
+	height:21px;
+	line-height:21px;
+	font-size:12px;
+	cursor:pointer;
+	border:none;
+	text-align: center;
+}
+.button1 {
+	color:#fff;
+	width:29px;
+	background:url("bg_button.gif") no-repeat -151px 0;
+}
+.button2 {
+	width:48px;
+	color:#fff;
+	background:url("bg_button.gif") no-repeat 0 -43px;
+}
+.button5 {
+	width:84px;
+	color:#fff;
+	background:url("bg_button.gif") no-repeat -96px -43px;
+}
+.button6 {
+	width:150px;
+	height:32px;
+	line-height:32px;
+	font-size:14px;
+	color:#fff;
+	background:url("bg_button.gif") no-repeat 0 0;
+	font-weight: bold;
+}
+.buttonGreen142 {
+	height:27px;
+	line-height:27px;
+	font-size:14px;
+	width:68px;
+	color:#fff;
+	background:url("bg_button.gif") no-repeat 0 -127px;
+}
+/*灰色*/
+a.buttonGary2,
+.buttonGary2 {
+	width:46px;
+	color:#000;
+	background:url("bg_button.gif") no-repeat -46px -85px;
+}
+/*灰色*/
+.buttonGary4 {
+	width:69px;
+	color:#000;
+	background:url("bg_button.gif") no-repeat -114px -106px;
+}
+/*灰色*/
+.buttonGary5 {
+	width:80px;
+	color:#000;
+	background:url("bg_button.gif") no-repeat -100px -85px;
+}
+
+/*--btn--*/
+.btnRed4{width:77px; height:28px; line-height:25px; color:#fff; text-align:center; font-size:12px; background:url(../images/new_index/btnRed3.jpg) no-repeat; display:block;}
+
+/*-通用组合样式-*/
+.bold{ font-weight:bold;}
+.mTB10 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.mT10 {
+	margin-top: 10px;
+}
+.mT20 {
+	margin-top: 20px;
+}
+.mB10 {
+	margin-bottom: 10px;
+}
+.mSide10{margin-left:10px; margin-right:10px;}
+.mL10 {
+	margin-left:10px;
+}
+.mR10 {
+	margin-right:10px;
+}
+.fLeft {
+	float:left;
+}
+.fCenter {
+	float:left;
+}
+.fRight {
+	float:right;
+}
+.w50 li {
+	float: left;
+	width: 50%;
+}
+.border a {
+	border: 1px solid #7a7977;
+	display: table;
+}
+.block{
+	display: block;
+}
+.none {
+	display: none;
+}
+.invisible {
+	display:none;
+	overflow:hidden;
+}
+.overflow {
+	overflow:hidden;
+}
+.textCenter {
+	text-align:center
+}
+.lineDot {
+	background-image: url("lineDot.gif");
+	background-repeat: repeat-x;
+}
+.lineBorder {
+	border: 1px solid #acd98c;
+}
+.lineTB {
+	border-top: 1px solid #acd98c;
+	border-bottom: 1px solid #acd98c;
+}
+.lineLR {
+	border-right: 1px solid #acd98c;
+	border-left: 1px solid #acd98c;
+}
+.lineB {
+	border-bottom: 1px solid #acd98c;
+}
+.lineL {
+	border-left: 1px solid #acd98c;
+}
+.lineR {
+	border-right: 1px solid #acd98c;
+}
+.indexTitle {
+	height:56px;
+	line-height:56px;
+	border-bottom: 1px dashed #acd98c;
+}
+.clear{clear:both;margin:0;parding0;height:0px;font-size:0px;}
+.displaynone{display:none}
+.now{ display:block!important;}

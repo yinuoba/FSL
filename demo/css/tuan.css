@@ -1,0 +1,230 @@
+@charset "utf-8";/* CSS Document */
+.head_tuan{width:100%;height:85px;background:#662425 url(../images/tuan/tuan_bg_top.jpg) top center no-repeat;margin:0;}
+.normal_box_tuan{width:1000px;height:auto;margin:0 auto;}
+.menu_tuan{width:100%;height:37px;background:url(../images/tuan/tuan_all_bgrep.jpg) 0 -184px repeat-x;overflow:hidden;}
+.body_tuan{background:#e8e4d8;padding:15px 20px 40px 20px;width:960px;height:auto;margin:0 auto;overflow:hidden;}
+/* basic element of tuan */
+#gotop{ display:none;background:url(../images/tuan/tuan_img_back.gif) no-repeat 0px 0px;overflow:hidden;width:22px;bottom:0;text-indent:-9em;position:fixed;height:65px;_position:absolute;margin-left:500px;left:50%;}
+.tuan_backtop{width:22px;height:65px;position:absolute;z-index:999;right:20px;bottom:20px;top:520px;}
+.tuan_textbox{width:168px;height:20px;background:border:1px solid #aeaeb0;line-height:20px;color:#bdbdbd;overflow:hidden;}
+.tuan_head_form{height:27px;overflow:hidden;}
+.tuan_btn{width:64px;height:27px;background:url(../images/tuan/headerbgs.png) -300px 0px no-repeat;cursor:pointer;border:none;margin-top:-1px;}
+.tuan_msg_order{height:16px;line-height:16px;margin-top:4px;color:#cac5cc;}
+.tuan_msg_order a{color:#c9c7c8!important;text-decoration:underline;}
+.tuan_head_right{width:245px;height:50px;float:right;margin-top:21px;}
+.menu_tuan ul{list-style:none;}
+.menu_tuan ul li{list-style:none; float:left;}
+.menu_img_400{height:19px; margin-top:8px; margin-right:35px; float:right!important;}
+.menu_img_online{height:16px; margin-top:10px; margin-right:15px; float:right!important;}
+.menu_text{margin-right:30px; line-height:35px; color:#fff; float:right!important;}
+.nav_tuan{width:927px; height:24px; padding-left:33px; margin-bottom:24px; line-height:17px; border-bottom:1px solid #892e2d; background:url(../images/tuan/tuan_img_nav.jpg) left top no-repeat;}
+.nav_tuan a{color:#000!important; text-decoration:none;}
+.nav_tuan a:hover{color:#000; text-decoration:underline!important;}
+.nav_tuan span{color:#5a2021;}
+.contain_left{width:697px; height:auto;  float:left; overflow:hidden;}
+.contain_right{width:255px; height:auto; margin-left:8px; float:left; position:relative;}
+.contain_right_img{width:224px;  height:auto; border:1px solid #6d2b2c; padding:16px 9px 8px 9px; background:#f3f3f3; margin-bottom:10px; margin-left:11px;}
+.contain_right_min{width:228px; padding-left:14px; height:63px; margin-left:11px; border:1px solid #c5ad8b;  background:url(../images/tuan/bg_noticeme_new.jpg) left no-repeat; margin-bottom:10px;}
+.contain_right_imgline{width:162px; height:31px; padding-top:45px; padding-left:80px; border:1px solid #c5ad8b; background:url(../images/tuan/bgad_mail.jpg) no-repeat; margin-left:11px;}
+.contain_right_imgline a{color:#000; font-weight:bold; text-decoration:underline!important; }
+.contain_right_imgline a:hover{color:#000; text-decoration:none!important;}
+.contain_right_min h3{font-size:12px; color:#ac0005; font-weight:bold; line-height:33px;}
+.infobox_imgall{width:242px; height:226px; background:url(../images/tuan/bgbox_infoall.jpg) no-repeat; margin-left:11px; border:1px solid #c5ad8b; margin-bottom:10px; overflow:hidden;}
+.infobox_imgall ul{list-style:none; margin-left:55px; margin-top:12px;}
+.infobox_imgall ul li{list-style:none; float:none; margin-bottom:22px;}
+.infobox_imgall ul li a{font-size:14px; color:#ac0005; }
+.infobox_imgall ul li a:hover{text-decoration:underline!important;}
+.infobox_imgall ul li p{color:#999; font-size:12px; line-height:15px;}
+.contain_right1{width:251px; height:185px;  background:url(../images/tuan/bg_adbarnew.jpg) repeat-x; margin-bottom:10px; margin-left:4px;}
+.contain_right1 ul{list-style:none; padding-top:58px; padding-left:33px; width:auto; height:auto; display:block; overflow:hidden}
+.contain_right1 ul li{list-style:none;margin-bottom:5px; color:#fff;}
+.contain_right1 span{width:230px; height:22px; line-height:22px;color:#a4352c; font-weight:bold; background:#e8e4d9; display:block; text-align:center;}
+
+.contain_right_title{width:224px; height:34px; background:url(../images/tuan/tuan_all_bg.png) no-repeat -1px -419px; font-size:14px; font-family:'微软雅黑,宋体'; color:#fff; line-height:34px; padding-left:20px; margin-left:11px;}
+.contain_right_title a{float:right; margin-right:18px; color:#ffdf00!important; text-decoration:underline!important; font-size:12px;}
+.contain_right_title span{*float:left;}
+.contain_right2{width:224px; margin-left:11px; height:656px; border:1px solid #bab49e; padding:0px 9px 8px; background:#f3f2ef; margin-bottom:10px; position:relative;  }
+.contain_right2 ul{list-style:none; }
+.ul_none{display:none;}
+.ul_block{display:block;}
+.contain_right2 ul li{list-style:none;height:213px;width:224px;border-bottom:1px dotted #acacaa;margin-top:12px;position:relative;}
+.last_libox{border-bottom:none!important;height:195px!important;}
+.contain_right2 ul li h3{font-size:14px!important;color:#333;font-weight:bold;line-height:25px;font-family:'宋体'!important;}
+.btn_tuan_buynow{width:110px;height:35px;position:absolute;left:-20px;top:25px;background:url(../images/tuan/btn_nextone.jpg) no-repeat ;cursor:pointer;}
+.btn_tuan_buynow span{font-size:15px;color:#fff;font-weight:bold;line-height:33px;padding-left:21px;}
+.detail_btn{width:110px;height:35px;display:block;}
+.btn_tuan_right_graybox{width:80px;height:115px;padding-left:8px;line-height:17px;border:1px solid #bbbaba;border-top:none;background:url(../images/tuan/tuan_all_bgrep.jpg) 0 -222px repeat-x;margin-top:35px;float:left;color:#666;padding-top:15px;}
+.btn_tuan_right_graybox strong{color:#f00;font-size:20px;font-weight:bold;}
+.btn_tuan_right_graybox i{text-decoration:none!important;}
+.box_tuan_right_imgbox{width:120px;height:160px;float:left;border:3px solid #ddc6ce;margin-left:8px;}
+.bottom_tuan{width:100%;height:183px;overflow:visible;background:url(../images/tuan/tuan_all_bgrep.jpg) repeat-x 0 0;}
+.bottom_tuan_boxtop{width:996px;height:132px;margin:0 auto;border:2px solid #541e1e;background:url(../images/tuan/tuan_img_till.gif) no-repeat;}
+.bottom_tuan_boxtop ul{list-style:none;margin:45px auto auto 15px;width:175px;height:auto;float:left;}
+.bottom_tuan_boxtop ul li{float:left;margin-right:28px;font-size:14px;line-height:24px;}
+.bottom_tuan_boxtop dl{margin-left:40px;_margin-left:20px;margin-top:30px;height:78px;width:auto;list-style:none;float:left;}
+.bottom_tuan_boxtop dl dt{list-style:none;float:left;margin-right:15px;}
+.bottom_tuan_boxdown{width:1000px;line-height:45px;height:auto;margin:0 auto;}
+.bottom_tuan_boxdown ul{list-style:none;margin-left:200px;}
+.bottom_tuan_boxdown ul li{line-height:none;float:left;margin-left:30px;_margin-left:27px;}
+.tuan_zggs{width:60px;height:19px;line-height:19px;margin-top:13px;overflow:visible;padding-left:20px;margin-left:15px!important;background:url(../images/tuan/tuan_img_gongshang.jpg) left no-repeat;color:#fff;}
+/* detail page of tuan */
+.contain_left_detail1{width:672px;border:1px solid #bfb6a4;background:#d0cfcd;padding:9px;height:551px;}
+.contain_left_detail1_left{border:1px solid #d2c6b6;width:274px;height:549px;background:#fff;float:left;}
+.contain_left_detail_left1{height:160px;width:auto;padding:10px;overflow:hidden;line-height:18px;}
+.contain_left_detail_left1 img{width:auto;height:auto;max-height:40px;max-width:250px;}
+.contain_left_detail_left1 span{color:#a01b1d;font-size:14px;font-weight:bold;display:block;line-height:18px;}
+.contain_left_detail_left1 s{text-decoration:none;color:#917454;font-size:12px;line-height:28px;}
+.contain_left_detail_left1 p{color:#666;font-size:12px;}
+.contain_left_detail_left2{height:110px;width:auto;background:#f9f2ea;position:relative;}
+.contain_left_detail1_right{width:386px;height:551px;float:left;margin-left:9px;overflow:hidden;}
+.contain_left_detail1_right dl{list-style:none;}
+.contain_left_detail1_right dt{width:100%;height:515px;margin-bottom:5px;list-style:none;position:relative;}
+.contain_left_detail1_right dt span{width:78px;height:78px;position:absolute;top:0px;right:0px;z-index:200;background:url(../images/tuan/tuan_saleout.gif) no-repeat;text-indent:-999em;display:block;}
+.contain_left_detail1_right dd{width:100%;height:31px;list-style:none;background:url(../images/tuan/tuandetail_bg_share.jpg) repeat-x;}
+.tuan_share_span{width:80px;height:18px;display:block;margin:10px auto 10px 20px;font-size:13px;_font-size:12px;float:left;}
+.contain_left_detail1_right dd ul{list-style:none;float:left;height:18px;width:auto;margin-top:8px;}
+.contain_left_detail1_right dd ul li{float:left;width:auto;height:18px;margin-right:13px;}
+.contain_left_detail1_right dd ul li a img{border:none;}
+.tuan_detail_tips{border:1px solid #bab49e;width:690px;height:80px;background:#dfdbce;margin-top:10px;}
+.tuan_detail_tips ul{list-style:none;margin:13px auto auto 103px;width:auto;height:23px;}
+.tuan_detail_tips ul li{list-style:none;float:left;margin-right:50px;width:135px;height:23px;background:#e8e4d9;line-height:23px;color:#8f3632;text-align:center;font-weight:bold;}
+.tuan_detail_tips_topbox{height:33px;line-height:33px;background:#d5c6b7;width:100%;color:#656565;font-size:12px;}
+.tuan_detail_tips_topbox img{float:right;margin-top:8px;margin-right:10px;}
+.tuan_detail_tips_topbox span{width:auto;height:15px;float:left;margin-left:10px;margin-top:10px;background:url(../images/tuan/tuan_img_light.gif) left no-repeat;padding-left:80px;line-height:17px;}
+.tuan_detail_infobox{width:690px;height:auto;border:1px solid #bfb6a4;margin-top:10px;background:#fff;}
+.tuan_detail_infobox_title{width:98%;height:33px;line-height:33px;background:url(../images/tuan/tuande_bg_info.jpg) repeat-x;font-size:14px;font-weight:bold;color:#333;padding-left:2%;}
+.tuan_detail_package{width:690px;height:auto;border:1px solid #bfb6a4;margin-top:10px;background:#fff;}
+.tuan_detail_package img{margin:10px auto 10px 8px;}
+.tuan_detail_infobox_body{width:96%;padding:2%;line-height:25px;height:auto;}
+.tuan_detail_infobox_body span{float:left;width:auto;height:23px;line-height:23px;font-size:14px;font-weight:normal;}
+.tuan_detail_infobox_body s{text-decoration:none;font-size:12px;color:#000;float:right;width:auto;height:23px;line-height:23px;}
+.tuan_detail_info_photobox{width:100%;height:auto;text-align:center;overflow:visible;}
+.tuan_detail_info_photobox img{margin-top:15px;}
+.contain_left_detail_left2 span{position:absolute;left:-10px;top:10px;z-index:200;margin:0 auto;background:url(../images/tuan/tuan_all_bg.png) -1px -259px no-repeat;height:61px;}
+.contain_left_detail_left2 span,.tuan_detail_info_photobox span{width:219px;font-size:36px;line-height:55px;padding-left:55px;color:#fff;text-align:left;display:block;cursor:pointer;}
+.tuan_detail_info_photobox span{background:url(../images/tuan/tuan_all_bg.png) -1px -94px no-repeat;margin:40px auto;float:none;height:62px;}
+.btn_saleout_left{background:url(../images/tuan/tuan_all_bg.png) -1px -321px no-repeat!important;}
+.btn_saleout_down{background:url(../images/tuan/tuan_all_bg.png) -1px -30px no-repeat!important;}
+.tuan_btn_downbox{width:252px;height:28px;background:url(../images/tuan/tuan_all_bg.png)-1px -1px no-repeat;line-height:28px;border:1px solid #d6d4d5;overflow:hidden;text-align:center;color:#656565;left:10px;top:71px;position:absolute;}
+.contain_left_detail_left3{text-align:left;width:auto; height:auto; background:#fff; padding-left:10px;}
+.contain_left_detail_left3 span{color:#353535; font-size:16px; line-height:25px;}
+.contain_left_detail_left3 span strong{color:#ac0005;}
+.contain_left_detail_left3 p{color:#fd0000;font-size:12px;line-height:22px;}
+.timeout_box{width:252px;height:59px;background:url(../images/tuan/tuan_all_bg.png)-1px -556px no-repeat;border:1px solid #d9d9d9;margin:7px auto;}
+.timeout_box_span{float:left;margin-left:17px; _margin-left:10px;width:auto;height:auto;line-height:25px;text-align:left;margin-top:7px;}
+.timeout_box_span p{font-size:14px;color:#333;}
+.timeout_box_img{float:right;margin-right:17px;width:auto;height:auto;margin-top:7px;}
+#endTime,#endTime span{font-size:20px;font-family:Arial;}
+.hover_bgcolor{background:#d5c5b6!important;}
+.hover_font{color:#9f1b1d!important;}
+.sizeof_tuanimg{width:100%;height:auto;overflow:hidden;}
+.sizeof_tuanimg img{width:auto;height:auto;max-width:655px;}
+/*购买选择尺寸、颜色等*/
+.limitcontent_tuan{width:auto;height:130px;padding-left:10px;background:#f9f2ea;}
+.limitcontent_tuan ul{list-style:none;}
+.limitcontent_tuan ul li{list-style:none;clear:both;margin-bottom:5px;}
+.limitcontent_tuan li h2{float:left;font-size:12px;font-weight:normal;color:#666;}
+.img_select,.img_noselect{width:20px;/*height:20px;*/
+ height:25px;position:relative;float:left;margin-left:6px;}
+.img_select img{padding:2px;border:1px solid #f60;}
+.img_noselect img{padding:2px;border:1px solid #333;}
+.size_out_of_stock{background:url(../images/tuan/bg-out-of-stock.gif) no-repeat scroll right bottom transparent;border:2px solid #7f7f7f;display:inline-block;float:left;}
+.limitcontent_front{position:absolute;z-index:5;border:none;height:10px;width:10px;font-size:0px;overflow:hidden;background:url(../images/tuan/bg-selected.gif) no-repeat!important;top:10px;left:10px;}
+.size_select,.size_noselect,.size_out_of_stock{float:left;margin-left:5px;text-align:center;width:30px;height:18px;line-height:18px;cursor:pointer;}
+.size_select{border:2px solid #f60;display:inline-block;float:left;background:url(../images/tuan/bg-selected.gif) no-repeat right bottom;}
+.size_noselect{border:1px solid #ddd;margin-top:2px;display:inline-block;float:left;background:#fff;}
+.size_xq{float:left;display:inline-table;padding-left:5px;}
+.size_xq a:link,.size_xq a:visited{color:#934d03;text-decoration:underline;}
+.limitcontent_num{padding-left:6px;float:left;z-index:3;}
+.limitcontent_but{padding-left:5px;float:left;}
+#sel_color{height:auto;margin:0 0 10px 0;}
+.img_color_sel{border:2px solid #ff6600;padding:1px;width:12px;height:12px;cursor:pointer;}
+#sel_chicun{height:auto;line-height:24px;margin:0 0 10px 0;}
+#sel_chicun ul{width:100%;}
+#sel_chicun li{width:auto;float:left;margin-right:4px;margin-bottom:4px;line-height:20px;padding:0px 2px;cursor:pointer;display:inline;width:33px;text-align:center;padding-top:2px;padding-top:0 !important;}
+.img_gou{width:auto;height:24px;width:24px;position:absolute;background:url(../images/tuan/bg-selected.gif) no-repeat bottom right;}
+.img_size_sel{color:#333;border:2px solid #ff6600;background:url(../images/tuan/bg-selected.gif) no-repeat bottom right;height:19px;overflow:hidden;}
+.img_size{background-color:#FFF;color:#333;border:1px solid #369;height:21px;}
+#sel_color img{width:20px;height:20px;}
+#sel_shuliang{height:30px;line-height:30px;margin:0px 0 0 0;}
+/* main page of tuan */
+.contain_left_maintitle{width:687px;height:31px;line-height:26px;*line-height:30px;color:#fff;padding-left:5px;overflow:hidden;background:url(../images/tuan/tuan_main_title.jpg) repeat-x;}
+#tuan_new,#tuan_hot{cursor:pointer;}
+.contain_left_maintitle a{color:#fff;height:30px;width:auto;display:inline-block;}
+.a_on{background:url(../images/tuan/tuan_bg_5F3corner.jpg) center bottom no-repeat;display:inline-block;height:31px;width:auto;text-decoration:none!important;}
+.contain_left_mainbox{width:100%;height:auto;overflow:hidden;margin-top:12px;}
+.contain_left_mainbox ul{list-style:none;}
+.contain_left_mainbox ul li{list-style:none;cursor:pointer;float:left;width:222px;height:447px;margin-right:10px;_margin-right:8px;margin-bottom:18px;border:1px solid #b4b2b3;background:#fff;position:relative;}
+.hover_box{border:3px solid #d5c5b6;border-bottom:4px solid #d5c5b6;position:absolute;left:0px;top:0px;width:216px;height:333px;z-index:20;}
+.imglink,.hover_box{display:block;text-indent:-9999px;height:481px;width:224px;overflow:hidden;}
+.top_tuan_photo{height:43px;width:222px;border-bottom:1px solid #b3b3b3;background:#fff;}
+.top_tuan_photo_imgbox{float:left;width:115px;text-align:center;line-height:40px;}
+.top_tuan_photo_imgbox img{width:105px;height:30px;margin-top:6px;}
+.top_tuan_photo_numbox{float:left;width:107px;text-align:center;line-height:40px;color:#333333;font-size:12px;}
+.top_tuan_photo_numbox span{font-size:20px;color:#fe0000;}
+.mid_tuan_photo{width:222px;height:296px;text-align:center;position:relative;}
+.mid_tuan_photo s{width:55px;height:55px;text-decoration:none;position:absolute;right:0;top:0;z-index:10;background:url(../images/tuan/main_sale_out.gif) no-repeat;}
+.botm_tuan_photo{width:222px;height:107px;margin:0;background:#d9d9d9;}
+.botm_tuan_photo_buyon,.botm_tuan_photo_buyhover,.botm_tuan_photo_buyoff,.botm_tuan_photo_info{height:50px;float:left;margin-top:12px;}
+.botm_tuan_photo_buyon,.botm_tuan_photo_buynormal,.botm_tuan_photo_buyhover,.botm_tuan_photo_buyoff{width:141px;height:49px;cursor:pointer;line-height:49px;}
+.botm_tuan_photo_buyon{background:url(../images/tuan/tuanmain_btn_on.jpg) left top no-repeat;}
+.botm_tuan_photo_buyhover{background:url(../images/tuan/btn_list_hover.gif) -1px -52px no-repeat;}
+.botm_tuan_photo_buyoff{background:url(../images/tuan/tuan_all_bg.png) -143px -454px no-repeat;}
+.botm_tuan_photo_buyoff span,.botm_tuan_photo_buynormal span,.botm_tuan_photo_buyhover span,.botm_tuan_photo_buyon span{font-size:22px;color:#fff;padding-left:30px;padding-right:50px;}
+.spanbox{display:block;width:141px;height:49px;overflow:hidden;float:left;margin-top:12px;}
+.botm_tuan_photo_info{width:77px;margin-left:4px;color:#676767;line-height:17px;}
+.botm_tuan_btn_name{width:202px;height:25px;margin:10px auto;_margin:6px auto;text-align:center;background:url(../images/tuan/tuan_all_bg.png) no-repeat -1px -233px;overflow:hidden;}
+.botm_tuan_btn_name{color:#323234!important;}
+.botm_tuan_btn_name a:hover{color:#323234;}
+.botm_btn_name_normal,.botm_btn_name_hover{font-size:14px;font-weight:bold;line-height:25px;}
+.botm_btn_name_normal{color:#323234;}
+.botm_btn_name_hover{color:#9f1b1d;}
+/*---28日改版---*/
+/*9.20改版*/
+.tuan3_box{width:1012px;height:auto;padding-top:25px;*padding-bottom:26px;overflow:hidden;margin:0 auto;background:url(../images/tuan/bg_gray.jpg) repeat-y;}
+.tuan3_navbar{width:968px;height:38px;background:url(../images/tuan/bgbar_sort.jpg) no-repeat;overflow:hidden;line-height:38px;margin-left:21px;}
+.tuan3_navbar ul{margin-left:103px;margin-top:1px;padding:0;width:auto;height:36px;}
+.tuan3_navbar ul li{margin-right:2px;width:88px;font-size:14px;color:#fff;text-align:center;float:left;cursor:pointer;}
+.tuan3_w58{width:58px!important;}
+.tuan3_navli_on{color:#000!important;font-weight:bold!important;background:url(../images/tuan/bgbar_sort_on.jpg) repeat-x;}
+.tuan3_container{width:1012px;height:auto;overflow:hidden;}
+.tuan3_container ul{list-style:none;margin-top:25px;margin-left:22px;overflow:hidden;}
+.tuan3_container ul li{float:left;list-style:none;width:230px;height:487px;margin-right:15px;cursor:auto;margin-bottom:27px;position:relative;}
+.tuan3_container_lihover{width:224px;height:481px;border:3px solid #871b12;position:absolute;z-index:200;display:none;}
+.tuan3_container_on{cursor:pointer!important;}
+.tuan3_contop{width:100%;height:54px;background:url(../images/tuan/bg_tuan3_title.jpg) repeat-x;overflow:hidden}
+.tuan3_contop a{color:#000;}
+.tuan3_img_big{width:230px;height:425px;overflow:hidden;position:relative;}
+.tuan3_img_big a,.tuan3_img_big a img{ width:230px;height:425px;display:block;}
+.tuan3_img_big s{position:absolute;right:4px;bottom:4px;background:url(../images/tuan/sale_out_png.png) no-repeat;width:68px;height:68px;display:block;text-decoration:none;}
+.tuan3_contop s{text-decoration:none;width:143px;line-height:54px;font-size:14px;font-weight:bold;text-align:center;float:right;display:block;}
+.tuan3_contop img{width:auto;max-width:88px;height:54px;float:left;}
+.tuan3_img{width:100%;height:425px;overflow:hidden;margin:0;position:relative;}
+.tuan3_img s{position:absolute;right:4px;bottom:4px;background:url(../images/tuan/sale_out_png.png) no-repeat;width:68px;height:68px;display:block;text-decoration:none;}
+.tuan3_botm{width:100%;height:58px;padding-top:4px;}
+.tuan3_botm_red{background:url(../images/tuan/centerbgs.png) -110px 0 no-repeat;}
+.tuan3_botm_red h5{text-decoration:none;width:55px;height:55px;float:left;background:url(../images/tuan/centerbgs.png) -55px 0 no-repeat;display:block;cursor:pointer}
+.tuan3_botm_gray{background:url(../images/tuan/centerbgs.png) -340px 0 no-repeat;}
+.tuan3_botm_gray h5{text-decoration:none;width:55px;height:55px;float:left;background:url(../images/tuan/centerbgs.png)  0 0no-repeat;display:block;}
+.tuan3_botm_left{float:left;width:156px;height:auto;margin-left:9px;color:#fff;_margin-left:5px;}
+.tuan3_botm_left h4{margin:0;padding:0;font-size:28px;color:#fff;float:left;font-weight:normal!important;margin-right:5px;line-height:30px;padding-left:15px;_padding-left:15px;padding-right:0px;}
+#end_time{line-height:28px;color:#666;font-size:12px;}
+
+/*底部图片合并*/
+a.tuan_zz,a.tuan_yh,a.tuan_bz,a.tuan_pay,a.tuan_yy,a.tuan_jf{ background-image:url(../images/tuan/footerbgs.png); height:78px; display:block;}
+a.tuan_zz{ background-position:0 0; width:108px;}
+a.tuan_yh{ background-position:-108px 0; width:113px;}
+a.tuan_bz{ background-position:-221px 0; width:102px;}
+a.tuan_pay{ background-position:-323px 0; width:104px;}
+a.tuan_yy{ background-position:-427px 0; width:99px;}
+a.tuan_jf{ background-position:-526px 0; width:129px;}
+
+a.online_order,.menu_img_400,.tuangou_main,.qianggou_main{ background-image:url(../images/tuan/headerbgs.png); display:block;}
+a.online_order{ background-position:-100px 0; width:70px; height:16px;}
+.menu_img_400{ background-position:-187px 0;}
+.tuangou_main{ background-position:-364px 0; width:160px; height:39px;}
+.qianggou_main{ background-position:-524px 0; width:163px; height:39px;}
+.contain_right_imgline{background:url("../images/tuan/bgad_mail.jpg") no-repeat scroll 0 0 transparent;border:1px solid #C5AD8B;height:31px;margin-left:11px;padding-left:80px;padding-top:45px;width:162px;}
+.contain_right_imgline a{color:#000000;font-weight:bold;text-decoration:underline !important;}
+.contain_right_imgline a:hover{color:#000000;text-decoration:none !important;}
+

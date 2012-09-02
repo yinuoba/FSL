@@ -1,0 +1,102 @@
+﻿/*新加部分*/
+.blank_boxright{width:722px;margin:15px 10px;float:left;height:auto;overflow:hidden;}
+.blank_adbox{width:722px;height:auto;margin-top:10px;overflow:hidden;}
+.blank_msgbox,.blank_msgboxl,.blank_msgboxr{height:132px;overflow:hidden;}
+.blank_msgbox{width:722px;background:url("../images/rush/bgmsg_center.gif") repeat-x;}
+.blank_msgboxl{width:107px;background:url("../images/rush/pic_blank.png") 0 -60px no-repeat;float:left;}
+.blank_msgboxr{width:222px;*width:237px;background:url("../images/rush/pic_blank.png") 0 -194px;float:right;padding-top:24px;padding-left:30px;*padding-left:15px;}
+.blank_msgboxr p{margin-top:20px;font-weight:bold;}
+a.noticeme_sina,a.noticeme_qq,a.noticeme_kaixin{padding-left:20px;color:#000;line-height:18px;height:18px;display:block;float:left;margin-right:10px;}
+a.noticeme_sina{background:url("../images/rush/pic_blank.png") 0 -329px no-repeat;}
+a.noticeme_qq{background:url("../images/rush/pic_blank.png") 0 -348px no-repeat;}
+a.noticeme_kaixin{background:url("../images/rush/pic_blank.png") 0 -367px no-repeat;}
+.blank_msgboxr_btn{width:82px;height:28px;display:block;text-align:center;line-height:28px;float:left;margin-right:10px;background:url("../images/rush/pic_blank.png") 0 -30px no-repeat;color:#fff;font-weight:bold;}
+a.blank_msgboxr_btn{color:#fff;}
+.blank_msgboxc{width:auto;float:left;padding-left:30px;padding-top:24px;}
+.blank_msgboxc p{color:#000;font-size:14px;font-weight:bold;line-height:25px;margin:0;}
+.blank_input{width:210px;height:28px;border:1px solid #999;line-height:28px;padding-left:10px;color:#6c6c6c;font-size:12px;}
+.blank_btn{width:82px;height:28px;background:url("../images/rush/pic_blank.png") no-repeat;border:none;color:#fff;cursor:pointer;}
+.blank_fun{width:722px;height:36px;background:url("../images/rush/bgmsg_center.gif") 0 -133px repeat-x;line-height:36px;position:relative;margin-top:10px;}
+.blank_fun span{width:120px;height:36px;display:block;position:absolute;left:0;top:0;padding-left:20px;background:url("../images/rush/pic_blank.png") 0 -386px no-repeat;font-weight:bold;}
+.blank_fun a{width:116px;height:36px;overflow:hidden;display:block;position:absolute;top:0px;left:606px;background:url("../images/rush/pic_blank.png") 0 -425px no-repeat;}
+.blank_tuanbox{width:722px!important;margin-top:10px;}
+l.blank_tuanbox ul{list-style:none;overflow:hidden;}
+.margin_r0{margin-right:0!important;}
+.clearboth{clear:both;font-size:1px;height:0;overflow:hidden;}
+/*团购部分*/
+#endTime{font-family:Arial;font-size:20px;}
+.hover_bgcolor{background:none repeat scroll 0 0 #D5C5B6 !important;}
+.hover_font{color:#9F1B1D !important;}
+.sizeof_tuanimg{height:auto;overflow:hidden;width:100%;}
+.sizeof_tuanimg img{height:auto;max-width:655px;width:auto;}
+.limitcontent_tuan{background:none repeat scroll 0 0 #F9F2EA;height:130px;padding-left:10px;width:auto;}
+.limitcontent_tuan ul{list-style:none outside none;}
+.limitcontent_tuan ul li{clear:both;list-style:none outside none;margin-bottom:5px;}
+.limitcontent_tuan li h2{color:#666666;float:left;font-size:12px;font-weight:normal;}
+.img_select,.img_noselect{float:left;height:25px;margin-left:6px;position:relative;width:20px;}
+.img_select img{border:1px solid #FF6600;padding:2px;}
+.img_noselect img{border:1px solid #333333;padding:2px;}
+#sel_color{height:auto;margin:0 0 10px;}
+.img_color_sel{border:2px solid #FF6600;cursor:pointer;height:12px;padding:1px;width:12px;}
+#sel_chicun{height:auto;line-height:24px;margin:0 0 10px;}
+#sel_chicun ul{width:100%;}
+#sel_chicun li{cursor:pointer;display:inline;float:left;line-height:20px;margin-bottom:4px;margin-right:4px;padding-bottom:0;padding-left:2px;padding-right:2px;padding-top:0 !important;text-align:center;width:33px;}
+.img_gou{background:url("../images/bg-selected.gif") no-repeat scroll right bottom transparent;height:24px;position:absolute;width:24px;}
+.img_size_sel{background:url("../images/bg-selected.gif") no-repeat scroll right bottom transparent;border:2px solid #FF6600;color:#333333;height:19px;overflow:hidden;}
+.img_size{background-color:#FFFFFF;border:1px solid #336699;color:#333333;height:21px;}
+#sel_color img{height:20px;width:20px;}
+#sel_shuliang{height:30px;line-height:30px;margin:0 0 0;}
+.contain_left_maintitle{background:url("../images/tuan_main_title.jpg") repeat-x scroll 0 0 transparent;color:#FFFFFF;height:31px;line-height:26px;overflow:hidden;padding-left:5px;width:687px;}
+#tuan_new,#tuan_hot{cursor:pointer;}
+.contain_left_maintitle a{color:#FFFFFF;display:inline-block;height:30px;width:auto;}
+.a_on{background:url("../images/tuan_bg_3corner.jpg") no-repeat scroll center bottom transparent;display:inline-block;height:31px;text-decoration:none !important;width:auto;}
+.contain_left_mainbox{height:auto;margin-top:12px;overflow:hidden;width:100%;}
+.contain_left_mainbox ul{list-style:none outside none;}
+.contain_left_mainbox ul li{background:none repeat scroll 0 0 #FFFFFF;border:1px solid #B4B2B3;cursor:pointer;float:left;height:447px;list-style:none outside none;margin-bottom:18px;margin-right:10px;position:relative;width:222px;}
+.hover_box{-moz-border-bottom-colors:none;-moz-border-image:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;border-color:#D5C5B6;border-style:solid;border-width:3px 3px 4px;height:333px;left:0;position:absolute;top:0;width:216px;z-index:20;}
+.imglink,.hover_box{display:block;height:481px;overflow:hidden;text-indent:-9999px;width:224px;}
+.top_tuan_photo{background:none repeat scroll 0 0 #FFFFFF;border-bottom:1px solid #B3B3B3;height:43px;width:222px;}
+.top_tuan_photo_imgbox{float:left;line-height:40px;text-align:center;width:115px;}
+.top_tuan_photo_imgbox img{height:30px;margin-top:6px;width:105px;}
+.top_tuan_photo_numbox{color:#333333;float:left;font-size:12px;line-height:40px;text-align:center;width:107px;}
+.top_tuan_photo_numbox span{color:#FE0000;font-size:20px;}
+.mid_tuan_photo{height:296px;position:relative;text-align:center;width:222px;}
+.mid_tuan_photo s{background:url("../images/main_sale_out.gif") no-repeat scroll 0 0 transparent;height:55px;position:absolute;right:0;text-decoration:none;top:0;width:55px;z-index:10;}
+.botm_tuan_photo{background:none repeat scroll 0 0 #D9D9D9;height:107px;margin:0;width:222px;}
+.botm_tuan_photo_buyon,.botm_tuan_photo_buyhover,.botm_tuan_photo_buyoff,.botm_tuan_photo_info{float:left;height:50px;margin-top:12px;}
+.botm_tuan_photo_buyon,.botm_tuan_photo_buynormal,.botm_tuan_photo_buyhover,.botm_tuan_photo_buyoff{cursor:pointer;height:49px;line-height:49px;width:141px;}
+.botm_tuan_photo_buyon{background:url("../images/tuanmain_btn_on.jpg") no-repeat scroll left top transparent;}
+.botm_tuan_photo_buyhover{background:url("../images/btn_list_hover.gif") no-repeat scroll -1px -52px transparent;}
+.botm_tuan_photo_buyoff{background:url("../images/tuan_all_bg.jpg") no-repeat scroll -143px -454px transparent;}
+.botm_tuan_photo_buyoff span,.botm_tuan_photo_buynormal span,.botm_tuan_photo_buyhover span,.botm_tuan_photo_buyon span{color:#FFFFFF;font-size:22px;padding-left:30px;padding-right:50px;}
+.spanbox{display:block;float:left;height:49px;margin-top:12px;overflow:hidden;width:141px;}
+.botm_tuan_photo_info{color:#676767;line-height:17px;margin-left:4px;width:77px;}
+.botm_tuan_btn_name{background:url("../images/tuan_all_bg.jpg") no-repeat scroll -1px -233px transparent;height:25px;margin:10px auto;overflow:hidden;text-align:center;width:202px;}
+.botm_tuan_btn_name{color:#323234 !important;}
+.botm_tuan_btn_name a:hover{color:#323234;}
+.botm_btn_name_normal,.botm_btn_name_hover{font-size:14px;font-weight:bold;line-height:25px;}
+.botm_btn_name_normal{color:#323234;}
+.botm_btn_name_hover{color:#9F1B1D;}
+.tuan3_box{background:url("../images/rush/bg_gray.jpg") repeat-y scroll 0 0 transparent;height:auto;margin:0 auto;overflow:hidden;padding-top:25px;width:1012px;}
+.tuan3_navbar{background:url("../images/rush/bgbar_sort.jpg") no-repeat scroll 0 0 transparent;height:38px;line-height:38px;margin-left:21px;overflow:hidden;width:968px;}
+.tuan3_navbar ul{height:36px;margin-left:103px;margin-top:1px;padding:0;width:auto;}
+.tuan3_navbar ul li{color:#FFFFFF;cursor:pointer;float:left;font-size:14px;margin-right:2px;text-align:center;width:88px;}
+.tuan3_w58{width:58px !important;}
+.tuan3_navli_on{background:url("../images/rush/bgbar_sort_on.jpg") repeat-x scroll 0 0 transparent;color:#000000 !important;font-weight:bold !important;}
+.tuan3_container{height:auto;overflow:hidden;width:1012px;}
+.tuan3_container ul{list-style:none outside none;margin-left:5px;_margin-left:2px;overflow:hidden;}
+.tuan3_container ul li{cursor:auto;float:left;height:487px;list-style:none outside none;margin-bottom:10px;margin-right:10px;position:relative;width:230px;border:1px solid #999;}
+.tuan3_container ul li:hover, .tuanlihover{ border:1px solid #f00!important;}
+.tuan3_container_lihover{border:1px solid #D5291C;height:487px;position:absolute;width:230px;z-index:200;}
+.tuan3_img_big{height:425px;overflow:hidden;position:relative;width:230px;}
+.tuan3_img_big s{background:url("../images/rush/sale_out_png.png") no-repeat scroll 0 0 transparent;bottom:4px;display:block;height:68px;position:absolute;right:4px;text-decoration:none;width:68px;}
+.tuan3_contop s{display:block;float:right;font-size:14px;font-weight:bold;line-height:54px;text-align:center;text-decoration:none;width:143px;}
+.tuan3_contop img{float:left;height:54px;max-width:88px;width:auto;}
+.tuan3_botm{height:58px;padding-top:4px;width:100%;}
+.tuan3_botm_red{background:url("../images/rush/bg_menu.jpg") no-repeat scroll 0 0 transparent;}
+.tuan3_botm_red h5{background:url("../images/rush/btn_giang_on.jpg") no-repeat scroll 0 0 transparent;cursor:pointer;display:block;float:left;height:55px;text-decoration:none;width:55px;}
+.tuan3_botm_gray{background:url("../images/rush/bg_menu_gray.jpg") no-repeat scroll 0 0 transparent;}
+.tuan3_botm_gray h5{background:url("../images/rush/btn_giang_gray.jpg") no-repeat scroll 0 0 transparent;display:block;float:left;height:55px;text-decoration:none;width:55px;}
+.tuan3_botm_left{color:#FFFFFF;float:left;height:auto;margin-left:9px;width:156px;_width:146px;}
+.tuan3_botm_left h4{color:#FFFFFF;float:left;font-size:28px;font-weight:normal !important;line-height:30px;margin:0 5px 0 0;padding:0 0 0 15px;}
+#end_time{color:#666666;font-size:12px;line-height:28px;}

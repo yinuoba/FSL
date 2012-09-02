@@ -1,0 +1,387 @@
+<!doctype html>
+<html>
+    <head><meta charset="utf-8">
+        <title>聚尚网-国际名品限时特卖购物网</title><meta name="keywords" content="聚尚网,品牌折扣,限时抢购 "><meta name="description" content="聚尚网fclub提供国际品牌正品的1折起限时抢购。提供货到付款，并由中华联合财产保险公司为每件商品提供正品保险，如工商部门鉴定为假货，即可向保险公司索取全额赔偿。">
+        <style>
+            .oBox {
+                float: left;
+                padding: 0 10px 0 5px;
+                position: relative;
+                z-index: 1;
+            }
+            .operateBar {
+                border-top: 1px solid #FFFFFF;
+                height: 25px;
+                padding: 10px 5px 0;
+            }
+            .operateBar a {
+                font-family: '宋体';
+                font-size: 12px;
+                font-style: normal;
+                text-decoration: none;
+            }
+            .operateBar ul {
+                margin: 0;
+                padding:0
+            }
+            .operateBar ul li {
+                list-style: none;
+                font-family: '宋体';
+                font-size: 12px;
+                font-style: normal
+            }
+            .operateBar ul li em {
+                font-style: normal;
+            }
+            .operateBar .oBox {
+                float: left;
+                padding: 0 10px 0 5px;
+                position: relative;
+                z-index: 1;
+            }
+            .operateBar .sTag {
+                background-position: -150px 0;
+                cursor: pointer;
+                display: block;
+                height: 22px;
+                line-height: 22px;
+                padding-left: 15px;
+                width: 86px;
+            }
+            .operateBar .hover .sTag {
+                background-position: -150px -50px;
+                height: 31px;
+                position: relative;
+                z-index: 2;
+            }
+            .operateBar .onsale a {
+                background-position: 0 -50px;
+                border: 1px solid #DBD7D9;
+                display: block;
+                height: 20px;
+                line-height: 20px;
+                padding: 0 5px;
+                text-align: center;
+                width: 100px;
+            }
+            .operateBar .order a {
+                float: left;
+                height: 22px;
+                line-height: 22px;
+                padding-left: 8px;
+                width: 44px;
+            }
+            .operateBar .order i {
+                float: left;
+                line-height: 22px;
+            }
+            .operateBar .aDiscount {
+                background-position: -300px 0;
+            }
+            .operateBar .aPrice {
+                background-position: -300px -50px;
+            }
+            .operateBar .aDiscount:hover, .operateBar .selected01 {
+                background-position: -300px -25px;
+                color: #DB2083;
+            }
+            .operateBar .aPrice:hover, .operateBar .selected02 {
+                background-position: -300px -75px;
+                color: #DB2083;
+            }
+            .hidDiv .showAll a:hover, .hidDiv p.selected a, #ulSize dd a.selected, #div_allSize dd a.selected, .operateBar .onsale a:hover, .operateBar .selected03 a {
+                border: 1px solid #DB2083;
+                color: #DB2083;
+            }
+            #ulSize dd a.selected, #div_allSize dd a.selected {
+                background-position: -353px -76px;
+            }
+            .hidDiv {
+                background: none repeat scroll 0 0 #F2EFF1;
+                border: 1px solid #E0D6E0;
+                left: 5px;
+                padding: 15px;
+                position: absolute;
+                top: 30px;
+                display:none;
+                width: auto;
+                z-index: 1;
+            }
+            .hidDiv .showAll {
+                height: 35px;
+            }
+            .hidDiv .showAll a {
+                background: none repeat scroll 0 0 #FBF9FC;
+                border: 1px solid #E0D6DF;
+                float: left;
+                padding: 3px 5px;
+                width: 80px;
+            }
+            .ulMenu {
+                background-position: 0 0;
+                padding-top: 2px;
+                width: 109px;
+            }
+            .ulMenu li {
+                position: relative;
+                width: 109px;
+            }
+            .ulMenu em {
+                background-color: #F1EFF2;
+                background-position: 0 28px;
+                display: block;
+                height: 30px;
+                line-height: 30px;
+                padding-left: 10px;
+            }
+            .ulMenu li.hover em {
+                background-position: 0 -50px;
+                color: #D31E7F;
+                height: 32px;
+                line-height: 32px;
+                margin-top: -2px;
+                position: relative;
+                width: 99px;
+                z-index: 4;
+            }
+            .subHidDiv {
+                background: none repeat scroll 0 0 #FBF9FC;
+                border: 1px solid #E0D6DF;
+                left: 108px;
+                min-height: 24px;
+                padding: 15px 20px;
+                position: absolute;
+                display:none;
+                width: 150px;
+                z-index: 3;
+            }
+            .subHidDiv span {
+                display: block;
+                height: 24px;
+                line-height: 24px;
+            }
+            .subHidDiv a{
+                color:#4B4344
+            }
+            .subHidDiv a:hover{
+                color:#D31E7F
+            }
+            #ulSize .subHidDiv {
+                width: auto;
+            }
+            #ulSize dl, #div_allSize dl {
+                overflow: hidden;
+                width: 272px;
+            }
+            #ulSize dt, #div_allSize dt {
+                border-bottom: 1px solid #DFDDDE;
+                font-weight: bold;
+                height: 24px;
+                line-height: 24px;
+                margin-bottom: 5px;
+                width: 262px;
+            }
+            #ulSize dd, #div_allSize dd {
+                width: 272px;
+            }
+            #ulSize dd a, #div_allSize dd a {
+                border: 1px solid #DFDDDE;
+                display: inline;
+                float: left;
+                height: 24px;
+                line-height: 24px;
+                margin: 5px 9px 5px 0;
+                text-align: center;
+                width: 56px;
+            }
+            #div_allSize {
+                background: none repeat scroll 0 0 #FBF9FC;
+                border: 1px solid #E0D6DF;
+                display: none;
+                padding: 15px 20px;
+                width: 282px;
+            }
+            .modList {
+                width: 1036px;
+            }
+            .modList dl {
+                border: 1px solid #EEE9EE;
+                display: inline;
+                float: left;
+                margin: 20px 37px 5px 0;
+                overflow: hidden;
+                width: 220px;
+            }
+            .modList .dtPic {
+                height: 278px;
+                overflow: hidden;
+                position: relative;
+                width: 220px;
+            }
+            .modList .soldOut {
+                background-position: -393px 0;
+                display: block;
+                height: 57px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 57px;
+            }
+            .modList .ddTit {
+                height: 24px;
+                line-height: 24px;
+                overflow: hidden;
+                padding: 5px 10px 0;
+                width: 200px;
+            }
+            .modList .ddData {
+                background-position: 0 0;
+                height: 40px;
+                line-height: 40px;
+            }
+            .modList .ddData em {
+                font: bold 14px/30px arial;
+            }
+            .modList dl:hover {
+                border: 1px solid #DA1E82;
+            }
+            .proList .page {
+                margin: 20px 0 0;
+                opacity: 1;
+                width: 977px;
+            }
+            .toTop {
+                padding: 20px 30px 0 0;
+                text-align: right;
+            }
+            .notice_none_goods {
+                height: 400px;
+            }
+            .modList .soldOut, .operateBar .sTag, .operateBar .order a, .ulMenu, .ulMenu em, #ulSize dd a.selected, #div_allSize dd a.selected {
+                background-image: url("images/new_index/list_img.png");
+                background-repeat: no-repeat;
+            }
+            .modSearch, .modList .ddData, .operateBar .onsale a {
+                background-image: url("images/new_index/list_rep.png");
+                background-repeat: repeat-x;
+            }
+            .sTag{ font-size:12px;}
+
+        </style>
+    </head>
+    <body>
+        <div class="operateBar">
+            <div id="sortBoxId" class="oBox">
+                <span class="sTag">商品分类</span>
+                <div class="hidDiv" id="hideDiv" style="width: 301px; height: 235px;">
+                    <p class="showAll selected" id="showAll">
+                        <a href="show-0-24336-0.html">显示所有商品</a>
+                    </p>
+                    <ul id="ulSort" class="ulMenu">
+                        <li>
+                            <em>男上衣</em>
+                            <div style="top: 0px;" class="subHidDiv">
+                                <span>
+                                    <a href="show-0-24336-10201.html">所有男上衣</a>
+                                </span>
+                                <span>
+                                    <a href="show-0-24336-10201002.html">男款T恤</a>
+                                </span>
+                                <span>
+                                    <a href="show-0-24336-10201003.html">男款衬衫</a>
+                                </span>
+                                <span>
+                                    <a href="show-0-24336-10201004.html">男款西装</a>
+                                </span>
+                                <span>
+                                    <a href="show-0-24336-10201008.html">男款外套</a>
+                                </span>
+                                <span>
+                                    <a href="show-0-24336-10201009.html">男款卫衣</a>
+                                </span>
+                                <span>
+                                    <a href="show-0-24336-10201010.html">男款Polo</a>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <em>男裤</em>
+                            <div class="subHidDiv" style="top: -9.6px;">
+                                <span>
+                                    <a href="show-0-24336-10202.html">所有男裤</a>
+                                </span>
+                                <span>
+                                    <a href="show-0-24336-10202002.html">男款休闲裤</a>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <em>男配件</em>
+                            <div class="subHidDiv" style="top: -28.8px;">
+                                <span>
+                                    <a href="show-0-24336-10204.html">所有男配件</a>
+                                </span>
+                                <span>
+                                    <a href="show-0-24336-10204001.html">男款领带</a>
+                                </span>
+                                <span>
+                                    <a href="show-0-24336-10204003.html">男款皮带</a>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <em>男童鞋</em>
+                            <div class="subHidDiv" style="top: -43.2px;">
+                                <span>
+                                    <a href="show-0-24336-10304.html">所有男童鞋</a>
+                                </span>
+                                <span>
+                                    <a href="show-0-24336-10304004.html">男童休闲鞋</a>
+                                </span>
+                                <span>
+                                    <a href="show-0-24336-10304005.html">男童皮鞋</a>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <em>男鞋</em>
+                            <div class="subHidDiv" style="top: -38.4px;">
+                                <span>
+                                    <a href="show-0-24336-10401.html">所有男鞋</a>
+                                </span>
+                                <span>
+                                    <a href="show-0-24336-10401001.html">男款拖鞋</a>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <em>男包</em>
+                            <div class="subHidDiv" style="top: -48px;">
+                                <span>
+                                    <a href="show-0-24336-10602.html">所有男包</a>
+                                </span>
+                                <span>
+                                    <a href="show-0-24336-10602002.html">男手提包/挎包</a>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="js/FSL.js">
+    </script>
+    <script src="js/FSL_Plug.js">
+    </script>
+    <script>
+        FS.sortBox({
+            sortBoxId :'#sortBoxId',
+            hideDiv : '#hideDiv',
+            showAll : '#showAll',
+            ulSort : '#ulSort',
+            boxHover : 'hover',
+            allSortHover : 'hover'
+        });
+    </script>
+</html>

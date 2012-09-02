@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>计算文本框中还可输入多少个字符</title>
+        <style type="text/css">
+        .qa_textarea {
+            border: 1px solid #999999;
+            height: 68px;
+            margin: 8px 0 0;
+            padding: 10px;
+            width: 646px;
+        }
+        .dp_text_area {
+            height: 58px;
+            width: 418px;
+        }
+        </style>
+    </head>
+    <body>
+        <textarea class="qa_textarea" rows="10" cols="30" id="qa_textarea" name="">请输入您要咨询的内容，可输入200个汉字！</textarea>
+        <span id="qa_num">200</span>
+    </body>
+    <script src="js/FSL.js"></script>
+    <script src="../components/freelength.js"></script>
+    <script src="../components/toogletext.js"></script>
+    <script>
+        FS.addEvent(FS.query('#qa_textarea'), 'focus', function(){
+            if(FS.html(this) == '请输入您要咨询的内容，可输入200个汉字！'){
+                FS.html(this, '')
+            }
+        });
+        FS.addEvent(FS.query('#qa_textarea'), 'blur', function(){
+            if(FS.html(this) == ''){
+                FS.html(this, '请输入您要咨询的内容，可输入200个汉字！')
+            }
+        });
+        FS.freeLength({
+            inputSelector: '#qa_textarea',
+            lengthSelector: '#qa_num',
+            maxLength: 200
+        });
+    </script>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head><meta charset="utf-8">
+        <title>聚尚网-国际名品限时特卖购物网</title><meta name="keywords" content="聚尚网,品牌折扣,限时抢购 "><meta name="description" content="聚尚网fclub提供国际品牌正品的1折起限时抢购。提供货到付款，并由中华联合财产保险公司为每件商品提供正品保险，如工商部门鉴定为假货，即可向保险公司索取全额赔偿。">
+        <style>
+            .goods_img {
+                cursor: pointer;
+                float: left;
+                padding: 0;
+                position: relative;
+                width: 342px;
+                height: 455px;
+                margin-left: 200px;
+            }
+            .bigImg{display: block;}
+            body{ margin: 10px auto;}
+        </style>
+    </head>
+    <body>
+        <div class="goods_img">
+            <img id="mediumImg" src="http://img2.fclubimg.com/data/goods_img/3767/342_455_img/188307_342_455_1320864423293.jpg" zoomSrc="http://img1.fclubimg.com/data/goods_img/3767/goods_img/188307_goods_1320864423911.jpg"/>
+        </div>
+        <select>
+            <option>南昌</option>
+            <option>嘉兴</option>
+            <option>上海</option>
+        </select>
+        <select>
+            <option>南昌</option>
+            <option>嘉兴</option>
+            <option>上海</option>
+        </select>
+        <select>
+            <option>南昌</option>
+            <option>嘉兴</option>
+            <option>上海</option>
+        </select>
+    </body>
+    <script src="js/FSL.js">
+    </script>
+    <script src="js/FSL_Plug.js">
+    </script>
+    <script>
+        FS.zoomImg({
+            mediumImg: FS.query('#mediumImg'),
+            bigImg: '#bigZoom',
+            mediumWidth: 342,
+            mediumHeight: 455,
+            bigWidth: 1800,
+            bigHeight: 2400,
+            bigClass: 'bigImg'
+        });
+    </script>
+</html>

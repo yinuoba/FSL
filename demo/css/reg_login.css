@@ -1,0 +1,115 @@
+.reg_content{ clear: both; margin:0 auto; margin-bottom:30px; background:url(../images/rush/rushbg.png) repeat-x #EEE; padding-top:15px;}
+.mb0{ margin-bottom:0px!important;}
+.mr0{ margin-right:0!important;}
+.width300{ width:300px;}
+.width400{ width:400px;}
+.width200{ width:200px!important;}
+a{ outline:none;}
+
+.reg_box,.success_box{ margin:0 auto; overflow: hidden; width:948px; padding:30px 25px 25px 25px; +padding-bottom:0; border:1px solid #ccc; background:#fff;}
+h1.reg_title{ clear: both; overflow: hidden; margin-bottom:30px; height:22px; line-height:22px; font-family:'微软雅黑'; font-size:22px; font-weight:normal;}
+.reg_left, .reg_right{ float: left; overflow: hidden;}
+.reg_left{ width:528px; border-right:1px solid #ccc; padding-right:30px;}
+.reg_right{ width:350px; padding-left:30px;}
+.reg_left dl dt,.reg_left dl dd{ float: left;}
+.reg_left dl dd{ position: relative;}
+.reg_left dl dt{ width:70px; height:28px; text-align:right; line-height:28px; font-size:14px;}
+.dt115{ width:115px!important;}
+.reg_left dl{ clear: both; overflow: hidden; zoom:1; margin-bottom:16px;}
+input.orderInput,input.username,input.user_pwd,input.confirm_pwd,input.yzma,input.forget_user{ width:213px; height:26px; padding-left:5px; margin-right:3px; line-height:26px; border:1px solid #989898; color:#989898;}
+.sub_form, a.login_now, a.fast_login{ clear:both; float: left; width:108px; height:43px; line-height:38px; margin-right:10px; padding:0 8px 9px 0; color:#fff; text-align:center; font-size:14px; font-weight:bold; border:none; background:url(../images/reg/reg_login_bg.png) no-repeat; display:block; cursor:pointer; text-decoration:none!important;}
+b.no_thanks{ cursor: pointer; font-weight:normal; display: block; float:left; padding-top:13px; color:#000!important; text-decoration:underline; font-size:12px;}
+b.no_thanks a{ color: #000!important;}
+dd.tips_correct{ display: none; width:18px; height:26px; margin-left:5px;  background:url(../images/reg/input_ok.png) center center no-repeat;}
+dd.tips_wrong{ display: none; float:left; zoom:1; padding:0 0 0 5px; margin:0 0 0 6px; height:28px; line-height:28px; color: #f00; font-size:12px; background:url(../images/reg/tips_left.png) left center no-repeat;}
+dd.tips_wrong b{ display: block; background:#FFEEEE; height:26px; line-height:26px; border:1px solid #f00; border-left:none; padding:0 7px; font-weight:normal;}
+input.yzma, img.yz_img, a.change_yz{ float:left;}
+input.yzma{ width:90px;}
+img.yz_img{ width:53px; height:26px; border:none; margin:1px 0 0 5px;}
+a.change_yz{ height:26px; line-height:38px; margin-left:10px; color:#f00!important; text-decoration:underline;}
+.width_yz{ width:163px;}
+a.see_xy{ color:#f00!important; text-decoration: underline!important;}
+h2.has_account{ font-family:"微软雅黑"; font-size:18px; color:#000; font-weight:normal; height:18px; line-height:18px; margin-bottom:15px;}
+a.login_now{ overflow: hidden; background:url(../images/reg/reg_black_bg.png) no-repeat; text-decoration:none;}
+h3.other_way{ clear: both; padding:10px 0 15px 0; margin-top:0; font-family:"微软雅黑"; font-size:14px; color:#000;}
+ul.union_login,ul.four_info{ clear: both; overflow: hidden;}
+ul.union_login li{ float: left; margin:0 8px 8px 0}
+ul.union_login li a{ display: block; width:90px; height:25px; text-indent:-8000px;}
+a.sina_login{ background:url(../images/reg/sina_bg.png) no-repeat;}
+a.login360{ background:url(../images/reg/360bg.png) no-repeat;}
+a.kaixin_login{ background:url(../images/reg/kaixin_bg.png) no-repeat;}
+a.alipay_login{ background:url(../images/reg/alipay_bg.png) no-repeat;}
+a.qq_login{ background:url(../images/reg/qqbg.png) no-repeat;}
+a.renren_login{ background:url(../images/reg/renren_bg.png) no-repeat;}
+.forget_pwd_m{ margin-left:60px; text-decoration: underline!important; color:#000!important;}
+a.fast_login{ background:url(../images/reg/fast_reg.png) no-repeat; width:139px;}
+ul.four_info{ zoom:1; padding-top:20px;}
+ul.four_info li{ float:left; margin:0 10px 10px 0; padding:0; overflow: hidden;}
+ul.four_info li a{ display: block; width:170px; height:35px;}
+a.zhengpin_login{ background:url(../images/reg/zhengpin_login.png) no-repeat;}
+a.mian_login{ background:url(../images/reg/mian_login.png) no-repeat;}
+a.seven_login{ background:url(../images/reg/seven_login.png) no-repeat;}
+a.huo_login{ background:url(../images/reg/huo_login.png) no-repeat;}
+
+/*注册成功*/
+.success_box{ clear: both; background:url(../images/reg/success_bg.png) 28px center no-repeat #fff;}
+.success_info{ float:right; width:502px; margin:20px 35px 0 0; _margin-right:18px;}
+h1.welcome_to,h2.gx_success{ font-family:"微软雅黑"; color:#000; font-weight:normal; text-align:center;}
+h1.welcome_to{ font-size:30px; height:30px; line-height:30px; padding-bottom:10px;}
+h2.gx_success{ font-size:22px; height:22px; line-height:22px; color:#f00; padding-bottom:30px;}
+ul.success_six{ zoom:1; border:1px solid #ccc; border-radius:6px; -webkit-box-shadow: #D3D3D3 1px 1px 3px; -moz-box-shadow: #D3D3D3 1px 1px 3px; box-shadow: #D3D3D3 1px 1px 3px; padding:20px 0 5px 18px; clear:both; overflow: hidden;}
+ul.success_six li{ float:left; background-position:left center; height:20px; line-height:20px; font-size:12px; padding-left:25px; margin-bottom:10px;}
+li.suc_home{ width:235px; background:url(../images/reg/suc_home.png) no-repeat;}
+li.suc_am{ background:url(../images/reg/suc_ten.png) no-repeat;}
+li.suc_work{ width:235px; background:url(../images/reg/suc_work.png) no-repeat;}
+li.suc_huo{ background:url(../images/reg/suc_huo.png) no-repeat;}
+li.suc_seven{ width:235px; background:url(../images/reg/suc_seven.png) no-repeat;}
+li.suc_china{ background:url(../images/reg/suc_china.png) no-repeat;}
+.success_bot{ margin-top:20px; padding:0 20px 0 5px; clear: both; overflow: hidden;}
+.suc_left{ float:left; width:260px; margin:0 auto;}
+.suc_right{ float:right;}
+.suc_left p,.suc_right p{ height:18px; line-height:18px; padding-bottom:10px; color:#666; font-size:14px;}
+.ml58{ margin-left:58px; _margin-left:29px;}
+.ml40{ margin-left:40px; _margin-left:20px;}
+
+/*支付宝合并*/
+.mainbox_goods{ overflow: hidden; clear: both;}
+.select_frame{ display:block;position:absolute;z-index:9997; filter:alpha(opacity=0); opacity: 0; width:100%; height:100%}
+h2.ali_title{ font-family:"微软雅黑"; font-weight:normal; line-height:18px;}
+.alipay_alert,.del_tip{ background:#000; border:1px solid #2D2D2D; width:475px; padding:6px; position:fixed; left:50%; top:50%;  _position:absolute; _top:expression(eval(document.documentElement.scrollTop+(window.screen.height-208)/2)); margin:-134px 0 0 -243px; z-index:9998}
+.del_tip{ width:406px; margin:-110px 0 0 -210px; display: none; border:1px solid #2D2D2D}
+.alert_top{ height:35px; background:url(../images/reg/alert_top.jpg) no-repeat;}
+.alert_body,.tip_body{ background:#EFEFEF; padding:25px 20px 18px 25px}
+.tip_body{ text-align:center; padding-bottom:32px; overflow: hidden;}
+.merge_body{ margin-left:0; padding:25px 0 0 0; width:524px;}
+.close_alert{ width:15px; height:14px; background-position:0px 0px; float:right; margin-right:8px; margin-top:10px; cursor:pointer}
+.alert_title,.tip_title{ width:429px; font-size:14px; font-weight:bold; color:#000; line-height:20px;}
+h1.tip_title{ padding-bottom:10px;}
+.a_zhanghu{ height:54px; border-bottom:1px solid #CCCCCC; margin-top:15px;}
+.merge_zhanghu{ height:60px;}
+.a_zhanghu_left{ margin-left:0; height:38px; overflow:hidden;}
+.a_zhanghu_left a{ text-decoration:underline; color:#333!important;}
+.a_zhanghu_left a:hover{ color:#f00!important; cursor:pointer;}
+.a_zhanghu b{ font-family:Arial; font-size:14px; color:#000; font-weight:bold; height:22px; line-height:18px; display:block;}
+.a_zhanghu span{ color:#666;}
+a.zhanghu_btn,a.zhanghu_del{ width:146px; height:33px; margin-top:9px; display:block; float:right; cursor:pointer}
+a.zhanghu_btn{ background-position: 0px -14px }
+a.zhanghu_del{ width:94px; height:33px; background-position: 0px -47px; margin-right:5px}
+.bordernone{ border:none}
+h1.title_top{ height:35px; line-height:35px; font-size:12px; color:#CCC; padding-left:15px;}
+/*支付宝合并页面弹窗 结束*/
+
+/*支付宝合并页面*/
+.mergediv{ background:#F3F3F3; padding:36px}
+.mergediv h2{ font-size:20px; font-weight:bold; font-family:"微软雅黑"; padding-top:12px; color:#000;}
+.anytips{ padding-top:48px; _margin-bottom:25px;}
+.anytips p{ color:#666; font-size:12px; line-height:20px}
+.tip_con{ font-size:14px; text-align:center; padding:35px 0 18px 0;}
+.confirm_btn{ clear:both; overflow: hidden; height:45px;}
+input.confirms,input.confirm_del,input.later_del,.close_alert,a.zhanghu_del,a.zhanghu_btn{ border:none; cursor:pointer; background-image:url(../images/reg/aliapybgs.png);}
+input.confirms,input.confirm_del,input.later_del{ width:108px; height:43px; display:block;}
+input.confirms{ background-position:0px -166px; margin-left:120px; +margin-left:0px;}
+input.confirm_del{ background-position:0px -80px; float:left; margin:0 5px 0 66px; _margin:0 5px 0 33px;}
+input.later_del{ background-position:0px -123px; float:left;}
+
+.recive_tip{ color:#f00; margin-left:10px; display: inline;}
