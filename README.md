@@ -1,6 +1,7 @@
-1、FSL简介
+﻿1、FSL简介
 
-    FSL(Fei Shang Library),FSL javascript类库。 
+    FSL(Fei Shang Library),FSL javascript类库。
+    原分支地址：https://fclub-fsl.googlecode.com/svn/branches 
 
 2、文件结构
 
