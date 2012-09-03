@@ -1,19 +1,19 @@
 ﻿1、FSL简介
 
     FSL(Fei Shang Library),FSL javascript类库。
-    原分支地址：https://fclub-fsl.googlecode.com/svn/branches 
+    原分支地址： http://fclub-fsl.googlecode.com/svn/branches (可查看开发过程中的详细log)
 
 2、文件结构
 
-    core—FSL core库; 
+    core: FSL core库; 
 
-    components—FSL UI组建库; 
+    components: FSL UI组建库; 
 
-    docs—FSL core库及FSL UI库文档); 
+    docs: FSL core库及FSL UI库文档); 
 
-    tool—jsDoc(文档生成工具、需java环境)、minify(压缩、混淆、打包工具)、yuicompressor(YUI压缩、混淆工具)、Js.Compressor(js压缩、混淆工具、需.net 3.5环境); 
+    tools:jsDoc(文档生成工具、需java环境)、minify(压缩、混淆、打包工具)、yuicompressor(YUI压缩、混淆工具)、Js.Compressor(js压缩、混淆工具、需.net 3.5环境); 
 
-    demo—一些例子(有些例子还没理完整，可进 http://www.fclub.cn 查看); 
+    demo: 一些例子(有些例子还没理完整，可进 http://www.fclub.cn 查看); 
 
 3、FSL宗旨
 
