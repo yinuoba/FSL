@@ -1,6 +1,6 @@
 ﻿1、FSL简介
 
-    FSL(Fei Shang Library),FSL javascript类库。
+    聚尚网javascript类库（FSL）。
     原分支地址： http://fclub-fsl.googlecode.com/svn/branches (可查看开发过程中的详细log)
 
 2、文件结构
