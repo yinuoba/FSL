@@ -121,7 +121,9 @@ FS.extend(FS, function () {
             var zoomImageDiv = FS('#' + bigImgId + 'Div')[0],
                 bigSrc = mediumImg.getAttribute(attr);
             zoomImageDiv.innerHTML = "<img class='"+bigClass+"' id="+bigImgId+" src='"+bigSrc+"'/>";
-            FS.query('#' + bigImgId).setAttribute('src', bigSrc);
+
+            // 注释这一段，防止大图被请求两遍
+            // FS.query('#' + bigImgId).setAttribute('src', bigSrc);
 
             // zoomimg 大图
             // bigWidth 大图的宽度
