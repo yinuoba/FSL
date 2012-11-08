@@ -130,56 +130,61 @@ FS.extend(FS, function () {
             // scaleY 大图跟中等图的高度比
             var zoomimg = FS.query('#' + bigImgId);
             zoomimg.display = 'block';
+            
             var bigWidth = options.bigWidth || zoomimg.offsetWidth,
-                bigHeight = options.bigHeight || zoomimg.offsetHeight,
-                scaleX = bigWidth / mediumWidth,
+                bigHeight = options.bigHeight || zoomimg.offsetHeight;
+            // 防止大图没有加载完
+            if(!bigWidth || !bigHeight){
+                setTimeout(arguments.callee,50);
+            }else{
+                var scaleX = bigWidth / mediumWidth,
                 scaleY = bigHeight / mediumHeight;
 
-            // 如果鼠标周围的透明层还未创建
-            if (FS('#' + bigImgId + 'Pup')[0] == null) {
-                var zoomPup = document.createElement('div');
-                zoomPup.id = bigImgId + 'Pup';
-                mediumDiv.appendChild(zoomPup);
-                //如果没有设置pupWidth和pupHeight，则将大图div容器与scaleX之比设为包围鼠标透明层的宽高。
-                if (pupWidth == null) {
-                    pupWidth = Math.floor(bigDivWidth / scaleX);
+                // 如果鼠标周围的透明层还未创建
+                if (FS('#' + bigImgId + 'Pup')[0] == null) {
+                    var zoomPup = document.createElement('div');
+                    zoomPup.id = bigImgId + 'Pup';
+                    mediumDiv.appendChild(zoomPup);
+                    //如果没有设置pupWidth和pupHeight，则将大图div容器与scaleX之比设为包围鼠标透明层的宽高。
+                    if (pupWidth == null) {
+                        pupWidth = Math.floor(bigDivWidth / scaleX);
+                    }
+                    if (pupHeight == null) {
+                        pupHeight = Math.floor(bigDivHeight / scaleY);
+                    }
+                    // 定义包围鼠标透明层的style
+                    var pupStyle = {
+                        width: pupWidth + 'px',
+                        height: pupHeight + 'px',
+                        background: '#fff',
+                        border: '1px solid #AAA',
+                        position: 'absolute',
+                        top: 0,
+                        visibility: 'hidden',
+                        cursor: 'move'
+                    }
+                    FS.setCss(zoomPup, pupStyle);
+                    FS.opacity(zoomPup, 0.5);
                 }
-                if (pupHeight == null) {
-                    pupHeight = Math.floor(bigDivHeight / scaleY);
-                }
-                // 定义包围鼠标透明层的style
-                var pupStyle = {
-                    width: pupWidth + 'px',
-                    height: pupHeight + 'px',
-                    background: '#fff',
-                    border: '1px solid #AAA',
-                    position: 'absolute',
-                    top: 0,
-                    visibility: 'hidden',
-                    cursor: 'move'
-                }
-                FS.setCss(zoomPup, pupStyle);
-                FS.opacity(zoomPup, 0.5);
-            }
 
-            // 如果包围鼠标那一层已经存在了，则直接获取该节点
-            var zoomPup = FS('#' + bigImgId + 'Pup')[0];
+                // 如果包围鼠标那一层已经存在了，则直接获取该节点
+                var zoomPup = FS('#' + bigImgId + 'Pup')[0];
 
-            // mouseenter 右侧大图显示
-            FS.setCss([zoomImageDiv, zoomPup], {
-                visibility: 'visible'
-            });
+                // mouseenter 右侧大图显示
+                FS.setCss([zoomImageDiv, zoomPup], {
+                    visibility: 'visible'
+                });
 
-            // 显示大图
-            showBig(e);
+                // 显示大图
+                showBig(e);
 
-            FS.addEvent(document.body, 'mousemove', showBig);
+                FS.addEvent(document.body, 'mousemove', showBig);
 
-            // 如果是IE6并且页面中存在select下拉框，隐藏页面中所有的select
-            FS.hideSelect();
+                // 如果是IE6并且页面中存在select下拉框，隐藏页面中所有的select
+                FS.hideSelect();
+            }            
 
             // 设置包围鼠标透明层的位置，并设置图片所在div的scrollTop、scrollLeft，让图片显示
-
             function showBig(e) {
                 // 鼠标相对页面的位置，校正，让其兼容各个浏览器
                 var e = FS.fixMousePos(e),
