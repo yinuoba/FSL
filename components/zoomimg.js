@@ -136,8 +136,8 @@ FS.extend(FS, function () {
             var bigWidth = options.bigWidth || zoomimg.offsetWidth,
                 bigHeight = options.bigHeight || zoomimg.offsetHeight;
             // 防止大图没有加载完
-            if(!bigWidth || !bigHeight){
-                setTimeout(arguments.callee,50);
+            if(bigWidth < mediumWidth || bigHeight < mediumHeight){
+                setTimeout(arguments.callee,100);
             }else{
                 var scaleX = bigWidth / mediumWidth,
                 scaleY = bigHeight / mediumHeight;
@@ -178,7 +178,7 @@ FS.extend(FS, function () {
                 });
 
                 // 显示大图
-                showBig(e);
+                // showBig(e);
 
                 FS.addEvent(document.body, 'mousemove', showBig);
 
