@@ -13,7 +13,7 @@
  */
 var FS = (function(window, document, undefined) {
     // 创建FS对象
-    if (!window.FS || typeof(FS) === 'undefined') {
+    if (!window.FS || typeof FS === 'undefined') {
         FS = {};
     }
 
@@ -87,7 +87,7 @@ var FS = (function(window, document, undefined) {
 
     FS.$$ = function(selector, limitNode) {
         // 如果传入的参数为null、undefined或nodeType, 则返回它本身
-        if (selector === null || typeof(selector) === 'undefined') {
+        if (selector === null || typeof selector === 'undefined') {
             return selector;
         }
 

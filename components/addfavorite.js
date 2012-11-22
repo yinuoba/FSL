@@ -6,7 +6,7 @@
  * @version 1.0
  * @author <a href="mailto:zeng.xianghu@hotmail.com">Hoogle</a>、<a href="http://weibo.com/yinuoba">新浪微博(一诺吧)</a>)
  * 
- * @description 网站添加收藏，兼容各个浏览器
+ * @description 网站添加收藏，兼容各个浏览器 
  */
 
 FS.extend(FS, function () {
