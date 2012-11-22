@@ -12,7 +12,7 @@
 FS.extend(FS, function () {
     /**
      * @description 搜索提示。当用户在文本框中输入字符，当键盘释放时，如果数据源中的某个字段中包含输入的字符，则将弹出下拉搜索提示，此时可选择通过向上、向左、向下、向右键或鼠标对下拉项进行选择，按enter或tab键选好并收缩下拉区域，也可选择将搜索项手动输入完成。
-     * @param  {Object} options 参数对象
+     * @param {Object} options 参数对象
      * @param {String} options.hiddenId 页面中input文本框的ID
      * @param {String} options.method 获取数据源的方式，默认是'local'
      * @param {String} options.dataSource 本地提供的数据源

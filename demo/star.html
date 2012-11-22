@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>星级评分插件</title>
+	<script src="../core/FSL.js" type="text/javascript" ></script>
+	<style type="text/css">
+		.goods_rate i{ display: inline-block; width: 19px; height:19px; background: url(images/test/star.png)}
+		i.smile{ background: url(images/test/smile.png) no-repeat!important;}
+		i.cry{ background: url(images/test/cry.png) no-repeat!important;}
+	</style>
+</head>
+<body>
+	<span class="goods_rate" id="goods_rate">
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+	</span>
+	<br/>
+	<span class="goods_rate" id="kefu_rate">
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+	</span>
+	<br/>
+	<span class="goods_rate" id="kuaidi_rate">
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+		<i></i>
+	</span>
+	<script type="text/javascript" src="../components/star.js"></script>
+	<script type="text/javascript">
+		var goods_rate = FS.star({
+			parentObj: FS.query('#goods_rate')
+		});
+
+		var kefu_rate = FS.star({
+			parentObj: FS.query('#kefu_rate')
+		});
+	</script>
+</body>
+</html>

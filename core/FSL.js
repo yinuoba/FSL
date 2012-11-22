@@ -20,7 +20,7 @@ var FS = (function(window, document, undefined) {
     var slice = Array.prototype.slice;
 
     // 标识当前的发布模式，如果为发布模式，则为true
-    var developVersion = true;
+    var developVersion = false;
 
     /**
      * @description 选择器。根据css选择器（可以是id选择器、class选择器、node、tagname、不带尖括号的tagname和*）选择出元素数组
@@ -561,16 +561,18 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.makeArray = function(arr) {
-        if (arr != null) {
-            var len = arr.length,
-                array = [];
-
-            while (len--) {
-                array[len] = arr[len];
+        var array = [];
+        if(arr != null) {
+            var len = arr.length;
+            if(len == null || typeof arr === "string" || FS.isFunction(arr) || arr.setInterval) {
+                array[0] = arr;
+            } else {
+                while(len) {
+                    array[--len] = arr[len];
+                }
             }
-            return array;
         }
-        return slice.call(arr);
+        return array;
     }
 
     /**
