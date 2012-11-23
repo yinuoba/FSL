@@ -11,38 +11,75 @@
 	</style>
 </head>
 <body>
-	<span class="goods_rate" id="goods_rate">
-		<i></i>
-		<i></i>
-		<i></i>
-		<i></i>
-		<i></i>
-	</span>
-	<br/>
-	<span class="goods_rate" id="kefu_rate">
-		<i></i>
-		<i></i>
-		<i></i>
-		<i></i>
-		<i></i>
-	</span>
-	<br/>
-	<span class="goods_rate" id="kuaidi_rate">
-		<i></i>
-		<i></i>
-		<i></i>
-		<i></i>
-		<i></i>
-	</span>
+	<div>
+		<span class="goods_rate" id="kuaidi_rate">
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+		</span><em id="kuaidi_score"/></em>
+		<br/>
+		<span class="goods_rate" id="goods_rate">
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+		</span><em id="goods_score"></em>
+		<br/>
+		<span class="goods_rate" id="kefu_rate">
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+			<i></i>
+		</span>		
+	</div>
+
 	<script type="text/javascript" src="../components/star.js"></script>
 	<script type="text/javascript">
-		var goods_rate = FS.star({
-			parentObj: FS.query('#goods_rate')
-		});
+		;(function(){
+			var goods_rate = FS.star({
+				parentObj: FS.query('#goods_rate'),
+				nowScore:5,
+				setScoreFun: function(nowScore){
+					var state = {
+						"1": "很不满意",
+						"2": "不满意",
+						"3": "一般",
+						"4": "满意",
+						"5": "很满意"
+					}
+					var pjObj = FS.query('#goods_score');
+					FS.html(pjObj, state[nowScore])
+				}
+			});
 
-		var kefu_rate = FS.star({
-			parentObj: FS.query('#kefu_rate')
-		});
+			var kefu_rate = FS.star({
+				parentObj: FS.query('#kefu_rate'),
+				setScoreFun: function(nowScore){
+					FS.consoleInfo(nowScore);
+				}
+			});
+
+			var kuaidi = FS.star({
+				parentObj: FS.query('#kuaidi_rate'),
+				nowScore: 4,
+				mouseAble: false,
+				setScoreFun: function(nowScore){
+					var state = {
+						"1": "很不满意",
+						"2": "不满意",
+						"3": "一般",
+						"4": "满意",
+						"5": "很满意"
+					}
+					var pjObj = FS.query('#kuaidi_score');
+					FS.html(pjObj, state[nowScore])
+				}
+			});
+		}());
 	</script>
 </body>
 </html>
