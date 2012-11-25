@@ -53,11 +53,11 @@ FS.extend(FS, function() {
 			}
 		});
 	 */
-	var star = function(options) {
+	var Star = function(options) {
 			// 直接返回一个对应的实例
-			return new star.main(options)
+			return new Star.main(options)
 		}
-	star.main = function(options) {
+	Star.main = function(options) {
 		// 将this赋给self，方便混淆
 		var self = this;
 		// 取出参数列表
@@ -78,8 +78,8 @@ FS.extend(FS, function() {
 		// 实例创建即执行
 		self.init()
 	}
-	star.main.prototype = {
-		constructor: star.main,
+	Star.prototype = {
+		constructor: Star.main,
 		init: function() {
 			var mine = this;
 			var allStar = mine.allStar,
@@ -170,7 +170,10 @@ FS.extend(FS, function() {
 		}
 	}
 
+	// 共享原型链
+	Star.main.prototype = Star.prototype;
+
 	return {
-		star: star
+		star: Star
 	}
 }());
