@@ -119,7 +119,7 @@ FS.extend(FS, function() {
 						}
 
 						// 鼠标一开后的回调函数
-						mine.leaveFun(i + 1)
+						mine.leaveFun(mine.nowScore)
 					})
 
 					// 鼠标点击星，改变this.nowScore,并改变状态
