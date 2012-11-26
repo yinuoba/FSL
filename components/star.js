@@ -79,7 +79,7 @@ FS.extend(FS, function() {
 		self.init()
 	}
 	Star.prototype = {
-		constructor: Star.main,
+		constructor: Star,
 		init: function() {
 			var mine = this;
 			var allStar = mine.allStar,
