@@ -65,7 +65,7 @@ FS.extend(FS, function() {
 		self.cryNum = options.cryNum || 2;
 		self.smile = options.smile || 'smile';
 		self.cry = options.cry || 'cry';
-		self.nowScore = options.nowScore ? options.nowScore : 1;
+		self.nowScore = options.nowScore ? options.nowScore : 5;
 		self.mouseAble = options.mouseAble === false ? false : true;
 		// 如果允许鼠标交互，则定义如下参数
 		if(self.mouseAble) {
