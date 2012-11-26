@@ -65,7 +65,7 @@ FS.extend(FS, function() {
 		self.cryNum = options.cryNum || 2;
 		self.smile = options.smile || 'smile';
 		self.cry = options.cry || 'cry';
-		self.nowScore = options.nowScore ? options.nowScore : 0;
+		self.nowScore = options.nowScore ? options.nowScore : 1;
 		self.mouseAble = options.mouseAble === false ? false : true;
 		// 如果允许鼠标交互，则定义如下参数
 		if(self.mouseAble) {
@@ -79,7 +79,7 @@ FS.extend(FS, function() {
 		self.init()
 	}
 	Star.prototype = {
-		constructor: Star,
+		constructor: Star.main,
 		init: function() {
 			var mine = this;
 			var allStar = mine.allStar,
