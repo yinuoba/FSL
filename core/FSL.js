@@ -14,12 +14,15 @@
 var FS = (function(window, document, undefined) {
     // 创建FS对象
     if (!window.FS || typeof FS === 'undefined') {
-        FS = {};
+        FS = {}
     }
 
-    var slice = Array.prototype.slice;
+    // 定义成局部变量
+    var core_slice = Array.prototype.slice,
+        core_toString = Object.prototype.toString,
+        userAgent = window.navigator.userAgent;
 
-    // 标识当前的发布模式，如果为发布模式，则为true
+    // 标识当前的发布模式，如果为发布模式，则为true,调试模式，则为false
     var developVersion = false;
 
     /**
@@ -39,7 +42,7 @@ var FS = (function(window, document, undefined) {
      * FS(".mainnews_close",FS(".mainnews_contbg")[0])
      */
     var FS = function(selector, limitNode) {
-            return new FS.$$(selector, limitNode);
+            return new FS.$$(selector, limitNode)
         };
 
     /**
@@ -62,7 +65,7 @@ var FS = (function(window, document, undefined) {
     FS.query = function(selector, limitNode) {
         // 如果传入的参数为null、undefined或nodeType, 则返回它本身
         if (selector === null || typeof selector === 'undefined') {
-            return selector;
+            return selector
         }
         return FS.$$(selector, limitNode)[0];
     }
@@ -351,24 +354,20 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.getChildNodes = function(node) {
-        try {
-            if (!node.nodeType) {
-                return false;
-            }
-            // 将所有的childNodes全存放在temp中
-            var temp = node.childNodes,
-                length = temp.length,
-                elements = [];
-            // 遍历所有childNodes，将符合条件的node全放入elements数组中
-            for (var i = 0; i < length; i++) {
-                if (temp[i].nodeType === 1) {
-                    elements.push(temp[i]);
-                }
-            }
-            return elements;
-        } catch (msg) {
-            FS.error('调用getChildNodes方法出现异常,可能是node为null,' + msg);
+        if (!node.nodeType) {
+            return false;
         }
+        // 将所有的childNodes全存放在temp中
+        var temp = node.childNodes,
+            length = temp.length,
+            elements = [];
+        // 遍历所有childNodes，将符合条件的node全放入elements数组中
+        for (var i = 0; i < length; i++) {
+            if (temp[i].nodeType === 1) {
+                elements.push(temp[i]);
+            }
+        }
+        return elements;
     }
 
     /**
@@ -378,21 +377,19 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.getPrevElement = function(node) {
-        try {
-            if (!node.nodeType) {
-                return false;
-            }
-            // 取得元素的下一个节点
-            var node = node.previousSibling;
-            // 帅选元素的下一个元素节点
-            for (; node; node = node.previousSibling) {
-                if (node.nodeType === 1) {
-                    return node;
-                }
-            }
-        } catch (msg) {
-            FS.error('调用getPrevElement方法出现异常：' + msg);
+        if (!node.nodeType) {
+            return false;
         }
+        var prevNode = null;
+        // 取得下一个元素
+        for(node = node.previousSibling; node; node = node.previousSibling){
+            if(node.nodeType === 1) {
+                // 找到了上一个元素节点，则退出当前循环
+                prevNode = node;
+                break
+            }
+        }
+        return prevNode
     }
 
     /**
@@ -402,21 +399,18 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.getNextElement = function(node) {
-        try {
-            if (!node.nodeType) {
-                return false;
-            }
-            // 取得元素的下一个节点
-            var node = node.nextSibling;
-            // 帅选元素的下一个元素节点
-            for (; node; node = node.nextSibling) {
-                if (node.nodeType === 1) {
-                    return node;
-                }
-            }
-        } catch (msg) {
-            FS.error('调用getNextElement方法出现异常：' + msg);
+        if (!node.nodeType) {
+            return false;
         }
+        var nextNode = null;
+        for(node = node.nextSibling; node; node = node.nextSibling) {
+            if(node.nodeType === 1) {
+                // 找到下一个节点元素，则退出循环
+                nextNode = node;
+                break
+            }
+        }
+        return nextNode
     }
 
     /**
@@ -446,17 +440,17 @@ var FS = (function(window, document, undefined) {
      * @param  {Element} node 老节点
      */
     FS.insertAfter = function(node, newNode) {
-        try {
-            var parent = node.parentNode;
-            if (FS.getLastChild(parent) == node) {
-                // 如果最后的节点是目标元素，则直接添加。因为默认是最后
-                parent.appendChild(newNode);
-            } else {
-                //如果不是，则插入在目标元素的下一个兄弟节点 的前面。也就是目标元素的后面
-                parent.insertBefore(newNode, FS.getNextElement(node))
-            }
-        } catch (msg) {
-            FS.error('insertAfter方法出现异常：' + msg);
+        // 如果node或newNode中有的不是节点，则返回false
+        if(!node.nodeType || !newNode.nodeType) {
+            return false
+        }
+        var parent = node.parentNode;
+        if (FS.getLastChild(parent) == node) {
+            // 如果最后的节点是目标元素，则直接添加。因为默认是最后
+            parent.appendChild(newNode)
+        } else {
+            //如果不是，则插入在目标元素的下一个兄弟节点 的前面。也就是目标元素的后面
+            parent.insertBefore(newNode, FS.getNextElement(node))
         }
     }
 
@@ -466,18 +460,18 @@ var FS = (function(window, document, undefined) {
      * @param {Element|String} child 需要添加的子节点,该参数可以是Element类型，也可以是html节点字符串
      */
     FS.append = function(node, child) {
-        try {
-            // 第二个参数是Elemet节点
-            if (child.nodeType === 1) {
-                node.appendChild(child);
-            } else if (FS.isString(child)) {
-                // 将节点字符串添加为其子节点
-                var oldHtml = FS.html(node);
-                oldHtml += child;
-                FS.html(node, oldHtml);
-            }
-        } catch (msg) {
-            FS.error('FS.append方法出现异常，可能是' + node + '或' + 'child' + '类型不对：' + msg);
+        // 去除node不是节点的情况
+        if(!node.nodeType) {
+            return false
+        }
+        // 第二个参数是Elemet节点
+        if (child.nodeType === 1) {
+            node.appendChild(child)
+        } else if (FS.isString(child)) {
+            // 将节点字符串添加为其子节点
+            var oldHtml = FS.html(node);
+            oldHtml += child;
+            FS.html(node, oldHtml)
         }
     }
 
@@ -523,20 +517,38 @@ var FS = (function(window, document, undefined) {
 
     /**
      * @description 对象继承，destination继承source。
-     * @param {object} destination 原始对象
-     * @param {object} source 新对象
-     * @return {object} 继承新特性后的对象
+     * @param {object|Array} destination 原始对象
+     * @param {object|Array} source 新对象
+     * @return {object|Array} 继承新特性后的对象
      * @example
      * var obj1 = {a:"1", b:'2'},
      * var obj2 = {c:3""};
      * FS.extend(obj1, obj2);
      */
+    
+    FS.extend = function(child, parent) {
+        // toStr，isArray 用来判断属性类型
+        var prop,
+            isArray = '[object Array]';
+        
+        // 设置child的默认值为一空对象
+        child = child || {};
 
-    FS.extend = function(destination, source) {
-        // 遍历新对象的每一个属性
-        for (var property in source)
-        destination[property] = source[property];
-        return destination;
+        // 遍历扩展对象
+        for(prop in parent) {
+            // 只针对自身属性，过滤prototype属性
+            if(parent.hasOwnProperty(prop)){
+                // 当某一属性类型是数组
+                if(typeof parent[prop] === 'object') {
+                    child[prop] = core_toString.call(parent[prop]) === isArray ? [] : {},
+                    arguments.callee(child[prop], parent[prop]);
+                } else {
+                    child[prop] = parent[prop]
+                }
+            }
+        }
+        // 返回扩展后的child对象
+        return child;
     }
 
     /**
@@ -549,7 +561,7 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.isArray = function(obj) {
-        return Object.prototype.toString.call(obj) == "[object Array]"
+        return core_toString.call(obj) === "[object Array]"
     }
 
     /**
@@ -565,14 +577,14 @@ var FS = (function(window, document, undefined) {
         if(arr != null) {
             var len = arr.length;
             if(len == null || typeof arr === "string" || FS.isFunction(arr) || arr.setInterval) {
-                array[0] = arr;
+                array[0] = arr
             } else {
                 while(len) {
-                    array[--len] = arr[len];
+                    array[--len] = arr[len]
                 }
             }
         }
-        return array;
+        return array
     }
 
     /**
@@ -585,7 +597,7 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.isObject = function(obj) {
-        return Object.prototype.toString.call(obj) == "[object Object]"
+        return core_toString.call(obj) === "[object Object]"
     }
 
     /**
@@ -598,7 +610,7 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.isFunction = function(obj) {
-        return typeof obj == "function"
+        return typeof obj === "function"
     }
 
     /**
@@ -611,7 +623,7 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.isString = function(obj) {
-        return typeof obj == "string"
+        return typeof obj === "string"
     }
 
     /**
@@ -624,21 +636,7 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.isNumber = function(obj) {
-        return typeof obj == "number"
-    }
-
-    /**
-     * @ignore
-     * @description 检测一个对象是否是数字或字符串
-     * @param {object} obj 待检测的对象
-     * @return {Boolean}
-     * @example
-     * var obj = '45';
-     * FS.isValue(obj);
-     */
-
-    FS.isValue = function(obj) {
-        return typeof obj == "number" || typeof obj == "string"
+        return typeof obj === "number"
     }
 
     /**
@@ -651,7 +649,7 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.isBoolean = function(obj) {
-        return typeof obj == "boolean"
+        return typeof obj === "boolean"
     }
 
     /**
@@ -688,7 +686,7 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.isIE = function() {
-        return !!(!window.addEventListener && window.ActiveXObject)
+        return !!(window.attachEvent && userAgent.indexOf('Opera') === -1)
     }
 
     /**
@@ -725,6 +723,16 @@ var FS = (function(window, document, undefined) {
     }
 
     /**
+     * @description 检测当前浏览器为IE9及以上浏览器
+     * @return {Boolean}
+     * @example
+     * FS.isIE9()
+     */
+    FS.isIE9 = function() {
+        return !!(window.addEventListener && window.attachEvent)
+    }
+
+    /**
      * @description 检测浏览器是否是Opera浏览器
      * @return {Boolean}
      * @example
@@ -743,7 +751,7 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.isFirefox = function() {
-        return navigator.userAgent.indexOf('Firefox') > 0 ? true : false;
+        return userAgent.indexOf('Firefox') > 0 ? true : false;
     }
 
     /**
@@ -754,7 +762,7 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.isChrome = function() {
-        return navigator.userAgent.indexOf('Chrome') > 0 ? true : false;
+        return userAgent.indexOf('Chrome') > 0 ? true : false;
     }
 
     /**
@@ -792,7 +800,7 @@ var FS = (function(window, document, undefined) {
     }
 
     /**
-     * @description 取得m到n之间的一个随机整数
+     * @description 取得m到n之间的一个随机整数，注意m小于n
      * @param  {Number} m 应返回的最小值
      * @param  {Number} n 应返回的最大值
      * @return {Number} m到n之间的一个随机整数
@@ -804,7 +812,7 @@ var FS = (function(window, document, undefined) {
         // 可能值的总数量
         var all = n - m + 1;
         // 值 = Math.floor(Math.random()*可能值的总数量 + 可能的最小值)
-        return Math.floor(Math.random() * all + m);
+        return Math.floor(Math.random() * all + m)
     }
 
     /**
@@ -823,10 +831,10 @@ var FS = (function(window, document, undefined) {
                 if (this[i] == obj) {
                     result = i;
                     // 如果已找到，则跳出循环
-                    break;
+                    break
                 }
             }
-            return result;
+            return result
         }
 
         /**
@@ -834,7 +842,7 @@ var FS = (function(window, document, undefined) {
          */
 
         function contains(obj) {
-            return (this.indexOf(obj) >= 0);
+            return this.indexOf(obj) >= 0
         }
 
         /**
@@ -842,8 +850,8 @@ var FS = (function(window, document, undefined) {
          */
 
         function append(obj) {
-            if (!(this.contains(obj))) {
-                this[this.length] = obj;
+            if (!this.contains(obj)) {
+                this[this.length] = obj
             }
         }
 
@@ -1025,93 +1033,25 @@ var FS = (function(window, document, undefined) {
      * @description 扩展Function对象
      */
     FS.extend(Function.prototype, (function() {
-        function update(array, args) {
-            var arrayLength = array.length,
-                length = args.length;
-            while (length--)
-            array[arrayLength + length] = args[length];
-            return array;
-        }
-
-        function merge(array, args) {
-            array = slice.call(array, 0);
-            return update(array, args);
-        }
-
-        function argumentNames() {
-            var names = this.toString().match(/^[\s\(]*function[^(]*\(([^)]*)\)/)[1].replace(/\/\/.*?[\r\n]|\/\*(?:.|[\r\n])*?\*\//g, '').replace(/\s+/g, '').split(',');
-            return names.length == 1 && !names[0] ? [] : names;
-        }
-
-        function bind(context) {
-            if (arguments.length < 2 && FS.isUndefined(arguments[0])) return this;
-            var __method = this,
-                args = slice.call(arguments, 1);
-            return function() {
-                var a = merge(args, arguments);
-                return __method.apply(context, a);
+        /**
+         * @description 通过bind方法，给函数绑定参数，并返回一个函数
+         * @param  {Object} obj 用来替换的this对象
+         * @return {[type]}     [description]
+         */
+        function bind(obj) {
+            var fn = this;
+            // 如果没有传入参数，则返回该函数本身
+            if (arguments.length < 2 && FS.isUndefined(arguments[0])) return fn;
+            
+            var args = core_slice.call(arguments, 1);
+            // 返回一function，以obj为this，bind中传入的参数加上当前function中参数为参数
+            return function(){
+                // 后面继续连上arguments，给返回的function传入参数
+                return fn.apply(obj, args.concat(core_slice.call(arguments)))
             }
         }
-
-        function bindAsEventListener(context) {
-            var __method = this,
-                args = slice.call(arguments, 1);
-            return function(event) {
-                var a = update([event || window.event], args);
-                return __method.apply(context, a);
-            }
-        }
-
-        function curry() {
-            if (!arguments.length) return this;
-            var __method = this,
-                args = slice.call(arguments, 0);
-            return function() {
-                var a = merge(args, arguments);
-                return __method.apply(this, a);
-            }
-        }
-
-        function delay(timeout) {
-            var __method = this,
-                args = slice.call(arguments, 1);
-            timeout = timeout * 1000;
-            return window.setTimeout(function() {
-                return __method.apply(__method, args);
-            }, timeout);
-        }
-
-        function defer() {
-            var args = update([0.01], arguments);
-            return this.delay.apply(this, args);
-        }
-
-        function wrap(wrapper) {
-            var __method = this;
-            return function() {
-                var a = update([__method.bind(this)], arguments);
-                return wrapper.apply(this, a);
-            }
-        }
-
-        function methodize() {
-            if (this._methodized) return this._methodized;
-            var __method = this;
-            return this._methodized = function() {
-                var a = update([this], arguments);
-                return __method.apply(null, a);
-            };
-        }
-
         return {
-            argumentNames: argumentNames,
-            bind: bind,
-            bindAsEventListener: bindAsEventListener,
-            curry: curry,
-            delay: delay,
-            defer: defer,
-            wrap: wrap,
-            methodize: methodize
+            bind: bind
         }
     })());
 
@@ -1558,18 +1498,6 @@ var FS = (function(window, document, undefined) {
     //         host = url.replace(/^(\w+:\/\/[^/]*)\/?.*$/, '$1');
     //     return host;
     // }
-    /**
-     * @description 获取url的页面文件，踢掉后缀参数,返回当前页面的文件名
-     * @param {String} [url='window.location.href'] 需处理的url,可选项。
-     * @return {String} url中域名与'?'之间，如http://www.fclub.cn/goods.php?id=0,则得到goods.php
-     * @example FS.subUrl();
-     */
-
-    FS.subUrl = function(url) {
-        var url = url || window.location.href,
-            sUrl = url.lastIndexOf("?") == -1 ? url.substring(url.lastIndexOf("/") + 1) : url.substring(url.lastIndexOf("/") + 1, url.lastIndexOf("?"));
-        return sUrl;
-    }
 
     /**
      * @description ajax 参数为options对象,对象的各个属性如下。其中不管是get方式还是post方式，都可以用data参数，
@@ -1650,7 +1578,7 @@ var FS = (function(window, document, undefined) {
             } else if (window.ActiveXObject && window.location.protocol !== "file:") {
                 // IE创建xmlHttp对象，其实只有IE6及以下浏览器会通过window.activeXObject创建
                 // 因为IE6以上浏览器都支持XMLHttpRequest
-                var xmlHttp = new window.ActiveXObject(navigator.userAgent.indexOf("MSIE 5") >= 0 ? "Microsoft.XMLHTTP" : "Msxml2.XMLHTTP");
+                var xmlHttp = new window.ActiveXObject(userAgent.indexOf("MSIE 5") >= 0 ? "Microsoft.XMLHTTP" : "Msxml2.XMLHTTP");
             }
 
             if (xmlHttp == null) {
@@ -2781,7 +2709,7 @@ var FS = (function(window, document, undefined) {
                 // DOM2级事件模型，Mozilla, Opera, webkit等支持DOMContentLoaded方法的浏览器，直接用DOMContentLoaded判断。
             if (doc.addEventListener) {
                 doc.addEventListener("DOMContentLoaded", init, false);
-            } else if (/WebKit/i.test(navigator.userAgent)) {
+            } else if (/WebKit/i.test(userAgent)) {
                 (function() {
                     if (/loaded|complete/.test(doc.readyState)) {
                         init();
