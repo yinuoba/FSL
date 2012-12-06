@@ -1527,112 +1527,108 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.ajax = function(options) {
-        try {
-            var async = options.async || true,
-                method = options.method != null ? options.method.toUpperCase() : options.method || 'GET',
-                url = options.url,
-                data = options.data || null,
-                dataType = options.dataType,
-                timeout = options.timeout || 30000,
-                isTimeout = false,
-                isComplete = false,
-                onTimeout = options.onTimeout ||
-            function() {}, success = options.success ||
-            function() {}, onError = options.onError ||
-            function() {};
+        var async = options.async || true,
+            method = options.method != null ? options.method.toUpperCase() : options.method || 'GET',
+            url = options.url,
+            data = options.data || null,
+            dataType = options.dataType,
+            timeout = options.timeout || 30000,
+            isTimeout = false,
+            isComplete = false,
+            onTimeout = options.onTimeout ||
+        function() {}, success = options.success ||
+        function() {}, onError = options.onError ||
+        function() {};
 
-            // 指定是否对url参数编码，默认编码
-            var unencode = options.unencode === true ? true : false;
+        // 指定是否对url参数编码，默认编码
+        var unencode = options.unencode === true ? true : false;
 
-            // 假如method是GET请求，并且data是有值的
-            if (method === 'GET' && data != null) {
-                url += (url.indexOf('?') === -1 ? '?' : '&');
-                url += data;
-            }
-            // 假如url是带参数的，则对url中参数的名值对编码，不然GET请求有时会报异常
-            // 如果指定为不编码，则不进行编码
-            if (url.indexOf('?') !== -1 && !unencode) {
-                var params = url.substring(url.indexOf('?') + 1).split('&'),
-                    pLength = params.length - 1,
-                    param, paramString = '';
-
-                // 将url截到最后一个是？
-                url = url.slice(0, url.indexOf('?') + 1);
-
-                // 遍历所有的名值对，对名和值编码，并将各个名值对用&连接起来
-                for (; pLength >= 0; pLength--) {
-                    param = params[pLength].split('=');
-                    paramString += encodeURIComponent(param[0]) + '=' + encodeURIComponent(param[1]) + '&';
-                }
-
-                // 截掉最后一个&
-                paramString = paramString.slice(0, paramString.length - 1);
-
-                // 将url拼接回去
-                url += paramString;
-            }
-
-            // 非IE创建xmlHttp对象
-            if (window.XMLHttpRequest && window.location.protocol !== "file:") {
-                var xmlHttp = new XMLHttpRequest();
-            } else if (window.ActiveXObject && window.location.protocol !== "file:") {
-                // IE创建xmlHttp对象，其实只有IE6及以下浏览器会通过window.activeXObject创建
-                // 因为IE6以上浏览器都支持XMLHttpRequest
-                var xmlHttp = new window.ActiveXObject(userAgent.indexOf("MSIE 5") >= 0 ? "Microsoft.XMLHTTP" : "Msxml2.XMLHTTP");
-            }
-
-            if (xmlHttp == null) {
-                FS.error('未成功创建XHR对象，ajax方法出现异常！');
-            }
-            if (url.length == 0) {
-                FS.error('发送的url为空，ajax方法出现异常！');
-            }
-            xmlHttp.onreadystatechange = function() {
-                // readyState值为4，表示请求完成，已经接受到全部数据，并已经可以在客户端使用
-                if (xmlHttp.readyState == 4) {
-                    // 尚未超时时执行
-                    if (!isTimeout) {
-                        // 判断http状态码
-                        // 其中304表示
-                        // IE中XHR的ActiveX版本会将204设置为1223
-                        // Opera中会在取得204的时候却报告为0
-                        if (xmlHttp.status >= 200 && xmlHttp.status < 300 || xmlHttp.status == 304 || xmlHttp.status === 1223 || xmlHttp.status === 0) {
-                            if (dataType == 'json') {
-                                var jsonObj = FS.parseJson(xmlHttp.responseText);
-                                success(jsonObj);
-                            } else {
-                                success(xmlHttp.responseText);
-                            }
-                        } else {
-                            var obj = {};
-                            obj.responseText = xmlHttp.responseText;
-                            obj.options = options;
-                            obj.status = xmlHttp.status;
-                            onError(obj);
-                        }
-                    }
-                    // 执行完成
-                    isComplete = true;
-                    // 删除对象,节省内存
-                    xmlHttp = null;
-                }
-            }
-            // 打开链接
-            xmlHttp.open(method, url, async);
-            // 设置编码集
-            xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xmlHttp.send(data);
-            // 如果超时了，执行超时时的回调函数
-            window.setTimeout(function() {
-                // 如果还没有complete，及上面还没有执行，则执行超时和执行完成时的回调函数
-                if (!isComplete) {
-                    isTimeout = true;
-                    onTimeout(options);
-                }
-            }, timeout);
-        } catch (msg) {
-            FS.error('FS.ajax方法出现异常：' + msg);
+        // 假如method是GET请求，并且data是有值的
+        if (method === 'GET' && data != null) {
+            url += (url.indexOf('?') === -1 ? '?' : '&');
+            url += data;
         }
+        // 假如url是带参数的，则对url中参数的名值对编码，不然GET请求有时会报异常
+        // 如果指定为不编码，则不进行编码
+        if (url.indexOf('?') !== -1 && !unencode) {
+            var params = url.substring(url.indexOf('?') + 1).split('&'),
+                pLength = params.length - 1,
+                param, paramString = '';
+
+            // 将url截到最后一个是？
+            url = url.slice(0, url.indexOf('?') + 1);
+
+            // 遍历所有的名值对，对名和值编码，并将各个名值对用&连接起来
+            for (; pLength >= 0; pLength--) {
+                param = params[pLength].split('=');
+                paramString += encodeURIComponent(param[0]) + '=' + encodeURIComponent(param[1]) + '&';
+            }
+
+            // 截掉最后一个&
+            paramString = paramString.slice(0, paramString.length - 1);
+
+            // 将url拼接回去
+            url += paramString;
+        }
+
+        // 非IE创建xmlHttp对象
+        if (window.XMLHttpRequest && window.location.protocol !== "file:") {
+            var xmlHttp = new XMLHttpRequest();
+        } else if (window.ActiveXObject && window.location.protocol !== "file:") {
+            // IE创建xmlHttp对象，其实只有IE6及以下浏览器会通过window.activeXObject创建
+            // 因为IE6以上浏览器都支持XMLHttpRequest
+            var xmlHttp = new window.ActiveXObject(userAgent.indexOf("MSIE 5") >= 0 ? "Microsoft.XMLHTTP" : "Msxml2.XMLHTTP");
+        }
+
+        if (xmlHttp == null) {
+            FS.error('未成功创建XHR对象，ajax方法出现异常！');
+        }
+        if (url.length == 0) {
+            FS.error('发送的url为空，ajax方法出现异常！');
+        }
+        xmlHttp.onreadystatechange = function() {
+            // readyState值为4，表示请求完成，已经接受到全部数据，并已经可以在客户端使用
+            if (xmlHttp.readyState == 4) {
+                // 尚未超时时执行
+                if (!isTimeout) {
+                    // 判断http状态码
+                    // 其中304表示
+                    // IE中XHR的ActiveX版本会将204设置为1223
+                    // Opera中会在取得204的时候却报告为0
+                    if (xmlHttp.status >= 200 && xmlHttp.status < 300 || xmlHttp.status == 304 || xmlHttp.status === 1223 || xmlHttp.status === 0) {
+                        if (dataType == 'json') {
+                            var jsonObj = FS.parseJson(xmlHttp.responseText);
+                            success(jsonObj);
+                        } else {
+                            success(xmlHttp.responseText);
+                        }
+                    } else {
+                        var obj = {};
+                        obj.responseText = xmlHttp.responseText;
+                        obj.options = options;
+                        obj.status = xmlHttp.status;
+                        onError(obj);
+                    }
+                }
+                // 执行完成
+                isComplete = true;
+                // 删除对象,节省内存
+                xmlHttp = null;
+            }
+        }
+        // 打开链接
+        xmlHttp.open(method, url, async);
+        // 设置编码集
+        xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xmlHttp.send(data);
+        // 如果超时了，执行超时时的回调函数
+        window.setTimeout(function() {
+            // 如果还没有complete，及上面还没有执行，则执行超时和执行完成时的回调函数
+            if (!isComplete) {
+                isTimeout = true;
+                onTimeout(options);
+            }
+        }, timeout);
     }
 
     /**
@@ -2710,24 +2706,20 @@ var FS = (function(window, document, undefined) {
             if (doc.addEventListener) {
                 doc.addEventListener("DOMContentLoaded", init, false);
             } else if (/WebKit/i.test(userAgent)) {
-                (function() {
-                    if (/loaded|complete/.test(doc.readyState)) {
-                        init();
-                    } else {
-                        setTimeout(arguments.callee, 50);
-                        return;
-                    }
-                })();
-            } else if (doc.documentElement.doScroll) {
-                (function() {
-                    try {
-                        doc.documentElement.doScroll('left');
-                    } catch (e) {
-                        setTimeout(arguments.callee, 50);
-                        return;
-                    }
+                if (/loaded|complete/.test(doc.readyState)) {
                     init();
-                })();
+                } else {
+                    setTimeout(arguments.callee, 50);
+                    return;
+                }
+            } else if (doc.documentElement.doScroll) {
+                try {
+                    doc.documentElement.doScroll('left');
+                } catch (e) {
+                    setTimeout(arguments.callee, 50);
+                    return;
+                }
+                init();
             }
         } catch (msg) {
             FS.error('FS.ready方法出现异常：' + msg);
