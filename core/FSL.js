@@ -1312,7 +1312,6 @@ var FS = (function(window, document, undefined) {
 
     FS.loadScript = function(url, callback) {
         var script = document.createElement('script');
-        var callback = callback || function() {};
         script.type = 'text/javascript';
         // 如果传入了回调函数
         if (callback) {
