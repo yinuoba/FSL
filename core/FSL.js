@@ -1687,7 +1687,7 @@ var FS = (function(window, document, undefined) {
             //将回调函数拼接到后面
             url += 'callback=' + success;
             //创建script，发送请求
-            FS.createScript(url);
+            FS.loadScript(url);
         } catch (msg) {
             FS.error('FS.jsonp方法出现异常：' + msg);
         }
@@ -2417,21 +2417,17 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.getCookie = function(sName) {
-        try {
-            // 将cookie字符串用'；'分割成数组
-            var aCookie = document.cookie.split("; "),
-                length = aCookie.length;
-            for (var i = 0; i < length; i++) {
-                // 将键值对用'='隔开
-                var aCrumb = aCookie[i].split("=");
-                // 如果找到了这个cookie名称，则返回cookie的值
-                if (sName == aCrumb[0]) return decodeURIComponent(aCrumb[1]);
-            }
-            // 没有此cookie
-            return null;
-        } catch (msg) {
-            FS.error('FS.getCookie方法出现异常：' + msg);
+        // 将cookie字符串用'；'分割成数组
+        var aCookie = document.cookie.split("; "),
+            length = aCookie.length;
+        for (var i = 0; i < length; i++) {
+            // 将键值对用'='隔开
+            var aCrumb = aCookie[i].split("=");
+            // 如果找到了这个cookie名称，则返回cookie的值
+            if (sName == aCrumb[0]) return decodeURIComponent(aCrumb[1]);
         }
+        // 没有此cookie
+        return null;
     }
 
     /**
@@ -2443,15 +2439,11 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.setCookie = function(sName, sValue, sExpires) {
-        try {
-            var sCookie = sName + "=" + encodeURIComponent(sValue);
-            if (sExpires != null && (sExpires instanceof Date)) {
-                sCookie += "; expires=" + sExpires.toGMTString();
-            }
-            document.cookie = sCookie;
-        } catch (msg) {
-            FS.error('FS.setCookie方法出现异常：' + msg);
+        var sCookie = sName + "=" + encodeURIComponent(sValue);
+        if (sExpires != null && (sExpires instanceof Date)) {
+            sCookie += "; expires=" + sExpires.toGMTString();
         }
+        document.cookie = sCookie;
     }
 
     /**
@@ -2461,11 +2453,7 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.removeCookie = function(sName) {
-        try {
-            document.cookie = sName + "=; expires=Fri, 31 Dec 1999 23:59:59 GMT;";
-        } catch (msg) {
-            FS.error('FS.removeCookie方法出现异常：' + msg);
-        }
+        document.cookie = sName + "=; expires=Fri, 31 Dec 1999 23:59:59 GMT;";
     }
 
     /**
@@ -2561,26 +2549,22 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.forEach = function(object, block, context, fn) {
-        try {
-            if (object == null) return;
-            if (!fn) {
-                if (typeof object == "function" && object.call) {
-                    //遍历普通对象
-                    fn = Function;
-                } else if (typeof object.forEach == "function" && object.forEach != arguments.callee) {
-                    //如果目标已经实现了forEach方法，则使用它自己的forEach方法（如标准浏览器的Array对象）
-                    object.forEach(block, context);
-                    return;
-                } else if (typeof object.length == "number") {
-                    // 如果是类数组对象(如元素集合)或数组对象
-                    arrayForEach(object, block, context);
-                    return;
-                }
+        if (object == null) return;
+        if (!fn) {
+            if (typeof object == "function" && object.call) {
+                //遍历普通对象
+                fn = Function;
+            } else if (typeof object.forEach == "function" && object.forEach != arguments.callee) {
+                //如果目标已经实现了forEach方法，则使用它自己的forEach方法（如标准浏览器的Array对象）
+                object.forEach(block, context);
+                return;
+            } else if (typeof object.length == "number") {
+                // 如果是类数组对象(如元素集合)或数组对象
+                arrayForEach(object, block, context);
+                return;
             }
-            functionForEach(fn || Object, object, block, context);
-        } catch (msg) {
-            FS.error('FS.forEach方法出现异常：' + msg);
         }
+        functionForEach(fn || Object, object, block, context);
     }
 
     /**
@@ -2686,43 +2670,39 @@ var FS = (function(window, document, undefined) {
      */
 
     FS.ready = function(fn, win) {
-        try {
-            // 将window、document定义成局部变量
-            var win = win || window,
-                doc = win.document,
-                isReady = false;
-            var init = function() {
-                    // 如果该方法已经被执行过了，则return
-                    if (isReady) {
-                        return;
-                    }
-                    isReady = true;
-                    // 执行预执行的方法
-                    fn.apply(doc, arguments);
-                    win = null;
-                    doc = null;
-                }
-                // DOM2级事件模型，Mozilla, Opera, webkit等支持DOMContentLoaded方法的浏览器，直接用DOMContentLoaded判断。
-            if (doc.addEventListener) {
-                doc.addEventListener("DOMContentLoaded", init, false);
-            } else if (/WebKit/i.test(userAgent)) {
-                if (/loaded|complete/.test(doc.readyState)) {
-                    init();
-                } else {
-                    setTimeout(arguments.callee, 50);
+        // 将window、document定义成局部变量
+        var win = win || window,
+            doc = win.document,
+            isReady = false;
+        var init = function() {
+                // 如果该方法已经被执行过了，则return
+                if (isReady) {
                     return;
                 }
-            } else if (doc.documentElement.doScroll) {
-                try {
-                    doc.documentElement.doScroll('left');
-                } catch (e) {
-                    setTimeout(arguments.callee, 50);
-                    return;
-                }
-                init();
+                isReady = true;
+                // 执行预执行的方法
+                fn.apply(doc, arguments);
+                win = null;
+                doc = null;
             }
-        } catch (msg) {
-            FS.error('FS.ready方法出现异常：' + msg);
+            // DOM2级事件模型，Mozilla, Opera, webkit等支持DOMContentLoaded方法的浏览器，直接用DOMContentLoaded判断。
+        if (doc.addEventListener) {
+            doc.addEventListener("DOMContentLoaded", init, false);
+        } else if (/WebKit/i.test(userAgent)) {
+            if (/loaded|complete/.test(doc.readyState)) {
+                init();
+            } else {
+                setTimeout(arguments.callee, 50);
+                return;
+            }
+        } else if (doc.documentElement.doScroll) {
+            try {
+                doc.documentElement.doScroll('left');
+            } catch (e) {
+                setTimeout(arguments.callee, 50);
+                return;
+            }
+            init();
         }
     }
 
