@@ -48,5 +48,14 @@
             mediumHeight: 455,
             bigClass: 'bigImg'
         });
+        (function(){
+            var div1 = document.createElement('div1');
+            var div2 = document.createElement('div2');
+            FS.data(div1, "tagName", "div");
+            FS.data(div2, "tagName", "disv");
+            var tagname1 = FS.data(div1, "tagName");
+            var tagname2 = FS.data(div2, "tagName");
+            console.info(tagname1, tagname2);
+        }());
     </script>
 </html>

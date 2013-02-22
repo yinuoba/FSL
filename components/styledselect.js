@@ -79,26 +79,22 @@ FS.extend(FS, function () {
             optionLi.id = liId;
             ul_select.appendChild(optionLi);
             FS.html(FS.query('#'+liId), FS.html(optionArr[i]));
-            // 如果定义了liClass,则把liClass赋给li
-            if (liClass !== undefined && liClass !== null) {
-                FS.addClass(optionLi, liClass);
-            }
+            // 把liClass赋给li
+            FS.addClass(optionLi, liClass);
 
             // 如果有选中项，则给选中项对应的li加上选中状态的class样式
             // 并将选中项存到数组中，一边下面创建select的值对应的div时调用
-            if (optionArr[i].selected && liSelected !== undefined) {
+            if (optionArr[i].selected) {
                 FS.addClass(optionLi, liSelected);
                 selectedOption.push(optionArr[i]);
             }
 
             // 如果定义了option对应的li在hover状态下的样式，则添加到li
-            if (liHover !== undefined && liHover !== null) {
-                FS.hover(optionLi, function () {
-                    FS.addClass(this, liHover);
-                }, function () {
-                    FS.removeClass(this, liHover);
-                });
-            }
+            FS.hover(optionLi, function() {
+                FS.addClass(this, liHover);
+            }, function() {
+                FS.removeClass(this, liHover);
+            });
         }
 
         // 假如选中项有好几个，则选择第一个为默认选中项，如果没有选中项，则选options的第一项为选中项

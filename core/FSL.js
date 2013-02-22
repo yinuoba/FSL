@@ -25,6 +25,11 @@ var FS = (function(window, document, undefined) {
     // 标识当前的发布模式，如果为发布模式，则为true,调试模式，则为false
     var developVersion = false;
 
+    // 为FS.data方法定义的内部全局变量
+    var core_cache = {},
+        core_expando = 'FSL' + (new Date()).getTime(),
+        core_uid = 0;
+
     /**
      * @description 选择器。根据css选择器（可以是id选择器、class选择器、node、tagname、不带尖括号的tagname和*）选择出元素数组
      * @param {String|Element|null} selector 选择器 可以是id、class、node、tagname、不带尖括号的tagname和*
@@ -1483,6 +1488,39 @@ var FS = (function(window, document, undefined) {
             }
         } catch (msg) {
             FS.error('FS.stringify方法出现异常：' + msg);
+        }
+    }
+
+    /**
+     * 基于Element元素存储数据
+     * @param  {Element} node [description]
+     * @param  {String} name [description]
+     * @param  {String|Number|Boolean|Function|Array|Object|null|undefined} [value] 数据
+     * @return {[type]}      [description]
+     */
+    FS.data = function(node, name, value) {
+        // 判断node为element， 并且name存在
+        if(node && name && node.nodeType == 1) {
+            var id = node[core_expando];
+            if(value) {
+                // 该node上第一次缓存数据，创建键号
+                if(!id) {
+                    id = node[core_expando] = ++core_uid;
+                }
+                //如果core_cache中id键号不存在（即这个node没有设置过数据缓存），则先创建一个空对象
+                if(!core_cache[id]) {
+                    core_cache[id] = {}
+                }
+                // 设置缓存数据
+                core_cache[id][name] = value
+            } else {
+                // 读取缓存数据
+                if(id) {
+                    return core_cache[id][name]
+                }
+                // 没有name上设置过数据
+                return 'Not set value in this element!';
+            }
         }
     }
 
