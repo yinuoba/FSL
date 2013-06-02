@@ -128,7 +128,7 @@ var FS = (function(window, document, undefined) {
                     limit = [];
 
                 // 如果limitNode是节点元素、元素集合、节点数组
-                // 分别将所有的限制节点放入limit数组中，下面就统一处理limit数组就可以了                
+                // 分别将所有的限制节点放入limit数组中，下面就统一处理limit数组就可以了
                 if (limitNode.nodeType) {
                     limit.push(limitNode);
                 } else if (limitNode.item) {
@@ -530,12 +530,12 @@ var FS = (function(window, document, undefined) {
      * var obj2 = {c:3""};
      * FS.extend(obj1, obj2);
      */
-    
+
     FS.extend = function(child, parent) {
         // toStr，isArray 用来判断属性类型
         var prop,
             isArray = '[object Array]';
-        
+
         // 设置child的默认值为一空对象
         child = child || {};
 
@@ -1047,7 +1047,7 @@ var FS = (function(window, document, undefined) {
             var fn = this;
             // 如果没有传入参数，则返回该函数本身
             if (arguments.length < 2 && FS.isUndefined(arguments[0])) return fn;
-            
+
             var args = core_slice.call(arguments, 1);
             // 返回一function，以obj为this，bind中传入的参数加上当前function中参数为参数
             return function(){
@@ -1522,6 +1522,26 @@ var FS = (function(window, document, undefined) {
                 return 'Not set value in this element!';
             }
         }
+    }
+
+    /**
+     * 将url上的参数组装成以参数名称为属性名的对象
+     * @return {Object} 返回参数对象
+     */
+    function getParams(){
+      var url = window.location.href;
+      var index = url.indexOf('?');
+      var params = {};
+      if(index !== -1){
+        var paramsStr = url.slice(index + 1); // 获取到问号以后的字符串
+        var paramsArr = paramsStr.split('&');
+        // 把url上的所有参数塞到json对象中,以键值对的方式保存
+        for(var i = 0, length = paramsArr.length, param; i < length; i++){
+          param = paramsArr[i].split('=');
+          params[param[0]] = param[1]
+        }
+      }
+      return params;
     }
 
     /**
@@ -2262,7 +2282,7 @@ var FS = (function(window, document, undefined) {
         }
 
         // startTime 动画开始时间
-        // endTime 动画结束时间        
+        // endTime 动画结束时间
         var startTime = FS.now(),
             endTime = startTime + speed;
 
@@ -2318,7 +2338,7 @@ var FS = (function(window, document, undefined) {
             end = 0;
         }
         // startTime 动画开始时间
-        // endTime 动画结束时间  
+        // endTime 动画结束时间
         var startTime = FS.now(),
             endTime = startTime + speed;
 
