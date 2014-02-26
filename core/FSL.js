@@ -916,13 +916,35 @@ var FS = (function(window, document, undefined) {
             }
         }
 
+        /**
+         * @description 数组去重
+         * @return {Array} [description]
+         * @example [1, 2, 3, 4, 5, true , false, "a", "bbb", 0, "", 0, 3, 4, 5, 6, 7, true, false, "a", " ", "3", "5", "7"].unique()
+         */
+        function unique() {
+            var _this = this;
+            // 先让数组排序
+            var _sortArr = _this.sort();
+
+            // 逐个比较左右数据，把重复的删掉
+            for (var i = _sortArr.length - 1; i >= 0; i--) {
+                if (_sortArr[i] === _sortArr[i - 1]) {
+                    _sortArr.splice(i, 1);
+                }
+            }
+
+            // 返回新数组
+            return _sortArr;
+        }
+
         return {
             indexOf: indexOf,
             contains: contains,
             append: append,
             remove: remove,
             each: each,
-            randArray: randArray
+            randArray: randArray,
+            unique: unique
         }
     }());
 
