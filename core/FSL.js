@@ -149,6 +149,7 @@ var FS = (function(window, document, undefined) {
                 // 取出所有限制节点的所有子节点，存入limitNodes数组中，下面就只需要操作limitNodes数组
                 var limitLength = limit.length - 1,
                     limitNodes = [];
+                // TODO 考虑把第二层循环改成数组concat，考虑unique的问题
                 for (; limitLength >= 0; limitLength--) {
                     var limitElements = FS.getAll(limit[limitLength]),
                         limitElementsLeng = limitElements.length - 1;
