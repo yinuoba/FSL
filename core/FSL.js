@@ -120,48 +120,98 @@ var FS = (function(window, document, undefined) {
                 match_tag = match.TAG.exec(selector),
                 match_utag = match.UTAG.exec(selector),
                 element = null,
-                allElement = null;
+                limitRoots,
+                elementsLimit,
+                isWithinLimits = function(node, limits) {
+                    if (!node || !limits) {
+                        return false;
+                    }
+                    for (var i = 0, len = limits.length; i < len; i++) {
+                        var currentLimit = limits[i];
+                        if (!currentLimit) {
+                            continue;
+                        }
+                        if (currentLimit === node) {
+                            return true;
+                        }
+                        if (currentLimit.contains) {
+                            if (currentLimit.contains(node)) {
+                                return true;
+                            }
+                        } else if (currentLimit.compareDocumentPosition) {
+                            if (currentLimit === node || (currentLimit.compareDocumentPosition(node) & 16)) {
+                                return true;
+                            }
+                        } else {
+                            var parent = node.parentNode;
+                            while (parent) {
+                                if (parent === currentLimit) {
+                                    return true;
+                                }
+                                parent = parent.parentNode;
+                            }
+                        }
+                    }
+                    return false;
+                };
 
-            // 如果limitNode存在，则筛选出limitNode子节点中的符合条件的elements，并将其存入limitNodes数组中
             if (limitNode != null) {
-                var elementsLimit = [],
-                    limit = [];
+                elementsLimit = [];
+                limitRoots = [];
 
-                // 如果limitNode是节点元素、元素集合、节点数组
-                // 分别将所有的限制节点放入limit数组中，下面就统一处理limit数组就可以了
                 if (limitNode.nodeType) {
-                    limit.push(limitNode);
+                    limitRoots.push(limitNode);
                 } else if (limitNode.item) {
-                    limit = FS.makeArray(limitNode);
+                    limitRoots = FS.makeArray(limitNode);
                 } else if (FS.isArray(limitNode)) {
-                    // 取得限制节点数组的长度
                     var limitLeng = limitNode.length - 1;
-                    // 循环所有限制节点，将元素节点放入limit数组
                     for (; limitLeng >= 0; limitLeng--) {
-                        if (limitNode[limitLeng].nodeType === 1) {
-                            limit.push(limitNode[limitLeng]);
+                        if (limitNode[limitLeng] && limitNode[limitLeng].nodeType) {
+                            limitRoots.push(limitNode[limitLeng]);
                         }
                     }
                 } else {
                     FS.error('limitNode参数类型不对，应传入节点元素或节点元素数组或元素结合!');
                 }
 
-                // 取出所有限制节点的所有子节点，存入limitNodes数组中，下面就只需要操作limitNodes数组
-                var limitLength = limit.length - 1,
-                    limitNodes = [];
-                // TODO 考虑把第二层循环改成数组concat，考虑unique的问题
-                for (; limitLength >= 0; limitLength--) {
-                    var limitElements = FS.getAll(limit[limitLength]),
-                        limitElementsLeng = limitElements.length - 1;
-                    for (; limitElementsLeng >= 0; limitElementsLeng--) {
-                        limitNodes.push(limitElements[limitElementsLeng]);
+                if (limitRoots.length > 0) {
+                    var limitIndex = limitRoots.length - 1;
+                    for (; limitIndex >= 0; limitIndex--) {
+                        var limitCandidate = limitRoots[limitIndex];
+                        if (!limitCandidate || (limitCandidate.nodeType !== 1 && limitCandidate.nodeType !== 9)) {
+                            limitRoots.splice(limitIndex, 1);
+                        }
                     }
-                };
+                }
+
+                if (limitRoots.length === 0) {
+                    return elementsLimit;
+                }
             }
 
             // 选择出匹配selector的所有节点
             // 如果浏览器支持document.querySelectorAll(IE8及以上、其他标准浏览器),则直接使用querySelectorAll
             if (document.querySelectorAll) {
+                if (limitRoots && limitRoots.length > 0 && !match_id && selector !== '*') {
+                    for (var limitIdx = 0, limitCount = limitRoots.length; limitIdx < limitCount; limitIdx++) {
+                        var limitNodeItem = limitRoots[limitIdx];
+                        if (!limitNodeItem || !limitNodeItem.querySelectorAll) {
+                            continue;
+                        }
+                        var scopedElements = limitNodeItem.querySelectorAll(selector);
+                        if (!scopedElements || scopedElements.length === 0) {
+                            continue;
+                        }
+                        var scopedLen = scopedElements.length;
+                        for (var scopedIndex = 0; scopedIndex < scopedLen; scopedIndex++) {
+                            var scopedNode = scopedElements[scopedIndex];
+                            if (!elementsLimit.contains(scopedNode)) {
+                                elementsLimit.push(scopedNode);
+                            }
+                        }
+                    }
+                    return elementsLimit;
+                }
                 elements = document.querySelectorAll(selector);
             } else {
                 // 不支持querySelectorAll的浏览器（主要是IE6、IE7）
@@ -184,13 +234,14 @@ var FS = (function(window, document, undefined) {
                 }
             }
 
-            // 如果limitNode存在，并且传入的选择器是TagName或class选择器，则筛选出limitNode的子节点中的符合条件的所有elements
-            if (limitNode != null && !match_id && selector !== '*') {
-                var eleLength = elements.length;
+            // 如果limitNode存在，并且传入的选择器不是id选择器或'*'，则筛选出limitNode的子节点中的符合条件的所有elements
+            if (limitRoots && limitRoots.length > 0 && !match_id && selector !== '*') {
+                var filteredElements = elements,
+                    eleLength = filteredElements.length;
                 for (var k = 0; k < eleLength; k++) {
-                    // 如果limitNodes数组中包含匹配出来的elements,则插入elementsLimit数组
-                    if (limitNodes.contains(elements[k])) {
-                        elementsLimit.push(elements[k]);
+                    var candidateElement = filteredElements[k];
+                    if (isWithinLimits(candidateElement, limitRoots)) {
+                        elementsLimit.push(candidateElement);
                     }
                 }
                 return elementsLimit;
